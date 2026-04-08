@@ -1,0 +1,86 @@
+# =========================
+# 1. Python 基础
+# =========================
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.log
+
+# virtual env
+.venv/
+venv/
+env/
+
+# =========================
+# 2. Environment & Secrets
+# =========================
+.env
+.env.*
+*.key
+*.pem
+
+# =========================
+# 3. Raw Data（重点！！！）
+# =========================
+data/raw/
+
+# 但保留结构（可选）
+!data/raw/.gitkeep
+
+# =========================
+# 4. Intermediate / Processed Data
+# =========================
+
+# vector DB（如果你后面用）
+chroma_db/
+faiss_index/
+
+# =========================
+# 5. Ingestion Code（你要求的）
+# =========================
+# 整个 ingestion pipeline 不上传
+code/src/ingestion/
+
+# 如果你只想保留接口（可选）
+code/src/ingestion/__init__.py
+
+# =========================
+# 6. Notebook Outputs
+# =========================
+.ipynb_checkpoints/
+*.ipynb
+
+# 如果你想保留 notebook，但去输出：
+# 可以后面用 nbstripout
+
+# =========================
+# 7. OS / IDE
+# =========================
+.DS_Store
+Thumbs.db
+
+.vscode/
+.idea/
+
+# =========================
+# 8. Large Files
+# =========================
+*.parquet
+*.feather
+*.csv
+*.jsonl
+
+# ⚠️ 注意：
+# 如果你有“最终clean数据要交付”，
+# 可以 whitelist（见下）
+
+# =========================
+# 9. Exceptions（重要）
+# =========================
+# 保留最终干净数据（可选）
+!data/clean/unified_corpus.csv
+!data/clean/unified_corpus.db
+
+# 保留配置
+!configs/
