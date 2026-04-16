@@ -1,0 +1,599 @@
+{
+  "company_name": "Cisco",
+  "input_files": [
+    "C:\\Users\\Kelno\\OneDrive\\Documents\\purpose_driven_score\\purpose_driven_scoring\\data\\data\\selected_10_companies\\Cisco\\pages.csv",
+    "C:\\Users\\Kelno\\OneDrive\\Documents\\purpose_driven_score\\purpose_driven_scoring\\data\\data\\selected_10_companies\\Cisco\\pages.jsonl",
+    "C:\\Users\\Kelno\\OneDrive\\Documents\\purpose_driven_score\\purpose_driven_scoring\\data\\data\\linkedin_selected_10_companies\\Cisco (1)\\pages (1).jsonl",
+    "C:\\Users\\Kelno\\OneDrive\\Documents\\purpose_driven_score\\purpose_driven_scoring\\data\\data\\10Ks\\edgar\\CSCO\\2020_10K_2020-09-03_full_submission.txt",
+    "C:\\Users\\Kelno\\OneDrive\\Documents\\purpose_driven_score\\purpose_driven_scoring\\data\\data\\10Ks\\edgar\\CSCO\\2021_10K_2021-09-09_full_submission.txt",
+    "C:\\Users\\Kelno\\OneDrive\\Documents\\purpose_driven_score\\purpose_driven_scoring\\data\\data\\10Ks\\edgar\\CSCO\\2022_10K_2022-09-08_full_submission.txt",
+    "C:\\Users\\Kelno\\OneDrive\\Documents\\purpose_driven_score\\purpose_driven_scoring\\data\\data\\10Ks\\edgar\\CSCO\\2023_10K_2023-09-07_full_submission.txt",
+    "C:\\Users\\Kelno\\OneDrive\\Documents\\purpose_driven_score\\purpose_driven_scoring\\data\\data\\10Ks\\edgar\\CSCO\\2024_10K_2024-09-05_full_submission.txt",
+    "C:\\Users\\Kelno\\OneDrive\\Documents\\purpose_driven_score\\purpose_driven_scoring\\data\\data\\10Ks\\edgar\\CSCO\\2025_10K_2025-09-03_full_submission.txt"
+  ],
+  "record_count": 106,
+  "scores": {
+    "purpose_articulation": {
+      "overall": 3.8,
+      "dimensions": {
+        "purpose_presence": 3,
+        "clarity": 3,
+        "historical_consistency": 5,
+        "leadership_centrality": 5,
+        "distinction_from_branding": 3
+      }
+    },
+    "operational_embedding": {
+      "overall": 4.4,
+      "dimensions": {
+        "corporate_strategy_integration": 5,
+        "capital_and_performance_alignment": 4,
+        "employee_embedding": 5,
+        "strategic_decision_justification": 3,
+        "execution_outcome_accountability": 5
+      }
+    },
+    "execution_consistency": {
+      "overall": 4.2,
+      "dimensions": {
+        "corporate_strategy_integration": 4,
+        "capital_and_performance_alignment": 3,
+        "execution_consistency": 4,
+        "core_capability_reinforcement": 5,
+        "industry_impact_breadth": 5
+      }
+    },
+    "aggregate": {
+      "overall": 4.1,
+      "label": "strongly purpose-driven"
+    }
+  },
+  "evidence": {
+    "top_pages": [
+      {
+        "title": "Cisco Purpose - Power an Inclusive Future for All - Cisco",
+        "url": "https://www.cisco.com/site/us/en/about/purpose/index.html",
+        "display_role": "purpose",
+        "display_reason": "explicit purpose language, stakeholder framing, leadership linkage",
+        "page_signal_score": 36.9,
+        "display_evidence_score": 37.0,
+        "purpose_hits": 7,
+        "impact_hits": 22,
+        "strategy_hits": 5
+      },
+      {
+        "title": "Cisco Nexus Dashboard – Cloud Network Dashboard - Cisco",
+        "url": "https://www.cisco.com/site/us/en/products/networking/cloud-networking/nexus-platform/index.html",
+        "display_role": "leadership",
+        "display_reason": "stakeholder framing, leadership linkage",
+        "page_signal_score": 10.8,
+        "display_evidence_score": 5.5,
+        "purpose_hits": 0,
+        "impact_hits": 6,
+        "strategy_hits": 1
+      },
+      {
+        "title": "Our People - Cisco",
+        "url": "https://www.cisco.com/site/us/en/about/purpose/our-people.html",
+        "display_role": "people",
+        "display_reason": "explicit purpose language, stakeholder framing, strategy linkage",
+        "page_signal_score": 23.0,
+        "display_evidence_score": 20.5,
+        "purpose_hits": 2,
+        "impact_hits": 6,
+        "strategy_hits": 3
+      },
+      {
+        "title": "Cisco Environmental Sustainability - Cisco",
+        "url": "https://www.cisco.com/site/us/en/about/purpose/environmental-sustainability/index.html",
+        "display_role": "purpose",
+        "display_reason": "explicit purpose language, stakeholder framing, leadership linkage",
+        "page_signal_score": 27.3,
+        "display_evidence_score": 32.0,
+        "purpose_hits": 2,
+        "impact_hits": 59,
+        "strategy_hits": 9
+      },
+      {
+        "title": "Cisco Purpose Reporting Hub",
+        "url": "https://www.cisco.com/c/m/en_us/about/purpose/reporting-hub.html",
+        "display_role": "purpose",
+        "display_reason": "explicit purpose language, stakeholder framing, strategy linkage",
+        "page_signal_score": 28.1,
+        "display_evidence_score": 28.0,
+        "purpose_hits": 4,
+        "impact_hits": 12,
+        "strategy_hits": 6
+      }
+    ],
+    "scoring_top_pages": [
+      {
+        "title": "Cisco Purpose - Power an Inclusive Future for All - Cisco",
+        "url": "https://www.cisco.com/site/us/en/about/purpose/index.html",
+        "page_signal_score": 36.9,
+        "display_evidence_score": 37.0,
+        "purpose_hits": 7,
+        "impact_hits": 22,
+        "strategy_hits": 5
+      },
+      {
+        "title": "Cisco Purpose Reporting Hub",
+        "url": "https://www.cisco.com/c/m/en_us/about/purpose/reporting-hub.html",
+        "page_signal_score": 28.1,
+        "display_evidence_score": 28.0,
+        "purpose_hits": 4,
+        "impact_hits": 12,
+        "strategy_hits": 6
+      },
+      {
+        "title": "Cisco Environmental Sustainability - Cisco",
+        "url": "https://www.cisco.com/site/us/en/about/purpose/environmental-sustainability/index.html",
+        "page_signal_score": 27.3,
+        "display_evidence_score": 32.0,
+        "purpose_hits": 2,
+        "impact_hits": 59,
+        "strategy_hits": 9
+      },
+      {
+        "title": "BT Creates Platform for Workplace Innovation - Cisco",
+        "url": "https://www.cisco.com/c/en/us/about/case-studies-customer-success-stories/bt-group.html",
+        "page_signal_score": 23.9,
+        "display_evidence_score": 16.0,
+        "purpose_hits": 1,
+        "impact_hits": 28,
+        "strategy_hits": 4
+      },
+      {
+        "title": "Our People - Cisco",
+        "url": "https://www.cisco.com/site/us/en/about/purpose/our-people.html",
+        "page_signal_score": 23.0,
+        "display_evidence_score": 20.5,
+        "purpose_hits": 2,
+        "impact_hits": 6,
+        "strategy_hits": 3
+      }
+    ],
+    "years_found": [
+      1934,
+      1973,
+      1986,
+      1992,
+      1998,
+      2000,
+      2005,
+      2012,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026,
+      2040,
+      2048
+    ],
+    "industries_found": [
+      "consumer",
+      "education",
+      "energy",
+      "finance",
+      "government",
+      "healthcare",
+      "logistics",
+      "manufacturing",
+      "retail",
+      "small business"
+    ],
+    "purpose_examples": [
+      "FY25 Purpose Report Our Purpose is core to who we are and what we do Our Purpose story comes to life through four interconnected pillars, CORE: Community resilience We empower communities to adapt and thrive through digital readiness, crisis response, and strategic investments.",
+      "Cisco Purpose - Power an Inclusive Future for All - Cisco Learn how Cisco's Purpose aims to combine our technology, our people, and our broader ecosystem to power an inclusive future for all.",
+      "Learn more Our people Our people fuel our business — and our award-winning culture — through their commitment to learning, connection, and collaboration.",
+      "Learn more Energy & sustainability Through our products, solutions, and operations, we drive energy efficiency and resilience for Cisco, our customers, and communities.",
+      "With its flexible hosting model (physical, virtual, and cloud-hosted), customers can choose the right model that is applicable to their environment."
+    ]
+  },
+  "scoring_templates": {
+    "purpose_articulation": {
+      "title": "Purpose Articulation",
+      "overall_score": 3.8,
+      "dimensions": {
+        "purpose_presence": {
+          "question": "Does the company articulate why it exists, who it serves, and the impact it seeks to create?",
+          "score": 3,
+          "score_description": "A recognizable purpose statement exists, but stakeholders or intended impact are only partly specified.",
+          "evidence_template": {
+            "required_signals": [
+              "explicit purpose statement",
+              "stakeholder mention",
+              "impact or outcome language"
+            ],
+            "preferred_sources": [
+              "web",
+              "linkedin",
+              "sec"
+            ],
+            "suggested_evidence_titles": [
+              "Cisco Purpose - Power an Inclusive Future for All - Cisco",
+              "Cisco Nexus Dashboard – Cloud Network Dashboard - Cisco",
+              "Our People - Cisco"
+            ],
+            "suggested_quote_candidates": [
+              "FY25 Purpose Report Our Purpose is core to who we are and what we do Our Purpose story comes to life through four interconnected pillars, CORE: Community resilience We empower communities to adapt and thrive through digital readiness, crisis response, and strategic investments.",
+              "Cisco Purpose - Power an Inclusive Future for All - Cisco Learn how Cisco's Purpose aims to combine our technology, our people, and our broader ecosystem to power an inclusive future for all."
+            ]
+          }
+        },
+        "clarity": {
+          "question": "Is the purpose concrete, outcome-oriented, and distinguishable from brand language?",
+          "score": 3,
+          "score_description": "Some real outcomes or beneficiaries are described.",
+          "evidence_template": {
+            "required_signals": [
+              "observable outcomes",
+              "beneficiary or stakeholder specificity",
+              "low branding dependence"
+            ],
+            "preferred_sources": [
+              "web",
+              "sec"
+            ],
+            "suggested_evidence_titles": [
+              "Cisco Purpose - Power an Inclusive Future for All - Cisco",
+              "Cisco Nexus Dashboard – Cloud Network Dashboard - Cisco",
+              "Our People - Cisco"
+            ],
+            "suggested_quote_candidates": [
+              "FY25 Purpose Report Our Purpose is core to who we are and what we do Our Purpose story comes to life through four interconnected pillars, CORE: Community resilience We empower communities to adapt and thrive through digital readiness, crisis response, and strategic investments.",
+              "Cisco Purpose - Power an Inclusive Future for All - Cisco Learn how Cisco's Purpose aims to combine our technology, our people, and our broader ecosystem to power an inclusive future for all."
+            ]
+          }
+        },
+        "historical_consistency": {
+          "question": "Has the company maintained a consistent purpose narrative across the 2021-2025 window?",
+          "score": 5,
+          "score_description": "The central purpose remains stable across the full review window.",
+          "evidence_template": {
+            "required_signals": [
+              "multi-year evidence",
+              "repeatable narrative",
+              "cross-year consistency"
+            ],
+            "preferred_sources": [
+              "sec"
+            ],
+            "suggested_evidence_titles": [
+              "Cisco Purpose - Power an Inclusive Future for All - Cisco",
+              "Cisco Nexus Dashboard – Cloud Network Dashboard - Cisco",
+              "Our People - Cisco"
+            ],
+            "suggested_quote_candidates": [
+              "FY25 Purpose Report Our Purpose is core to who we are and what we do Our Purpose story comes to life through four interconnected pillars, CORE: Community resilience We empower communities to adapt and thrive through digital readiness, crisis response, and strategic investments.",
+              "Cisco Purpose - Power an Inclusive Future for All - Cisco Learn how Cisco's Purpose aims to combine our technology, our people, and our broader ecosystem to power an inclusive future for all."
+            ]
+          }
+        },
+        "leadership_centrality": {
+          "question": "Do leaders repeatedly frame purpose as a guide for decisions or direction?",
+          "score": 5,
+          "score_description": "Purpose clearly functions as a leadership and governance principle.",
+          "evidence_template": {
+            "required_signals": [
+              "leadership co-mentions",
+              "strategy linkage",
+              "repeat mentions"
+            ],
+            "preferred_sources": [
+              "web",
+              "linkedin",
+              "sec"
+            ],
+            "suggested_evidence_titles": [
+              "Cisco Purpose - Power an Inclusive Future for All - Cisco",
+              "Cisco Nexus Dashboard – Cloud Network Dashboard - Cisco",
+              "Our People - Cisco"
+            ],
+            "suggested_quote_candidates": [
+              "FY25 Purpose Report Our Purpose is core to who we are and what we do Our Purpose story comes to life through four interconnected pillars, CORE: Community resilience We empower communities to adapt and thrive through digital readiness, crisis response, and strategic investments.",
+              "Cisco Purpose - Power an Inclusive Future for All - Cisco Learn how Cisco's Purpose aims to combine our technology, our people, and our broader ecosystem to power an inclusive future for all."
+            ]
+          }
+        },
+        "distinction_from_branding": {
+          "question": "Is purpose embedded in strategy and accountability rather than left as branding?",
+          "score": 3,
+          "score_description": "Purpose appears in both messaging and operational contexts.",
+          "evidence_template": {
+            "required_signals": [
+              "strategy relevance",
+              "measurement or KPI tie-in",
+              "limited brand-only framing"
+            ],
+            "preferred_sources": [
+              "web",
+              "sec"
+            ],
+            "suggested_evidence_titles": [
+              "Cisco Purpose - Power an Inclusive Future for All - Cisco",
+              "Cisco Nexus Dashboard – Cloud Network Dashboard - Cisco",
+              "Our People - Cisco"
+            ],
+            "suggested_quote_candidates": [
+              "FY25 Purpose Report Our Purpose is core to who we are and what we do Our Purpose story comes to life through four interconnected pillars, CORE: Community resilience We empower communities to adapt and thrive through digital readiness, crisis response, and strategic investments.",
+              "Cisco Purpose - Power an Inclusive Future for All - Cisco Learn how Cisco's Purpose aims to combine our technology, our people, and our broader ecosystem to power an inclusive future for all."
+            ]
+          }
+        }
+      }
+    },
+    "operational_embedding": {
+      "title": "Operational Embedding",
+      "overall_score": 4.4,
+      "dimensions": {
+        "corporate_strategy_integration": {
+          "question": "Is the stated purpose explicitly integrated into strategic priorities?",
+          "score": 5,
+          "score_description": "Purpose clearly guides long-term strategy.",
+          "evidence_template": {
+            "required_signals": [
+              "strategic priorities",
+              "purpose linkage",
+              "initiative framing"
+            ],
+            "preferred_sources": [
+              "web",
+              "sec"
+            ],
+            "suggested_evidence_titles": [
+              "Cisco Purpose - Power an Inclusive Future for All - Cisco",
+              "Cisco Nexus Dashboard – Cloud Network Dashboard - Cisco",
+              "Our People - Cisco"
+            ],
+            "suggested_quote_candidates": [
+              "FY25 Purpose Report Our Purpose is core to who we are and what we do Our Purpose story comes to life through four interconnected pillars, CORE: Community resilience We empower communities to adapt and thrive through digital readiness, crisis response, and strategic investments.",
+              "Cisco Purpose - Power an Inclusive Future for All - Cisco Learn how Cisco's Purpose aims to combine our technology, our people, and our broader ecosystem to power an inclusive future for all."
+            ]
+          }
+        },
+        "capital_and_performance_alignment": {
+          "question": "Do investments and resource allocation support purpose-related initiatives?",
+          "score": 4,
+          "score_description": "Major investments frequently align with purpose.",
+          "evidence_template": {
+            "required_signals": [
+              "investment language",
+              "purpose linkage",
+              "multi-year support"
+            ],
+            "preferred_sources": [
+              "sec",
+              "web"
+            ],
+            "suggested_evidence_titles": [
+              "Cisco Purpose - Power an Inclusive Future for All - Cisco",
+              "Cisco Nexus Dashboard – Cloud Network Dashboard - Cisco",
+              "Our People - Cisco"
+            ],
+            "suggested_quote_candidates": [
+              "FY25 Purpose Report Our Purpose is core to who we are and what we do Our Purpose story comes to life through four interconnected pillars, CORE: Community resilience We empower communities to adapt and thrive through digital readiness, crisis response, and strategic investments.",
+              "Cisco Purpose - Power an Inclusive Future for All - Cisco Learn how Cisco's Purpose aims to combine our technology, our people, and our broader ecosystem to power an inclusive future for all."
+            ]
+          }
+        },
+        "employee_embedding": {
+          "question": "Is purpose reflected in employee programs, incentives, and internal culture?",
+          "score": 5,
+          "score_description": "Purpose is deeply embedded in employee culture and decision-making.",
+          "evidence_template": {
+            "required_signals": [
+              "employee programs",
+              "training or incentives",
+              "purpose linkage"
+            ],
+            "preferred_sources": [
+              "linkedin",
+              "web",
+              "sec"
+            ],
+            "suggested_evidence_titles": [
+              "Cisco Purpose - Power an Inclusive Future for All - Cisco",
+              "Cisco Nexus Dashboard – Cloud Network Dashboard - Cisco",
+              "Our People - Cisco"
+            ],
+            "suggested_quote_candidates": [
+              "FY25 Purpose Report Our Purpose is core to who we are and what we do Our Purpose story comes to life through four interconnected pillars, CORE: Community resilience We empower communities to adapt and thrive through digital readiness, crisis response, and strategic investments.",
+              "Cisco Purpose - Power an Inclusive Future for All - Cisco Learn how Cisco's Purpose aims to combine our technology, our people, and our broader ecosystem to power an inclusive future for all."
+            ]
+          }
+        },
+        "strategic_decision_justification": {
+          "question": "Are major strategic moves justified using purpose rather than only growth logic?",
+          "score": 3,
+          "score_description": "Some strategic decisions demonstrate purpose alignment.",
+          "evidence_template": {
+            "required_signals": [
+              "major initiative",
+              "decision rationale",
+              "purpose linkage"
+            ],
+            "preferred_sources": [
+              "web",
+              "sec"
+            ],
+            "suggested_evidence_titles": [
+              "Cisco Purpose - Power an Inclusive Future for All - Cisco",
+              "Cisco Nexus Dashboard – Cloud Network Dashboard - Cisco",
+              "Our People - Cisco"
+            ],
+            "suggested_quote_candidates": [
+              "FY25 Purpose Report Our Purpose is core to who we are and what we do Our Purpose story comes to life through four interconnected pillars, CORE: Community resilience We empower communities to adapt and thrive through digital readiness, crisis response, and strategic investments.",
+              "Cisco Purpose - Power an Inclusive Future for All - Cisco Learn how Cisco's Purpose aims to combine our technology, our people, and our broader ecosystem to power an inclusive future for all."
+            ]
+          }
+        },
+        "execution_outcome_accountability": {
+          "question": "Does the company report measurable progress toward purpose-related outcomes?",
+          "score": 5,
+          "score_description": "A comprehensive KPI framework tracks purpose outcomes over time.",
+          "evidence_template": {
+            "required_signals": [
+              "metrics",
+              "progress reporting",
+              "purpose or impact target"
+            ],
+            "preferred_sources": [
+              "sec",
+              "web"
+            ],
+            "suggested_evidence_titles": [
+              "Cisco Purpose - Power an Inclusive Future for All - Cisco",
+              "Cisco Nexus Dashboard – Cloud Network Dashboard - Cisco",
+              "Our People - Cisco"
+            ],
+            "suggested_quote_candidates": [
+              "FY25 Purpose Report Our Purpose is core to who we are and what we do Our Purpose story comes to life through four interconnected pillars, CORE: Community resilience We empower communities to adapt and thrive through digital readiness, crisis response, and strategic investments.",
+              "Cisco Purpose - Power an Inclusive Future for All - Cisco Learn how Cisco's Purpose aims to combine our technology, our people, and our broader ecosystem to power an inclusive future for all."
+            ]
+          }
+        }
+      }
+    },
+    "execution_consistency": {
+      "title": "Execution Consistency",
+      "overall_score": 4.2,
+      "dimensions": {
+        "corporate_strategy_integration": {
+          "question": "Is purpose reflected in company-level strategic priorities and long-term direction?",
+          "score": 4,
+          "score_description": "Purpose regularly frames major initiatives.",
+          "evidence_template": {
+            "required_signals": [
+              "strategy continuity",
+              "long-term priority",
+              "purpose linkage"
+            ],
+            "preferred_sources": [
+              "sec",
+              "web"
+            ],
+            "suggested_evidence_titles": [
+              "Cisco Purpose - Power an Inclusive Future for All - Cisco",
+              "Cisco Nexus Dashboard – Cloud Network Dashboard - Cisco",
+              "Our People - Cisco"
+            ],
+            "suggested_quote_candidates": [
+              "FY25 Purpose Report Our Purpose is core to who we are and what we do Our Purpose story comes to life through four interconnected pillars, CORE: Community resilience We empower communities to adapt and thrive through digital readiness, crisis response, and strategic investments.",
+              "Cisco Purpose - Power an Inclusive Future for All - Cisco Learn how Cisco's Purpose aims to combine our technology, our people, and our broader ecosystem to power an inclusive future for all."
+            ]
+          }
+        },
+        "capital_and_performance_alignment": {
+          "question": "Do investments and performance drivers reinforce the purpose-related business areas?",
+          "score": 3,
+          "score_description": "Several major investments align with purpose-related capabilities.",
+          "evidence_template": {
+            "required_signals": [
+              "growth driver",
+              "capability investment",
+              "purpose linkage"
+            ],
+            "preferred_sources": [
+              "sec",
+              "web"
+            ],
+            "suggested_evidence_titles": [
+              "Cisco Purpose - Power an Inclusive Future for All - Cisco",
+              "Cisco Nexus Dashboard – Cloud Network Dashboard - Cisco",
+              "Our People - Cisco"
+            ],
+            "suggested_quote_candidates": [
+              "FY25 Purpose Report Our Purpose is core to who we are and what we do Our Purpose story comes to life through four interconnected pillars, CORE: Community resilience We empower communities to adapt and thrive through digital readiness, crisis response, and strategic investments.",
+              "Cisco Purpose - Power an Inclusive Future for All - Cisco Learn how Cisco's Purpose aims to combine our technology, our people, and our broader ecosystem to power an inclusive future for all."
+            ]
+          }
+        },
+        "execution_consistency": {
+          "question": "Do products, launches, and multi-year outcomes show sustained execution of the stated purpose?",
+          "score": 4,
+          "score_description": "Purpose-related execution is reflected consistently in products and outcomes.",
+          "evidence_template": {
+            "required_signals": [
+              "launches or programs",
+              "outcomes",
+              "multi-year continuity"
+            ],
+            "preferred_sources": [
+              "web",
+              "sec"
+            ],
+            "suggested_evidence_titles": [
+              "Cisco Purpose - Power an Inclusive Future for All - Cisco",
+              "Cisco Nexus Dashboard – Cloud Network Dashboard - Cisco",
+              "Our People - Cisco"
+            ],
+            "suggested_quote_candidates": [
+              "FY25 Purpose Report Our Purpose is core to who we are and what we do Our Purpose story comes to life through four interconnected pillars, CORE: Community resilience We empower communities to adapt and thrive through digital readiness, crisis response, and strategic investments.",
+              "Cisco Purpose - Power an Inclusive Future for All - Cisco Learn how Cisco's Purpose aims to combine our technology, our people, and our broader ecosystem to power an inclusive future for all."
+            ]
+          }
+        },
+        "core_capability_reinforcement": {
+          "question": "Does the company keep strengthening the core capability most central to its purpose?",
+          "score": 5,
+          "score_description": "The core capability is systematically reinforced across generations of strategy and execution.",
+          "evidence_template": {
+            "required_signals": [
+              "platform or capability language",
+              "reinforcement over time",
+              "purpose linkage"
+            ],
+            "preferred_sources": [
+              "web",
+              "sec"
+            ],
+            "suggested_evidence_titles": [
+              "Cisco Purpose - Power an Inclusive Future for All - Cisco",
+              "Cisco Nexus Dashboard – Cloud Network Dashboard - Cisco",
+              "Our People - Cisco"
+            ],
+            "suggested_quote_candidates": [
+              "FY25 Purpose Report Our Purpose is core to who we are and what we do Our Purpose story comes to life through four interconnected pillars, CORE: Community resilience We empower communities to adapt and thrive through digital readiness, crisis response, and strategic investments.",
+              "Cisco Purpose - Power an Inclusive Future for All - Cisco Learn how Cisco's Purpose aims to combine our technology, our people, and our broader ecosystem to power an inclusive future for all."
+            ]
+          }
+        },
+        "industry_impact_breadth": {
+          "question": "Are purpose-related capabilities applied across multiple industries or use cases?",
+          "score": 5,
+          "score_description": "There is broad, sustained multi-industry adoption of purpose-related capabilities.",
+          "evidence_template": {
+            "required_signals": [
+              "multiple industries",
+              "credible use cases",
+              "repeat application"
+            ],
+            "preferred_sources": [
+              "web",
+              "sec"
+            ],
+            "suggested_evidence_titles": [
+              "Cisco Purpose - Power an Inclusive Future for All - Cisco",
+              "Cisco Nexus Dashboard – Cloud Network Dashboard - Cisco",
+              "Our People - Cisco"
+            ],
+            "suggested_quote_candidates": [
+              "FY25 Purpose Report Our Purpose is core to who we are and what we do Our Purpose story comes to life through four interconnected pillars, CORE: Community resilience We empower communities to adapt and thrive through digital readiness, crisis response, and strategic investments.",
+              "Cisco Purpose - Power an Inclusive Future for All - Cisco Learn how Cisco's Purpose aims to combine our technology, our people, and our broader ecosystem to power an inclusive future for all."
+            ]
+          }
+        }
+      }
+    }
+  },
+  "openai_review": {
+    "enabled": false,
+    "status": "disabled"
+  }
+}

@@ -1,0 +1,6 @@
+# This project currently uses Python's standard library only.
+# No third-party packages are required to run the scoring pipeline.
+#
+# Optional:
+# - Set OPENAI_API_KEY to enable the built-in OpenAI judging layer.
+# - No `openai` package is required because the project uses `urllib`.

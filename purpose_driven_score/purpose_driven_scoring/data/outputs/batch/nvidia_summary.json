@@ -1,0 +1,603 @@
+{
+  "company_name": "Nvidia",
+  "input_files": [
+    "C:\\Users\\Kelno\\OneDrive\\Documents\\purpose_driven_score\\purpose_driven_scoring\\data\\data\\selected_10_companies\\Nvidia\\pages.csv",
+    "C:\\Users\\Kelno\\OneDrive\\Documents\\purpose_driven_score\\purpose_driven_scoring\\data\\data\\selected_10_companies\\Nvidia\\pages.jsonl",
+    "C:\\Users\\Kelno\\OneDrive\\Documents\\purpose_driven_score\\purpose_driven_scoring\\data\\data\\linkedin_selected_10_companies\\Nvidia (1)\\pages (1).jsonl",
+    "C:\\Users\\Kelno\\OneDrive\\Documents\\purpose_driven_score\\purpose_driven_scoring\\data\\data\\10Ks\\edgar\\NVDA\\2021_10K_2021-02-26_full_submission.txt",
+    "C:\\Users\\Kelno\\OneDrive\\Documents\\purpose_driven_score\\purpose_driven_scoring\\data\\data\\10Ks\\edgar\\NVDA\\2022_10K_2022-03-18_full_submission.txt",
+    "C:\\Users\\Kelno\\OneDrive\\Documents\\purpose_driven_score\\purpose_driven_scoring\\data\\data\\10Ks\\edgar\\NVDA\\2023_10K_2023-02-24_full_submission.txt",
+    "C:\\Users\\Kelno\\OneDrive\\Documents\\purpose_driven_score\\purpose_driven_scoring\\data\\data\\10Ks\\edgar\\NVDA\\2024_10K_2024-02-21_full_submission.txt",
+    "C:\\Users\\Kelno\\OneDrive\\Documents\\purpose_driven_score\\purpose_driven_scoring\\data\\data\\10Ks\\edgar\\NVDA\\2025_10K_2025-02-26_full_submission.txt",
+    "C:\\Users\\Kelno\\OneDrive\\Documents\\purpose_driven_score\\purpose_driven_scoring\\data\\data\\10Ks\\edgar\\NVDA\\2026_10K_2026-02-25_full_submission.txt"
+  ],
+  "record_count": 106,
+  "scores": {
+    "purpose_articulation": {
+      "overall": 2.4,
+      "dimensions": {
+        "purpose_presence": 0,
+        "clarity": 1,
+        "historical_consistency": 5,
+        "leadership_centrality": 3,
+        "distinction_from_branding": 3
+      }
+    },
+    "operational_embedding": {
+      "overall": 3.8,
+      "dimensions": {
+        "corporate_strategy_integration": 3,
+        "capital_and_performance_alignment": 3,
+        "employee_embedding": 5,
+        "strategic_decision_justification": 3,
+        "execution_outcome_accountability": 5
+      }
+    },
+    "execution_consistency": {
+      "overall": 4.4,
+      "dimensions": {
+        "corporate_strategy_integration": 3,
+        "capital_and_performance_alignment": 5,
+        "execution_consistency": 5,
+        "core_capability_reinforcement": 4,
+        "industry_impact_breadth": 5
+      }
+    },
+    "aggregate": {
+      "overall": 3.42,
+      "label": "moderately purpose-driven"
+    }
+  },
+  "evidence": {
+    "top_pages": [
+      {
+        "title": "AI Innovations Shaping Tomorrow | NVIDIA AI for Good",
+        "url": "https://www.nvidia.com/en-us/about-nvidia/ai-for-good",
+        "display_role": "impact",
+        "display_reason": "stakeholder framing",
+        "page_signal_score": 11.6,
+        "display_evidence_score": 12.5,
+        "purpose_hits": 0,
+        "impact_hits": 15,
+        "strategy_hits": 0
+      },
+      {
+        "title": "Diversity and Inclusion Support and Resources | NVIDIA",
+        "url": "https://www.nvidia.com/en-us/about-nvidia/careers/diversity-and-inclusion",
+        "display_role": "people",
+        "display_reason": "stakeholder framing, strategy linkage, people embedding",
+        "page_signal_score": 17.7,
+        "display_evidence_score": 12.5,
+        "purpose_hits": 0,
+        "impact_hits": 12,
+        "strategy_hits": 2
+      },
+      {
+        "title": "Life, Culture, Career at NVIDIA",
+        "url": "https://www.nvidia.com/en-us/about-nvidia/careers/life-at-nvidia",
+        "display_role": "people",
+        "display_reason": "stakeholder framing, people embedding",
+        "page_signal_score": 18.0,
+        "display_evidence_score": 12.0,
+        "purpose_hits": 0,
+        "impact_hits": 14,
+        "strategy_hits": 3
+      },
+      {
+        "title": "How We Hire",
+        "url": "https://www.nvidia.com/en-us/about-nvidia/careers/how-we-hire",
+        "display_role": "people",
+        "display_reason": "stakeholder framing, strategy linkage, people embedding",
+        "page_signal_score": 11.3,
+        "display_evidence_score": 9.5,
+        "purpose_hits": 0,
+        "impact_hits": 4,
+        "strategy_hits": 1
+      },
+      {
+        "title": "Discover Our Foundation Impact Globally | NVIDIA Foundation",
+        "url": "https://www.nvidia.com/en-us/foundation",
+        "display_role": "impact",
+        "display_reason": "stakeholder framing, strategy linkage, people embedding",
+        "page_signal_score": 7.6,
+        "display_evidence_score": 8.0,
+        "purpose_hits": 0,
+        "impact_hits": 3,
+        "strategy_hits": 1
+      }
+    ],
+    "scoring_top_pages": [
+      {
+        "title": "DGX-Ready Colocation Data Centers | NVIDIA",
+        "url": "https://www.nvidia.com/en-us/data-center/colocation-partners",
+        "page_signal_score": 26.2,
+        "display_evidence_score": 17.5,
+        "purpose_hits": 0,
+        "impact_hits": 45,
+        "strategy_hits": 10
+      },
+      {
+        "title": "Run Models for AI Factories |Mission Control | NVIDIA",
+        "url": "https://www.nvidia.com/en-us/data-center/mission-control",
+        "page_signal_score": 24.3,
+        "display_evidence_score": 6.5,
+        "purpose_hits": 1,
+        "impact_hits": 26,
+        "strategy_hits": 0
+      },
+      {
+        "title": "DGX BasePOD: The Infrastructure Foundation for Enterprise AI | NVIDIA",
+        "url": "https://www.nvidia.com/en-us/data-center/dgx-basepod",
+        "page_signal_score": 21.4,
+        "display_evidence_score": 7.0,
+        "purpose_hits": 2,
+        "impact_hits": 16,
+        "strategy_hits": 0
+      },
+      {
+        "title": "Benefits and Support Programs | NVIDIA Benefits",
+        "url": "https://www.nvidia.com/en-us/benefits",
+        "page_signal_score": 18.9,
+        "display_evidence_score": 3.0,
+        "purpose_hits": 0,
+        "impact_hits": 19,
+        "strategy_hits": 7
+      },
+      {
+        "title": "Life, Culture, Career at NVIDIA",
+        "url": "https://www.nvidia.com/en-us/about-nvidia/careers/life-at-nvidia",
+        "page_signal_score": 18.0,
+        "display_evidence_score": 12.0,
+        "purpose_hits": 0,
+        "impact_hits": 14,
+        "strategy_hits": 3
+      }
+    ],
+    "years_found": [
+      1934,
+      1999,
+      2000,
+      2001,
+      2003,
+      2004,
+      2006,
+      2010,
+      2012,
+      2014,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026,
+      2027,
+      2070,
+      2080
+    ],
+    "industries_found": [
+      "automotive",
+      "consumer",
+      "education",
+      "energy",
+      "finance",
+      "government",
+      "healthcare",
+      "logistics",
+      "manufacturing",
+      "retail"
+    ],
+    "purpose_examples": [
+      "AI Innovations Shaping Tomorrow | NVIDIA AI for Good Explore the latest AI breakthroughs from NVIDIA and partners transforming healthcare, sustainability, and global safety through cutting-edge technology.",
+      "See More Talks and Sessions Podcasts Real Stories, Real Impact Tune in to the NVIDIA AI Podcast episodes covering compelling stories and expert insights that illuminate the real-world impact of technology and the people working to build a better future.",
+      "Diversity and Inclusion Support and Resources | NVIDIA Hiring employees with diverse backgrounds and experiences is key to unlocking our full potential in creating groundbreaking products.",
+      "Creating What Comes Next, Together Connect With Incredible People We want to attract the world's best people who reflect different perspectives to help us deliver life-changing breakthroughs.",
+      "We’ve adapted our processes to let candidates meet with employees from their representative communities during their interview process, write more inclusive job descriptions, and boost our social inclusivity globally."
+    ]
+  },
+  "scoring_templates": {
+    "purpose_articulation": {
+      "title": "Purpose Articulation",
+      "overall_score": 2.4,
+      "dimensions": {
+        "purpose_presence": {
+          "question": "Does the company articulate why it exists, who it serves, and the impact it seeks to create?",
+          "score": 0,
+          "score_description": "No identifiable purpose or mission statement.",
+          "evidence_template": {
+            "required_signals": [
+              "explicit purpose statement",
+              "stakeholder mention",
+              "impact or outcome language"
+            ],
+            "preferred_sources": [
+              "web",
+              "linkedin",
+              "sec"
+            ],
+            "suggested_evidence_titles": [
+              "AI Innovations Shaping Tomorrow | NVIDIA AI for Good",
+              "Diversity and Inclusion Support and Resources | NVIDIA",
+              "Life, Culture, Career at NVIDIA"
+            ],
+            "suggested_quote_candidates": [
+              "AI Innovations Shaping Tomorrow | NVIDIA AI for Good Explore the latest AI breakthroughs from NVIDIA and partners transforming healthcare, sustainability, and global safety through cutting-edge technology.",
+              "See More Talks and Sessions Podcasts Real Stories, Real Impact Tune in to the NVIDIA AI Podcast episodes covering compelling stories and expert insights that illuminate the real-world impact of technology and the people working to build a better future."
+            ]
+          }
+        },
+        "clarity": {
+          "question": "Is the purpose concrete, outcome-oriented, and distinguishable from brand language?",
+          "score": 1,
+          "score_description": "Messaging is primarily promotional or brand-oriented.",
+          "evidence_template": {
+            "required_signals": [
+              "observable outcomes",
+              "beneficiary or stakeholder specificity",
+              "low branding dependence"
+            ],
+            "preferred_sources": [
+              "web",
+              "sec"
+            ],
+            "suggested_evidence_titles": [
+              "AI Innovations Shaping Tomorrow | NVIDIA AI for Good",
+              "Diversity and Inclusion Support and Resources | NVIDIA",
+              "Life, Culture, Career at NVIDIA"
+            ],
+            "suggested_quote_candidates": [
+              "AI Innovations Shaping Tomorrow | NVIDIA AI for Good Explore the latest AI breakthroughs from NVIDIA and partners transforming healthcare, sustainability, and global safety through cutting-edge technology.",
+              "See More Talks and Sessions Podcasts Real Stories, Real Impact Tune in to the NVIDIA AI Podcast episodes covering compelling stories and expert insights that illuminate the real-world impact of technology and the people working to build a better future."
+            ]
+          }
+        },
+        "historical_consistency": {
+          "question": "Has the company maintained a consistent purpose narrative across the 2021-2025 window?",
+          "score": 5,
+          "score_description": "The central purpose remains stable across the full review window.",
+          "evidence_template": {
+            "required_signals": [
+              "multi-year evidence",
+              "repeatable narrative",
+              "cross-year consistency"
+            ],
+            "preferred_sources": [
+              "sec"
+            ],
+            "suggested_evidence_titles": [
+              "AI Innovations Shaping Tomorrow | NVIDIA AI for Good",
+              "Diversity and Inclusion Support and Resources | NVIDIA",
+              "Life, Culture, Career at NVIDIA"
+            ],
+            "suggested_quote_candidates": [
+              "AI Innovations Shaping Tomorrow | NVIDIA AI for Good Explore the latest AI breakthroughs from NVIDIA and partners transforming healthcare, sustainability, and global safety through cutting-edge technology.",
+              "See More Talks and Sessions Podcasts Real Stories, Real Impact Tune in to the NVIDIA AI Podcast episodes covering compelling stories and expert insights that illuminate the real-world impact of technology and the people working to build a better future."
+            ]
+          }
+        },
+        "leadership_centrality": {
+          "question": "Do leaders repeatedly frame purpose as a guide for decisions or direction?",
+          "score": 3,
+          "score_description": "Leadership occasionally links purpose to direction or priorities.",
+          "evidence_template": {
+            "required_signals": [
+              "leadership co-mentions",
+              "strategy linkage",
+              "repeat mentions"
+            ],
+            "preferred_sources": [
+              "web",
+              "linkedin",
+              "sec"
+            ],
+            "suggested_evidence_titles": [
+              "AI Innovations Shaping Tomorrow | NVIDIA AI for Good",
+              "Diversity and Inclusion Support and Resources | NVIDIA",
+              "Life, Culture, Career at NVIDIA"
+            ],
+            "suggested_quote_candidates": [
+              "AI Innovations Shaping Tomorrow | NVIDIA AI for Good Explore the latest AI breakthroughs from NVIDIA and partners transforming healthcare, sustainability, and global safety through cutting-edge technology.",
+              "See More Talks and Sessions Podcasts Real Stories, Real Impact Tune in to the NVIDIA AI Podcast episodes covering compelling stories and expert insights that illuminate the real-world impact of technology and the people working to build a better future."
+            ]
+          }
+        },
+        "distinction_from_branding": {
+          "question": "Is purpose embedded in strategy and accountability rather than left as branding?",
+          "score": 3,
+          "score_description": "Purpose appears in both messaging and operational contexts.",
+          "evidence_template": {
+            "required_signals": [
+              "strategy relevance",
+              "measurement or KPI tie-in",
+              "limited brand-only framing"
+            ],
+            "preferred_sources": [
+              "web",
+              "sec"
+            ],
+            "suggested_evidence_titles": [
+              "AI Innovations Shaping Tomorrow | NVIDIA AI for Good",
+              "Diversity and Inclusion Support and Resources | NVIDIA",
+              "Life, Culture, Career at NVIDIA"
+            ],
+            "suggested_quote_candidates": [
+              "AI Innovations Shaping Tomorrow | NVIDIA AI for Good Explore the latest AI breakthroughs from NVIDIA and partners transforming healthcare, sustainability, and global safety through cutting-edge technology.",
+              "See More Talks and Sessions Podcasts Real Stories, Real Impact Tune in to the NVIDIA AI Podcast episodes covering compelling stories and expert insights that illuminate the real-world impact of technology and the people working to build a better future."
+            ]
+          }
+        }
+      }
+    },
+    "operational_embedding": {
+      "title": "Operational Embedding",
+      "overall_score": 3.8,
+      "dimensions": {
+        "corporate_strategy_integration": {
+          "question": "Is the stated purpose explicitly integrated into strategic priorities?",
+          "score": 3,
+          "score_description": "Purpose appears in strategy narratives but inconsistently.",
+          "evidence_template": {
+            "required_signals": [
+              "strategic priorities",
+              "purpose linkage",
+              "initiative framing"
+            ],
+            "preferred_sources": [
+              "web",
+              "sec"
+            ],
+            "suggested_evidence_titles": [
+              "AI Innovations Shaping Tomorrow | NVIDIA AI for Good",
+              "Diversity and Inclusion Support and Resources | NVIDIA",
+              "Life, Culture, Career at NVIDIA"
+            ],
+            "suggested_quote_candidates": [
+              "AI Innovations Shaping Tomorrow | NVIDIA AI for Good Explore the latest AI breakthroughs from NVIDIA and partners transforming healthcare, sustainability, and global safety through cutting-edge technology.",
+              "See More Talks and Sessions Podcasts Real Stories, Real Impact Tune in to the NVIDIA AI Podcast episodes covering compelling stories and expert insights that illuminate the real-world impact of technology and the people working to build a better future."
+            ]
+          }
+        },
+        "capital_and_performance_alignment": {
+          "question": "Do investments and resource allocation support purpose-related initiatives?",
+          "score": 3,
+          "score_description": "Several investments align with purpose-related initiatives.",
+          "evidence_template": {
+            "required_signals": [
+              "investment language",
+              "purpose linkage",
+              "multi-year support"
+            ],
+            "preferred_sources": [
+              "sec",
+              "web"
+            ],
+            "suggested_evidence_titles": [
+              "AI Innovations Shaping Tomorrow | NVIDIA AI for Good",
+              "Diversity and Inclusion Support and Resources | NVIDIA",
+              "Life, Culture, Career at NVIDIA"
+            ],
+            "suggested_quote_candidates": [
+              "AI Innovations Shaping Tomorrow | NVIDIA AI for Good Explore the latest AI breakthroughs from NVIDIA and partners transforming healthcare, sustainability, and global safety through cutting-edge technology.",
+              "See More Talks and Sessions Podcasts Real Stories, Real Impact Tune in to the NVIDIA AI Podcast episodes covering compelling stories and expert insights that illuminate the real-world impact of technology and the people working to build a better future."
+            ]
+          }
+        },
+        "employee_embedding": {
+          "question": "Is purpose reflected in employee programs, incentives, and internal culture?",
+          "score": 5,
+          "score_description": "Purpose is deeply embedded in employee culture and decision-making.",
+          "evidence_template": {
+            "required_signals": [
+              "employee programs",
+              "training or incentives",
+              "purpose linkage"
+            ],
+            "preferred_sources": [
+              "linkedin",
+              "web",
+              "sec"
+            ],
+            "suggested_evidence_titles": [
+              "AI Innovations Shaping Tomorrow | NVIDIA AI for Good",
+              "Diversity and Inclusion Support and Resources | NVIDIA",
+              "Life, Culture, Career at NVIDIA"
+            ],
+            "suggested_quote_candidates": [
+              "AI Innovations Shaping Tomorrow | NVIDIA AI for Good Explore the latest AI breakthroughs from NVIDIA and partners transforming healthcare, sustainability, and global safety through cutting-edge technology.",
+              "See More Talks and Sessions Podcasts Real Stories, Real Impact Tune in to the NVIDIA AI Podcast episodes covering compelling stories and expert insights that illuminate the real-world impact of technology and the people working to build a better future."
+            ]
+          }
+        },
+        "strategic_decision_justification": {
+          "question": "Are major strategic moves justified using purpose rather than only growth logic?",
+          "score": 3,
+          "score_description": "Some strategic decisions demonstrate purpose alignment.",
+          "evidence_template": {
+            "required_signals": [
+              "major initiative",
+              "decision rationale",
+              "purpose linkage"
+            ],
+            "preferred_sources": [
+              "web",
+              "sec"
+            ],
+            "suggested_evidence_titles": [
+              "AI Innovations Shaping Tomorrow | NVIDIA AI for Good",
+              "Diversity and Inclusion Support and Resources | NVIDIA",
+              "Life, Culture, Career at NVIDIA"
+            ],
+            "suggested_quote_candidates": [
+              "AI Innovations Shaping Tomorrow | NVIDIA AI for Good Explore the latest AI breakthroughs from NVIDIA and partners transforming healthcare, sustainability, and global safety through cutting-edge technology.",
+              "See More Talks and Sessions Podcasts Real Stories, Real Impact Tune in to the NVIDIA AI Podcast episodes covering compelling stories and expert insights that illuminate the real-world impact of technology and the people working to build a better future."
+            ]
+          }
+        },
+        "execution_outcome_accountability": {
+          "question": "Does the company report measurable progress toward purpose-related outcomes?",
+          "score": 5,
+          "score_description": "A comprehensive KPI framework tracks purpose outcomes over time.",
+          "evidence_template": {
+            "required_signals": [
+              "metrics",
+              "progress reporting",
+              "purpose or impact target"
+            ],
+            "preferred_sources": [
+              "sec",
+              "web"
+            ],
+            "suggested_evidence_titles": [
+              "AI Innovations Shaping Tomorrow | NVIDIA AI for Good",
+              "Diversity and Inclusion Support and Resources | NVIDIA",
+              "Life, Culture, Career at NVIDIA"
+            ],
+            "suggested_quote_candidates": [
+              "AI Innovations Shaping Tomorrow | NVIDIA AI for Good Explore the latest AI breakthroughs from NVIDIA and partners transforming healthcare, sustainability, and global safety through cutting-edge technology.",
+              "See More Talks and Sessions Podcasts Real Stories, Real Impact Tune in to the NVIDIA AI Podcast episodes covering compelling stories and expert insights that illuminate the real-world impact of technology and the people working to build a better future."
+            ]
+          }
+        }
+      }
+    },
+    "execution_consistency": {
+      "title": "Execution Consistency",
+      "overall_score": 4.4,
+      "dimensions": {
+        "corporate_strategy_integration": {
+          "question": "Is purpose reflected in company-level strategic priorities and long-term direction?",
+          "score": 3,
+          "score_description": "Purpose appears in strategic narratives but unevenly.",
+          "evidence_template": {
+            "required_signals": [
+              "strategy continuity",
+              "long-term priority",
+              "purpose linkage"
+            ],
+            "preferred_sources": [
+              "sec",
+              "web"
+            ],
+            "suggested_evidence_titles": [
+              "AI Innovations Shaping Tomorrow | NVIDIA AI for Good",
+              "Diversity and Inclusion Support and Resources | NVIDIA",
+              "Life, Culture, Career at NVIDIA"
+            ],
+            "suggested_quote_candidates": [
+              "AI Innovations Shaping Tomorrow | NVIDIA AI for Good Explore the latest AI breakthroughs from NVIDIA and partners transforming healthcare, sustainability, and global safety through cutting-edge technology.",
+              "See More Talks and Sessions Podcasts Real Stories, Real Impact Tune in to the NVIDIA AI Podcast episodes covering compelling stories and expert insights that illuminate the real-world impact of technology and the people working to build a better future."
+            ]
+          }
+        },
+        "capital_and_performance_alignment": {
+          "question": "Do investments and performance drivers reinforce the purpose-related business areas?",
+          "score": 5,
+          "score_description": "Capital allocation and performance drivers consistently advance intended purpose outcomes.",
+          "evidence_template": {
+            "required_signals": [
+              "growth driver",
+              "capability investment",
+              "purpose linkage"
+            ],
+            "preferred_sources": [
+              "sec",
+              "web"
+            ],
+            "suggested_evidence_titles": [
+              "AI Innovations Shaping Tomorrow | NVIDIA AI for Good",
+              "Diversity and Inclusion Support and Resources | NVIDIA",
+              "Life, Culture, Career at NVIDIA"
+            ],
+            "suggested_quote_candidates": [
+              "AI Innovations Shaping Tomorrow | NVIDIA AI for Good Explore the latest AI breakthroughs from NVIDIA and partners transforming healthcare, sustainability, and global safety through cutting-edge technology.",
+              "See More Talks and Sessions Podcasts Real Stories, Real Impact Tune in to the NVIDIA AI Podcast episodes covering compelling stories and expert insights that illuminate the real-world impact of technology and the people working to build a better future."
+            ]
+          }
+        },
+        "execution_consistency": {
+          "question": "Do products, launches, and multi-year outcomes show sustained execution of the stated purpose?",
+          "score": 5,
+          "score_description": "A sustained multi-year execution pattern clearly aligns with purpose.",
+          "evidence_template": {
+            "required_signals": [
+              "launches or programs",
+              "outcomes",
+              "multi-year continuity"
+            ],
+            "preferred_sources": [
+              "web",
+              "sec"
+            ],
+            "suggested_evidence_titles": [
+              "AI Innovations Shaping Tomorrow | NVIDIA AI for Good",
+              "Diversity and Inclusion Support and Resources | NVIDIA",
+              "Life, Culture, Career at NVIDIA"
+            ],
+            "suggested_quote_candidates": [
+              "AI Innovations Shaping Tomorrow | NVIDIA AI for Good Explore the latest AI breakthroughs from NVIDIA and partners transforming healthcare, sustainability, and global safety through cutting-edge technology.",
+              "See More Talks and Sessions Podcasts Real Stories, Real Impact Tune in to the NVIDIA AI Podcast episodes covering compelling stories and expert insights that illuminate the real-world impact of technology and the people working to build a better future."
+            ]
+          }
+        },
+        "core_capability_reinforcement": {
+          "question": "Does the company keep strengthening the core capability most central to its purpose?",
+          "score": 4,
+          "score_description": "The company consistently strengthens a purpose-linked core capability.",
+          "evidence_template": {
+            "required_signals": [
+              "platform or capability language",
+              "reinforcement over time",
+              "purpose linkage"
+            ],
+            "preferred_sources": [
+              "web",
+              "sec"
+            ],
+            "suggested_evidence_titles": [
+              "AI Innovations Shaping Tomorrow | NVIDIA AI for Good",
+              "Diversity and Inclusion Support and Resources | NVIDIA",
+              "Life, Culture, Career at NVIDIA"
+            ],
+            "suggested_quote_candidates": [
+              "AI Innovations Shaping Tomorrow | NVIDIA AI for Good Explore the latest AI breakthroughs from NVIDIA and partners transforming healthcare, sustainability, and global safety through cutting-edge technology.",
+              "See More Talks and Sessions Podcasts Real Stories, Real Impact Tune in to the NVIDIA AI Podcast episodes covering compelling stories and expert insights that illuminate the real-world impact of technology and the people working to build a better future."
+            ]
+          }
+        },
+        "industry_impact_breadth": {
+          "question": "Are purpose-related capabilities applied across multiple industries or use cases?",
+          "score": 5,
+          "score_description": "There is broad, sustained multi-industry adoption of purpose-related capabilities.",
+          "evidence_template": {
+            "required_signals": [
+              "multiple industries",
+              "credible use cases",
+              "repeat application"
+            ],
+            "preferred_sources": [
+              "web",
+              "sec"
+            ],
+            "suggested_evidence_titles": [
+              "AI Innovations Shaping Tomorrow | NVIDIA AI for Good",
+              "Diversity and Inclusion Support and Resources | NVIDIA",
+              "Life, Culture, Career at NVIDIA"
+            ],
+            "suggested_quote_candidates": [
+              "AI Innovations Shaping Tomorrow | NVIDIA AI for Good Explore the latest AI breakthroughs from NVIDIA and partners transforming healthcare, sustainability, and global safety through cutting-edge technology.",
+              "See More Talks and Sessions Podcasts Real Stories, Real Impact Tune in to the NVIDIA AI Podcast episodes covering compelling stories and expert insights that illuminate the real-world impact of technology and the people working to build a better future."
+            ]
+          }
+        }
+      }
+    }
+  },
+  "openai_review": {
+    "enabled": false,
+    "status": "disabled"
+  }
+}

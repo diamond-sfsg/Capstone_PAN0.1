@@ -1,0 +1,562 @@
+{
+  "company_name": "Meta",
+  "input_files": [
+    "C:\\Users\\Kelno\\OneDrive\\Documents\\purpose_driven_score\\purpose_driven_scoring\\data\\data\\selected_10_companies\\Meta_Platforms\\pages.csv",
+    "C:\\Users\\Kelno\\OneDrive\\Documents\\purpose_driven_score\\purpose_driven_scoring\\data\\data\\selected_10_companies\\Meta_Platforms\\pages.jsonl",
+    "C:\\Users\\Kelno\\OneDrive\\Documents\\purpose_driven_score\\purpose_driven_scoring\\data\\data\\10Ks\\edgar\\META\\2025_10K_2025-01-30_full_submission.txt",
+    "C:\\Users\\Kelno\\OneDrive\\Documents\\purpose_driven_score\\purpose_driven_scoring\\data\\data\\10Ks\\edgar\\META\\2026_10K_2026-01-29_full_submission.txt"
+  ],
+  "record_count": 102,
+  "scores": {
+    "purpose_articulation": {
+      "overall": 1.8,
+      "dimensions": {
+        "purpose_presence": 0,
+        "clarity": 2,
+        "historical_consistency": 1,
+        "leadership_centrality": 3,
+        "distinction_from_branding": 3
+      }
+    },
+    "operational_embedding": {
+      "overall": 3.6,
+      "dimensions": {
+        "corporate_strategy_integration": 3,
+        "capital_and_performance_alignment": 3,
+        "employee_embedding": 5,
+        "strategic_decision_justification": 3,
+        "execution_outcome_accountability": 4
+      }
+    },
+    "execution_consistency": {
+      "overall": 4.6,
+      "dimensions": {
+        "corporate_strategy_integration": 4,
+        "capital_and_performance_alignment": 5,
+        "execution_consistency": 4,
+        "core_capability_reinforcement": 5,
+        "industry_impact_breadth": 5
+      }
+    },
+    "aggregate": {
+      "overall": 3.18,
+      "label": "moderately purpose-driven"
+    }
+  },
+  "evidence": {
+    "top_pages": [
+      {
+        "title": "Meta and Constellation Partner on Clean Energy Project",
+        "url": "https://about.fb.com/news/2025/06/meta-constellation-partner-clean-energy-project",
+        "display_role": "purpose",
+        "display_reason": "explicit purpose language, stakeholder framing, leadership linkage",
+        "page_signal_score": 24.5,
+        "display_evidence_score": 22.5,
+        "purpose_hits": 1,
+        "impact_hits": 11,
+        "strategy_hits": 4
+      },
+      {
+        "title": "Meta’s 30th Data Center: Delivering AI, Creating Community Benefits, and Supporting Wetlands Restoration",
+        "url": "https://about.fb.com/news/2025/11/metas-30th-data-center-delivering-ai-supporting-wetlands-restoration",
+        "display_role": "people",
+        "display_reason": "stakeholder framing, strategy linkage, people embedding",
+        "page_signal_score": 18.8,
+        "display_evidence_score": 21.0,
+        "purpose_hits": 0,
+        "impact_hits": 17,
+        "strategy_hits": 3
+      },
+      {
+        "title": "How AI Glasses Are Empowering People With Disabilities",
+        "url": "https://about.fb.com/news/2025/11/meta-ai-glasses-empowering-people-with-disabilities",
+        "display_role": "people",
+        "display_reason": "stakeholder framing, leadership linkage, people embedding",
+        "page_signal_score": 16.8,
+        "display_evidence_score": 13.0,
+        "purpose_hits": 0,
+        "impact_hits": 11,
+        "strategy_hits": 0
+      },
+      {
+        "title": "Fighting Scammers and Protecting People With New Technology and Partnerships",
+        "url": "https://about.fb.com/news/2026/03/fighting-scammers-protecting-people-with-new-technology-and-partnerships",
+        "display_role": "people",
+        "display_reason": "stakeholder framing, people embedding",
+        "page_signal_score": 12.6,
+        "display_evidence_score": 9.0,
+        "purpose_hits": 0,
+        "impact_hits": 6,
+        "strategy_hits": 1
+      }
+    ],
+    "scoring_top_pages": [
+      {
+        "title": "Reflecting on Meta’s $8 Billion Investment in Privacy",
+        "url": "https://about.fb.com/news/2025/01/meta-8-billion-investment-privacy",
+        "page_signal_score": 25.1,
+        "display_evidence_score": 18.0,
+        "purpose_hits": 0,
+        "impact_hits": 17,
+        "strategy_hits": 10
+      },
+      {
+        "title": "Meta and Constellation Partner on Clean Energy Project",
+        "url": "https://about.fb.com/news/2025/06/meta-constellation-partner-clean-energy-project",
+        "page_signal_score": 24.5,
+        "display_evidence_score": 22.5,
+        "purpose_hits": 1,
+        "impact_hits": 11,
+        "strategy_hits": 4
+      }
+    ],
+    "years_found": [
+      1934,
+      2001,
+      2003,
+      2004,
+      2008,
+      2009,
+      2010,
+      2011,
+      2013,
+      2014,
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026,
+      2027,
+      2028,
+      2030,
+      2032,
+      2035
+    ],
+    "industries_found": [
+      "consumer",
+      "education",
+      "energy",
+      "finance",
+      "government",
+      "healthcare",
+      "manufacturing",
+      "retail",
+      "small business"
+    ],
+    "purpose_examples": [
+      "This partnership not only ensures the facility’s operation for two decades but also preserves over 1,100 local jobs and contributes $13.5 million annually in tax revenue without relying on the state’s Zero Emission Credit program, maintaining operations without additional ratepayer support.",
+      "At Meta, we’re building AI technologies that are transforming the global economy and the way people connect.",
+      "Our investments in nuclear energy ensure that we will have the robust energy infrastructure needed to power the AI innovations that are set to spark economic growth and prepare our communities for the future.",
+      "Meta’s 30th Data Center: Delivering AI, Creating Community Benefits, and Supporting Wetlands Restoration We’re breaking ground on our 30th data center in Beaver Dam, Wisconsin, designed to enable ambitious AI workloads.",
+      "As part of our commitment to supporting the Beaver Dam community, we’re donating $15 million to Alliant Energy’s Hometown Care Energy Fund, to help cover home energy costs for local families in need."
+    ]
+  },
+  "scoring_templates": {
+    "purpose_articulation": {
+      "title": "Purpose Articulation",
+      "overall_score": 1.8,
+      "dimensions": {
+        "purpose_presence": {
+          "question": "Does the company articulate why it exists, who it serves, and the impact it seeks to create?",
+          "score": 0,
+          "score_description": "No identifiable purpose or mission statement.",
+          "evidence_template": {
+            "required_signals": [
+              "explicit purpose statement",
+              "stakeholder mention",
+              "impact or outcome language"
+            ],
+            "preferred_sources": [
+              "web",
+              "linkedin",
+              "sec"
+            ],
+            "suggested_evidence_titles": [
+              "Meta and Constellation Partner on Clean Energy Project",
+              "Meta’s 30th Data Center: Delivering AI, Creating Community Benefits, and Supporting Wetlands Restoration",
+              "How AI Glasses Are Empowering People With Disabilities"
+            ],
+            "suggested_quote_candidates": [
+              "This partnership not only ensures the facility’s operation for two decades but also preserves over 1,100 local jobs and contributes $13.5 million annually in tax revenue without relying on the state’s Zero Emission Credit program, maintaining operations without additional ratepayer support.",
+              "At Meta, we’re building AI technologies that are transforming the global economy and the way people connect."
+            ]
+          }
+        },
+        "clarity": {
+          "question": "Is the purpose concrete, outcome-oriented, and distinguishable from brand language?",
+          "score": 2,
+          "score_description": "Purpose is partly visible but still abstract.",
+          "evidence_template": {
+            "required_signals": [
+              "observable outcomes",
+              "beneficiary or stakeholder specificity",
+              "low branding dependence"
+            ],
+            "preferred_sources": [
+              "web",
+              "sec"
+            ],
+            "suggested_evidence_titles": [
+              "Meta and Constellation Partner on Clean Energy Project",
+              "Meta’s 30th Data Center: Delivering AI, Creating Community Benefits, and Supporting Wetlands Restoration",
+              "How AI Glasses Are Empowering People With Disabilities"
+            ],
+            "suggested_quote_candidates": [
+              "This partnership not only ensures the facility’s operation for two decades but also preserves over 1,100 local jobs and contributes $13.5 million annually in tax revenue without relying on the state’s Zero Emission Credit program, maintaining operations without additional ratepayer support.",
+              "At Meta, we’re building AI technologies that are transforming the global economy and the way people connect."
+            ]
+          }
+        },
+        "historical_consistency": {
+          "question": "Has the company maintained a consistent purpose narrative across the 2021-2025 window?",
+          "score": 1,
+          "score_description": "A stable purpose narrative is hard to identify.",
+          "evidence_template": {
+            "required_signals": [
+              "multi-year evidence",
+              "repeatable narrative",
+              "cross-year consistency"
+            ],
+            "preferred_sources": [
+              "sec"
+            ],
+            "suggested_evidence_titles": [
+              "Meta and Constellation Partner on Clean Energy Project",
+              "Meta’s 30th Data Center: Delivering AI, Creating Community Benefits, and Supporting Wetlands Restoration",
+              "How AI Glasses Are Empowering People With Disabilities"
+            ],
+            "suggested_quote_candidates": [
+              "This partnership not only ensures the facility’s operation for two decades but also preserves over 1,100 local jobs and contributes $13.5 million annually in tax revenue without relying on the state’s Zero Emission Credit program, maintaining operations without additional ratepayer support.",
+              "At Meta, we’re building AI technologies that are transforming the global economy and the way people connect."
+            ]
+          }
+        },
+        "leadership_centrality": {
+          "question": "Do leaders repeatedly frame purpose as a guide for decisions or direction?",
+          "score": 3,
+          "score_description": "Leadership occasionally links purpose to direction or priorities.",
+          "evidence_template": {
+            "required_signals": [
+              "leadership co-mentions",
+              "strategy linkage",
+              "repeat mentions"
+            ],
+            "preferred_sources": [
+              "web",
+              "linkedin",
+              "sec"
+            ],
+            "suggested_evidence_titles": [
+              "Meta and Constellation Partner on Clean Energy Project",
+              "Meta’s 30th Data Center: Delivering AI, Creating Community Benefits, and Supporting Wetlands Restoration",
+              "How AI Glasses Are Empowering People With Disabilities"
+            ],
+            "suggested_quote_candidates": [
+              "This partnership not only ensures the facility’s operation for two decades but also preserves over 1,100 local jobs and contributes $13.5 million annually in tax revenue without relying on the state’s Zero Emission Credit program, maintaining operations without additional ratepayer support.",
+              "At Meta, we’re building AI technologies that are transforming the global economy and the way people connect."
+            ]
+          }
+        },
+        "distinction_from_branding": {
+          "question": "Is purpose embedded in strategy and accountability rather than left as branding?",
+          "score": 3,
+          "score_description": "Purpose appears in both messaging and operational contexts.",
+          "evidence_template": {
+            "required_signals": [
+              "strategy relevance",
+              "measurement or KPI tie-in",
+              "limited brand-only framing"
+            ],
+            "preferred_sources": [
+              "web",
+              "sec"
+            ],
+            "suggested_evidence_titles": [
+              "Meta and Constellation Partner on Clean Energy Project",
+              "Meta’s 30th Data Center: Delivering AI, Creating Community Benefits, and Supporting Wetlands Restoration",
+              "How AI Glasses Are Empowering People With Disabilities"
+            ],
+            "suggested_quote_candidates": [
+              "This partnership not only ensures the facility’s operation for two decades but also preserves over 1,100 local jobs and contributes $13.5 million annually in tax revenue without relying on the state’s Zero Emission Credit program, maintaining operations without additional ratepayer support.",
+              "At Meta, we’re building AI technologies that are transforming the global economy and the way people connect."
+            ]
+          }
+        }
+      }
+    },
+    "operational_embedding": {
+      "title": "Operational Embedding",
+      "overall_score": 3.6,
+      "dimensions": {
+        "corporate_strategy_integration": {
+          "question": "Is the stated purpose explicitly integrated into strategic priorities?",
+          "score": 3,
+          "score_description": "Purpose appears in strategy narratives but inconsistently.",
+          "evidence_template": {
+            "required_signals": [
+              "strategic priorities",
+              "purpose linkage",
+              "initiative framing"
+            ],
+            "preferred_sources": [
+              "web",
+              "sec"
+            ],
+            "suggested_evidence_titles": [
+              "Meta and Constellation Partner on Clean Energy Project",
+              "Meta’s 30th Data Center: Delivering AI, Creating Community Benefits, and Supporting Wetlands Restoration",
+              "How AI Glasses Are Empowering People With Disabilities"
+            ],
+            "suggested_quote_candidates": [
+              "This partnership not only ensures the facility’s operation for two decades but also preserves over 1,100 local jobs and contributes $13.5 million annually in tax revenue without relying on the state’s Zero Emission Credit program, maintaining operations without additional ratepayer support.",
+              "At Meta, we’re building AI technologies that are transforming the global economy and the way people connect."
+            ]
+          }
+        },
+        "capital_and_performance_alignment": {
+          "question": "Do investments and resource allocation support purpose-related initiatives?",
+          "score": 3,
+          "score_description": "Several investments align with purpose-related initiatives.",
+          "evidence_template": {
+            "required_signals": [
+              "investment language",
+              "purpose linkage",
+              "multi-year support"
+            ],
+            "preferred_sources": [
+              "sec",
+              "web"
+            ],
+            "suggested_evidence_titles": [
+              "Meta and Constellation Partner on Clean Energy Project",
+              "Meta’s 30th Data Center: Delivering AI, Creating Community Benefits, and Supporting Wetlands Restoration",
+              "How AI Glasses Are Empowering People With Disabilities"
+            ],
+            "suggested_quote_candidates": [
+              "This partnership not only ensures the facility’s operation for two decades but also preserves over 1,100 local jobs and contributes $13.5 million annually in tax revenue without relying on the state’s Zero Emission Credit program, maintaining operations without additional ratepayer support.",
+              "At Meta, we’re building AI technologies that are transforming the global economy and the way people connect."
+            ]
+          }
+        },
+        "employee_embedding": {
+          "question": "Is purpose reflected in employee programs, incentives, and internal culture?",
+          "score": 5,
+          "score_description": "Purpose is deeply embedded in employee culture and decision-making.",
+          "evidence_template": {
+            "required_signals": [
+              "employee programs",
+              "training or incentives",
+              "purpose linkage"
+            ],
+            "preferred_sources": [
+              "linkedin",
+              "web",
+              "sec"
+            ],
+            "suggested_evidence_titles": [
+              "Meta and Constellation Partner on Clean Energy Project",
+              "Meta’s 30th Data Center: Delivering AI, Creating Community Benefits, and Supporting Wetlands Restoration",
+              "How AI Glasses Are Empowering People With Disabilities"
+            ],
+            "suggested_quote_candidates": [
+              "This partnership not only ensures the facility’s operation for two decades but also preserves over 1,100 local jobs and contributes $13.5 million annually in tax revenue without relying on the state’s Zero Emission Credit program, maintaining operations without additional ratepayer support.",
+              "At Meta, we’re building AI technologies that are transforming the global economy and the way people connect."
+            ]
+          }
+        },
+        "strategic_decision_justification": {
+          "question": "Are major strategic moves justified using purpose rather than only growth logic?",
+          "score": 3,
+          "score_description": "Some strategic decisions demonstrate purpose alignment.",
+          "evidence_template": {
+            "required_signals": [
+              "major initiative",
+              "decision rationale",
+              "purpose linkage"
+            ],
+            "preferred_sources": [
+              "web",
+              "sec"
+            ],
+            "suggested_evidence_titles": [
+              "Meta and Constellation Partner on Clean Energy Project",
+              "Meta’s 30th Data Center: Delivering AI, Creating Community Benefits, and Supporting Wetlands Restoration",
+              "How AI Glasses Are Empowering People With Disabilities"
+            ],
+            "suggested_quote_candidates": [
+              "This partnership not only ensures the facility’s operation for two decades but also preserves over 1,100 local jobs and contributes $13.5 million annually in tax revenue without relying on the state’s Zero Emission Credit program, maintaining operations without additional ratepayer support.",
+              "At Meta, we’re building AI technologies that are transforming the global economy and the way people connect."
+            ]
+          }
+        },
+        "execution_outcome_accountability": {
+          "question": "Does the company report measurable progress toward purpose-related outcomes?",
+          "score": 4,
+          "score_description": "Clear metrics and progress reporting are tied to purpose.",
+          "evidence_template": {
+            "required_signals": [
+              "metrics",
+              "progress reporting",
+              "purpose or impact target"
+            ],
+            "preferred_sources": [
+              "sec",
+              "web"
+            ],
+            "suggested_evidence_titles": [
+              "Meta and Constellation Partner on Clean Energy Project",
+              "Meta’s 30th Data Center: Delivering AI, Creating Community Benefits, and Supporting Wetlands Restoration",
+              "How AI Glasses Are Empowering People With Disabilities"
+            ],
+            "suggested_quote_candidates": [
+              "This partnership not only ensures the facility’s operation for two decades but also preserves over 1,100 local jobs and contributes $13.5 million annually in tax revenue without relying on the state’s Zero Emission Credit program, maintaining operations without additional ratepayer support.",
+              "At Meta, we’re building AI technologies that are transforming the global economy and the way people connect."
+            ]
+          }
+        }
+      }
+    },
+    "execution_consistency": {
+      "title": "Execution Consistency",
+      "overall_score": 4.6,
+      "dimensions": {
+        "corporate_strategy_integration": {
+          "question": "Is purpose reflected in company-level strategic priorities and long-term direction?",
+          "score": 4,
+          "score_description": "Purpose regularly frames major initiatives.",
+          "evidence_template": {
+            "required_signals": [
+              "strategy continuity",
+              "long-term priority",
+              "purpose linkage"
+            ],
+            "preferred_sources": [
+              "sec",
+              "web"
+            ],
+            "suggested_evidence_titles": [
+              "Meta and Constellation Partner on Clean Energy Project",
+              "Meta’s 30th Data Center: Delivering AI, Creating Community Benefits, and Supporting Wetlands Restoration",
+              "How AI Glasses Are Empowering People With Disabilities"
+            ],
+            "suggested_quote_candidates": [
+              "This partnership not only ensures the facility’s operation for two decades but also preserves over 1,100 local jobs and contributes $13.5 million annually in tax revenue without relying on the state’s Zero Emission Credit program, maintaining operations without additional ratepayer support.",
+              "At Meta, we’re building AI technologies that are transforming the global economy and the way people connect."
+            ]
+          }
+        },
+        "capital_and_performance_alignment": {
+          "question": "Do investments and performance drivers reinforce the purpose-related business areas?",
+          "score": 5,
+          "score_description": "Capital allocation and performance drivers consistently advance intended purpose outcomes.",
+          "evidence_template": {
+            "required_signals": [
+              "growth driver",
+              "capability investment",
+              "purpose linkage"
+            ],
+            "preferred_sources": [
+              "sec",
+              "web"
+            ],
+            "suggested_evidence_titles": [
+              "Meta and Constellation Partner on Clean Energy Project",
+              "Meta’s 30th Data Center: Delivering AI, Creating Community Benefits, and Supporting Wetlands Restoration",
+              "How AI Glasses Are Empowering People With Disabilities"
+            ],
+            "suggested_quote_candidates": [
+              "This partnership not only ensures the facility’s operation for two decades but also preserves over 1,100 local jobs and contributes $13.5 million annually in tax revenue without relying on the state’s Zero Emission Credit program, maintaining operations without additional ratepayer support.",
+              "At Meta, we’re building AI technologies that are transforming the global economy and the way people connect."
+            ]
+          }
+        },
+        "execution_consistency": {
+          "question": "Do products, launches, and multi-year outcomes show sustained execution of the stated purpose?",
+          "score": 4,
+          "score_description": "Purpose-related execution is reflected consistently in products and outcomes.",
+          "evidence_template": {
+            "required_signals": [
+              "launches or programs",
+              "outcomes",
+              "multi-year continuity"
+            ],
+            "preferred_sources": [
+              "web",
+              "sec"
+            ],
+            "suggested_evidence_titles": [
+              "Meta and Constellation Partner on Clean Energy Project",
+              "Meta’s 30th Data Center: Delivering AI, Creating Community Benefits, and Supporting Wetlands Restoration",
+              "How AI Glasses Are Empowering People With Disabilities"
+            ],
+            "suggested_quote_candidates": [
+              "This partnership not only ensures the facility’s operation for two decades but also preserves over 1,100 local jobs and contributes $13.5 million annually in tax revenue without relying on the state’s Zero Emission Credit program, maintaining operations without additional ratepayer support.",
+              "At Meta, we’re building AI technologies that are transforming the global economy and the way people connect."
+            ]
+          }
+        },
+        "core_capability_reinforcement": {
+          "question": "Does the company keep strengthening the core capability most central to its purpose?",
+          "score": 5,
+          "score_description": "The core capability is systematically reinforced across generations of strategy and execution.",
+          "evidence_template": {
+            "required_signals": [
+              "platform or capability language",
+              "reinforcement over time",
+              "purpose linkage"
+            ],
+            "preferred_sources": [
+              "web",
+              "sec"
+            ],
+            "suggested_evidence_titles": [
+              "Meta and Constellation Partner on Clean Energy Project",
+              "Meta’s 30th Data Center: Delivering AI, Creating Community Benefits, and Supporting Wetlands Restoration",
+              "How AI Glasses Are Empowering People With Disabilities"
+            ],
+            "suggested_quote_candidates": [
+              "This partnership not only ensures the facility’s operation for two decades but also preserves over 1,100 local jobs and contributes $13.5 million annually in tax revenue without relying on the state’s Zero Emission Credit program, maintaining operations without additional ratepayer support.",
+              "At Meta, we’re building AI technologies that are transforming the global economy and the way people connect."
+            ]
+          }
+        },
+        "industry_impact_breadth": {
+          "question": "Are purpose-related capabilities applied across multiple industries or use cases?",
+          "score": 5,
+          "score_description": "There is broad, sustained multi-industry adoption of purpose-related capabilities.",
+          "evidence_template": {
+            "required_signals": [
+              "multiple industries",
+              "credible use cases",
+              "repeat application"
+            ],
+            "preferred_sources": [
+              "web",
+              "sec"
+            ],
+            "suggested_evidence_titles": [
+              "Meta and Constellation Partner on Clean Energy Project",
+              "Meta’s 30th Data Center: Delivering AI, Creating Community Benefits, and Supporting Wetlands Restoration",
+              "How AI Glasses Are Empowering People With Disabilities"
+            ],
+            "suggested_quote_candidates": [
+              "This partnership not only ensures the facility’s operation for two decades but also preserves over 1,100 local jobs and contributes $13.5 million annually in tax revenue without relying on the state’s Zero Emission Credit program, maintaining operations without additional ratepayer support.",
+              "At Meta, we’re building AI technologies that are transforming the global economy and the way people connect."
+            ]
+          }
+        }
+      }
+    }
+  },
+  "openai_review": {
+    "enabled": false,
+    "status": "disabled"
+  }
+}

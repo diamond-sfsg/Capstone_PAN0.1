@@ -1,0 +1,649 @@
+{
+  "company_name": "Oracle",
+  "input_files": [
+    "C:\\Users\\Kelno\\OneDrive\\Documents\\purpose_driven_score\\purpose_driven_scoring\\data\\data\\selected_10_companies\\Oracle_Corporation\\pages.csv",
+    "C:\\Users\\Kelno\\OneDrive\\Documents\\purpose_driven_score\\purpose_driven_scoring\\data\\data\\selected_10_companies\\Oracle_Corporation\\pages.jsonl",
+    "C:\\Users\\Kelno\\OneDrive\\Documents\\purpose_driven_score\\purpose_driven_scoring\\data\\data\\10Ks\\edgar\\ORCL\\2016_10K_2016-06-22_full_submission.txt",
+    "C:\\Users\\Kelno\\OneDrive\\Documents\\purpose_driven_score\\purpose_driven_scoring\\data\\data\\10Ks\\edgar\\ORCL\\2017_10K_2017-06-27_full_submission.txt",
+    "C:\\Users\\Kelno\\OneDrive\\Documents\\purpose_driven_score\\purpose_driven_scoring\\data\\data\\10Ks\\edgar\\ORCL\\2018_10K_2018-06-22_full_submission.txt",
+    "C:\\Users\\Kelno\\OneDrive\\Documents\\purpose_driven_score\\purpose_driven_scoring\\data\\data\\10Ks\\edgar\\ORCL\\2019_10K_2019-06-21_full_submission.txt",
+    "C:\\Users\\Kelno\\OneDrive\\Documents\\purpose_driven_score\\purpose_driven_scoring\\data\\data\\10Ks\\edgar\\ORCL\\2020_10K_2020-06-22_full_submission.txt",
+    "C:\\Users\\Kelno\\OneDrive\\Documents\\purpose_driven_score\\purpose_driven_scoring\\data\\data\\10Ks\\edgar\\ORCL\\2021_10K_2021-06-21_full_submission.txt",
+    "C:\\Users\\Kelno\\OneDrive\\Documents\\purpose_driven_score\\purpose_driven_scoring\\data\\data\\10Ks\\edgar\\ORCL\\2022_10K_2022-06-21_full_submission.txt",
+    "C:\\Users\\Kelno\\OneDrive\\Documents\\purpose_driven_score\\purpose_driven_scoring\\data\\data\\10Ks\\edgar\\ORCL\\2023_10K_2023-06-20_full_submission.txt",
+    "C:\\Users\\Kelno\\OneDrive\\Documents\\purpose_driven_score\\purpose_driven_scoring\\data\\data\\10Ks\\edgar\\ORCL\\2024_10K_2024-06-20_full_submission.txt",
+    "C:\\Users\\Kelno\\OneDrive\\Documents\\purpose_driven_score\\purpose_driven_scoring\\data\\data\\10Ks\\edgar\\ORCL\\2025_10K_2025-06-18_full_submission.txt"
+  ],
+  "record_count": 109,
+  "scores": {
+    "purpose_articulation": {
+      "overall": 3.8,
+      "dimensions": {
+        "purpose_presence": 3,
+        "clarity": 3,
+        "historical_consistency": 5,
+        "leadership_centrality": 5,
+        "distinction_from_branding": 3
+      }
+    },
+    "operational_embedding": {
+      "overall": 4.4,
+      "dimensions": {
+        "corporate_strategy_integration": 5,
+        "capital_and_performance_alignment": 4,
+        "employee_embedding": 5,
+        "strategic_decision_justification": 3,
+        "execution_outcome_accountability": 5
+      }
+    },
+    "execution_consistency": {
+      "overall": 4.4,
+      "dimensions": {
+        "corporate_strategy_integration": 5,
+        "capital_and_performance_alignment": 4,
+        "execution_consistency": 3,
+        "core_capability_reinforcement": 5,
+        "industry_impact_breadth": 5
+      }
+    },
+    "aggregate": {
+      "overall": 4.16,
+      "label": "strongly purpose-driven"
+    }
+  },
+  "evidence": {
+    "top_pages": [
+      {
+        "title": "Leadership Message - Environmental and Social Impact | Oracle",
+        "url": "https://www.oracle.com/social-impact/leadership-message",
+        "display_role": "leadership",
+        "display_reason": "explicit purpose language, stakeholder framing, leadership linkage",
+        "page_signal_score": 26.0,
+        "display_evidence_score": 21.0,
+        "purpose_hits": 2,
+        "impact_hits": 18,
+        "strategy_hits": 2
+      },
+      {
+        "title": "Philanthropy – Environmental and Social Impact | Oracle",
+        "url": "https://www.oracle.com/social-impact/philanthropy",
+        "display_role": "impact",
+        "display_reason": "stakeholder framing, leadership linkage, strategy linkage",
+        "page_signal_score": 20.1,
+        "display_evidence_score": 18.5,
+        "purpose_hits": 0,
+        "impact_hits": 82,
+        "strategy_hits": 12
+      },
+      {
+        "title": "Who We are - Life at Oracle | Careers | Oracle",
+        "url": "https://www.oracle.com/careers/life-at-oracle",
+        "display_role": "people",
+        "display_reason": "stakeholder framing, leadership linkage, people embedding",
+        "page_signal_score": 12.6,
+        "display_evidence_score": 7.5,
+        "purpose_hits": 0,
+        "impact_hits": 8,
+        "strategy_hits": 0
+      },
+      {
+        "title": "Joyce Westerdahl | Executive Biography",
+        "url": "https://www.oracle.com/corporate/executives/joyce-westerdahl",
+        "display_role": "about",
+        "display_reason": "explicit purpose language, stakeholder framing, leadership linkage",
+        "page_signal_score": 20.8,
+        "display_evidence_score": 19.5,
+        "purpose_hits": 2,
+        "impact_hits": 5,
+        "strategy_hits": 4
+      },
+      {
+        "title": "Oracle AI Database@Azure | Oracle",
+        "url": "https://www.oracle.com/cloud/azure/oracle-database-at-azure",
+        "display_role": "execution",
+        "display_reason": "explicit purpose language, stakeholder framing, leadership linkage",
+        "page_signal_score": 27.2,
+        "display_evidence_score": 19.0,
+        "purpose_hits": 2,
+        "impact_hits": 11,
+        "strategy_hits": 8
+      }
+    ],
+    "scoring_top_pages": [
+      {
+        "title": "Global Reporting Initiative (GRI) Standards | Oracle",
+        "url": "https://www.oracle.com/social-impact/philanthropy/gri-standards",
+        "page_signal_score": 30.8,
+        "display_evidence_score": 27.0,
+        "purpose_hits": 14,
+        "impact_hits": 55,
+        "strategy_hits": 17
+      },
+      {
+        "title": "Oracle AI Database@Azure | Oracle",
+        "url": "https://www.oracle.com/cloud/azure/oracle-database-at-azure",
+        "page_signal_score": 27.2,
+        "display_evidence_score": 19.0,
+        "purpose_hits": 2,
+        "impact_hits": 11,
+        "strategy_hits": 8
+      },
+      {
+        "title": "Leadership Message - Environmental and Social Impact | Oracle",
+        "url": "https://www.oracle.com/social-impact/leadership-message",
+        "page_signal_score": 26.0,
+        "display_evidence_score": 21.0,
+        "purpose_hits": 2,
+        "impact_hits": 18,
+        "strategy_hits": 2
+      },
+      {
+        "title": "Sustainability—Corporate Social Responsibility Report | Oracle India",
+        "url": "https://www.oracle.com/in/corporate-social-responsibility/sustainability",
+        "page_signal_score": 25.6,
+        "display_evidence_score": 11.0,
+        "purpose_hits": 3,
+        "impact_hits": 14,
+        "strategy_hits": 5
+      },
+      {
+        "title": "Solutions to Accelerate Customer Sustainability",
+        "url": "https://www.oracle.com/sustainability/customers",
+        "page_signal_score": 25.3,
+        "display_evidence_score": 8.0,
+        "purpose_hits": 1,
+        "impact_hits": 59,
+        "strategy_hits": 6
+      }
+    ],
+    "years_found": [
+      1934,
+      1973,
+      1977,
+      1978,
+      1982,
+      1986,
+      1987,
+      1989,
+      1991,
+      1992,
+      1995,
+      1998,
+      1999,
+      2000,
+      2001,
+      2005,
+      2006,
+      2007,
+      2008,
+      2009,
+      2010,
+      2011,
+      2012,
+      2013,
+      2014,
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026,
+      2027,
+      2028,
+      2029,
+      2030,
+      2031,
+      2032,
+      2033,
+      2034,
+      2035,
+      2036,
+      2037,
+      2038,
+      2039,
+      2040,
+      2041,
+      2043,
+      2044,
+      2045,
+      2046,
+      2047,
+      2050,
+      2051,
+      2052,
+      2053,
+      2054,
+      2055,
+      2060,
+      2061,
+      2064,
+      2065
+    ],
+    "industries_found": [
+      "automotive",
+      "consumer",
+      "education",
+      "energy",
+      "finance",
+      "government",
+      "healthcare",
+      "logistics",
+      "manufacturing",
+      "retail"
+    ],
+    "purpose_examples": [
+      "As the pace of change accelerates, our mission remains steadfast: to leverage our innovation, technology, and people to help create a better future for our communities and our planet.",
+      "Today, we are accelerating business transformation through the power of AI, and we have integrated AI throughout every layer of our technology stack to unlock new possibilities for our customers, partners, and society at large.",
+      "We’re proud to support initiatives in education, health, community, and environmental sustainability, knowing that meaningful progress depends on collective action and sustained commitment.",
+      "We also operate two charitable foundations dedicated to young people.",
+      "Supported by hundreds of Oracle Volunteers, it delivered 13,879 hours of learning for Design Tech High School and other partners in FY25."
+    ]
+  },
+  "scoring_templates": {
+    "purpose_articulation": {
+      "title": "Purpose Articulation",
+      "overall_score": 3.8,
+      "dimensions": {
+        "purpose_presence": {
+          "question": "Does the company articulate why it exists, who it serves, and the impact it seeks to create?",
+          "score": 3,
+          "score_description": "A recognizable purpose statement exists, but stakeholders or intended impact are only partly specified.",
+          "evidence_template": {
+            "required_signals": [
+              "explicit purpose statement",
+              "stakeholder mention",
+              "impact or outcome language"
+            ],
+            "preferred_sources": [
+              "web",
+              "linkedin",
+              "sec"
+            ],
+            "suggested_evidence_titles": [
+              "Leadership Message - Environmental and Social Impact | Oracle",
+              "Philanthropy – Environmental and Social Impact | Oracle",
+              "Who We are - Life at Oracle | Careers | Oracle"
+            ],
+            "suggested_quote_candidates": [
+              "As the pace of change accelerates, our mission remains steadfast: to leverage our innovation, technology, and people to help create a better future for our communities and our planet.",
+              "Today, we are accelerating business transformation through the power of AI, and we have integrated AI throughout every layer of our technology stack to unlock new possibilities for our customers, partners, and society at large."
+            ]
+          }
+        },
+        "clarity": {
+          "question": "Is the purpose concrete, outcome-oriented, and distinguishable from brand language?",
+          "score": 3,
+          "score_description": "Some real outcomes or beneficiaries are described.",
+          "evidence_template": {
+            "required_signals": [
+              "observable outcomes",
+              "beneficiary or stakeholder specificity",
+              "low branding dependence"
+            ],
+            "preferred_sources": [
+              "web",
+              "sec"
+            ],
+            "suggested_evidence_titles": [
+              "Leadership Message - Environmental and Social Impact | Oracle",
+              "Philanthropy – Environmental and Social Impact | Oracle",
+              "Who We are - Life at Oracle | Careers | Oracle"
+            ],
+            "suggested_quote_candidates": [
+              "As the pace of change accelerates, our mission remains steadfast: to leverage our innovation, technology, and people to help create a better future for our communities and our planet.",
+              "Today, we are accelerating business transformation through the power of AI, and we have integrated AI throughout every layer of our technology stack to unlock new possibilities for our customers, partners, and society at large."
+            ]
+          }
+        },
+        "historical_consistency": {
+          "question": "Has the company maintained a consistent purpose narrative across the 2021-2025 window?",
+          "score": 5,
+          "score_description": "The central purpose remains stable across the full review window.",
+          "evidence_template": {
+            "required_signals": [
+              "multi-year evidence",
+              "repeatable narrative",
+              "cross-year consistency"
+            ],
+            "preferred_sources": [
+              "sec"
+            ],
+            "suggested_evidence_titles": [
+              "Leadership Message - Environmental and Social Impact | Oracle",
+              "Philanthropy – Environmental and Social Impact | Oracle",
+              "Who We are - Life at Oracle | Careers | Oracle"
+            ],
+            "suggested_quote_candidates": [
+              "As the pace of change accelerates, our mission remains steadfast: to leverage our innovation, technology, and people to help create a better future for our communities and our planet.",
+              "Today, we are accelerating business transformation through the power of AI, and we have integrated AI throughout every layer of our technology stack to unlock new possibilities for our customers, partners, and society at large."
+            ]
+          }
+        },
+        "leadership_centrality": {
+          "question": "Do leaders repeatedly frame purpose as a guide for decisions or direction?",
+          "score": 5,
+          "score_description": "Purpose clearly functions as a leadership and governance principle.",
+          "evidence_template": {
+            "required_signals": [
+              "leadership co-mentions",
+              "strategy linkage",
+              "repeat mentions"
+            ],
+            "preferred_sources": [
+              "web",
+              "linkedin",
+              "sec"
+            ],
+            "suggested_evidence_titles": [
+              "Leadership Message - Environmental and Social Impact | Oracle",
+              "Philanthropy – Environmental and Social Impact | Oracle",
+              "Who We are - Life at Oracle | Careers | Oracle"
+            ],
+            "suggested_quote_candidates": [
+              "As the pace of change accelerates, our mission remains steadfast: to leverage our innovation, technology, and people to help create a better future for our communities and our planet.",
+              "Today, we are accelerating business transformation through the power of AI, and we have integrated AI throughout every layer of our technology stack to unlock new possibilities for our customers, partners, and society at large."
+            ]
+          }
+        },
+        "distinction_from_branding": {
+          "question": "Is purpose embedded in strategy and accountability rather than left as branding?",
+          "score": 3,
+          "score_description": "Purpose appears in both messaging and operational contexts.",
+          "evidence_template": {
+            "required_signals": [
+              "strategy relevance",
+              "measurement or KPI tie-in",
+              "limited brand-only framing"
+            ],
+            "preferred_sources": [
+              "web",
+              "sec"
+            ],
+            "suggested_evidence_titles": [
+              "Leadership Message - Environmental and Social Impact | Oracle",
+              "Philanthropy – Environmental and Social Impact | Oracle",
+              "Who We are - Life at Oracle | Careers | Oracle"
+            ],
+            "suggested_quote_candidates": [
+              "As the pace of change accelerates, our mission remains steadfast: to leverage our innovation, technology, and people to help create a better future for our communities and our planet.",
+              "Today, we are accelerating business transformation through the power of AI, and we have integrated AI throughout every layer of our technology stack to unlock new possibilities for our customers, partners, and society at large."
+            ]
+          }
+        }
+      }
+    },
+    "operational_embedding": {
+      "title": "Operational Embedding",
+      "overall_score": 4.4,
+      "dimensions": {
+        "corporate_strategy_integration": {
+          "question": "Is the stated purpose explicitly integrated into strategic priorities?",
+          "score": 5,
+          "score_description": "Purpose clearly guides long-term strategy.",
+          "evidence_template": {
+            "required_signals": [
+              "strategic priorities",
+              "purpose linkage",
+              "initiative framing"
+            ],
+            "preferred_sources": [
+              "web",
+              "sec"
+            ],
+            "suggested_evidence_titles": [
+              "Leadership Message - Environmental and Social Impact | Oracle",
+              "Philanthropy – Environmental and Social Impact | Oracle",
+              "Who We are - Life at Oracle | Careers | Oracle"
+            ],
+            "suggested_quote_candidates": [
+              "As the pace of change accelerates, our mission remains steadfast: to leverage our innovation, technology, and people to help create a better future for our communities and our planet.",
+              "Today, we are accelerating business transformation through the power of AI, and we have integrated AI throughout every layer of our technology stack to unlock new possibilities for our customers, partners, and society at large."
+            ]
+          }
+        },
+        "capital_and_performance_alignment": {
+          "question": "Do investments and resource allocation support purpose-related initiatives?",
+          "score": 4,
+          "score_description": "Major investments frequently align with purpose.",
+          "evidence_template": {
+            "required_signals": [
+              "investment language",
+              "purpose linkage",
+              "multi-year support"
+            ],
+            "preferred_sources": [
+              "sec",
+              "web"
+            ],
+            "suggested_evidence_titles": [
+              "Leadership Message - Environmental and Social Impact | Oracle",
+              "Philanthropy – Environmental and Social Impact | Oracle",
+              "Who We are - Life at Oracle | Careers | Oracle"
+            ],
+            "suggested_quote_candidates": [
+              "As the pace of change accelerates, our mission remains steadfast: to leverage our innovation, technology, and people to help create a better future for our communities and our planet.",
+              "Today, we are accelerating business transformation through the power of AI, and we have integrated AI throughout every layer of our technology stack to unlock new possibilities for our customers, partners, and society at large."
+            ]
+          }
+        },
+        "employee_embedding": {
+          "question": "Is purpose reflected in employee programs, incentives, and internal culture?",
+          "score": 5,
+          "score_description": "Purpose is deeply embedded in employee culture and decision-making.",
+          "evidence_template": {
+            "required_signals": [
+              "employee programs",
+              "training or incentives",
+              "purpose linkage"
+            ],
+            "preferred_sources": [
+              "linkedin",
+              "web",
+              "sec"
+            ],
+            "suggested_evidence_titles": [
+              "Leadership Message - Environmental and Social Impact | Oracle",
+              "Philanthropy – Environmental and Social Impact | Oracle",
+              "Who We are - Life at Oracle | Careers | Oracle"
+            ],
+            "suggested_quote_candidates": [
+              "As the pace of change accelerates, our mission remains steadfast: to leverage our innovation, technology, and people to help create a better future for our communities and our planet.",
+              "Today, we are accelerating business transformation through the power of AI, and we have integrated AI throughout every layer of our technology stack to unlock new possibilities for our customers, partners, and society at large."
+            ]
+          }
+        },
+        "strategic_decision_justification": {
+          "question": "Are major strategic moves justified using purpose rather than only growth logic?",
+          "score": 3,
+          "score_description": "Some strategic decisions demonstrate purpose alignment.",
+          "evidence_template": {
+            "required_signals": [
+              "major initiative",
+              "decision rationale",
+              "purpose linkage"
+            ],
+            "preferred_sources": [
+              "web",
+              "sec"
+            ],
+            "suggested_evidence_titles": [
+              "Leadership Message - Environmental and Social Impact | Oracle",
+              "Philanthropy – Environmental and Social Impact | Oracle",
+              "Who We are - Life at Oracle | Careers | Oracle"
+            ],
+            "suggested_quote_candidates": [
+              "As the pace of change accelerates, our mission remains steadfast: to leverage our innovation, technology, and people to help create a better future for our communities and our planet.",
+              "Today, we are accelerating business transformation through the power of AI, and we have integrated AI throughout every layer of our technology stack to unlock new possibilities for our customers, partners, and society at large."
+            ]
+          }
+        },
+        "execution_outcome_accountability": {
+          "question": "Does the company report measurable progress toward purpose-related outcomes?",
+          "score": 5,
+          "score_description": "A comprehensive KPI framework tracks purpose outcomes over time.",
+          "evidence_template": {
+            "required_signals": [
+              "metrics",
+              "progress reporting",
+              "purpose or impact target"
+            ],
+            "preferred_sources": [
+              "sec",
+              "web"
+            ],
+            "suggested_evidence_titles": [
+              "Leadership Message - Environmental and Social Impact | Oracle",
+              "Philanthropy – Environmental and Social Impact | Oracle",
+              "Who We are - Life at Oracle | Careers | Oracle"
+            ],
+            "suggested_quote_candidates": [
+              "As the pace of change accelerates, our mission remains steadfast: to leverage our innovation, technology, and people to help create a better future for our communities and our planet.",
+              "Today, we are accelerating business transformation through the power of AI, and we have integrated AI throughout every layer of our technology stack to unlock new possibilities for our customers, partners, and society at large."
+            ]
+          }
+        }
+      }
+    },
+    "execution_consistency": {
+      "title": "Execution Consistency",
+      "overall_score": 4.4,
+      "dimensions": {
+        "corporate_strategy_integration": {
+          "question": "Is purpose reflected in company-level strategic priorities and long-term direction?",
+          "score": 5,
+          "score_description": "Purpose clearly guides long-term corporate direction.",
+          "evidence_template": {
+            "required_signals": [
+              "strategy continuity",
+              "long-term priority",
+              "purpose linkage"
+            ],
+            "preferred_sources": [
+              "sec",
+              "web"
+            ],
+            "suggested_evidence_titles": [
+              "Leadership Message - Environmental and Social Impact | Oracle",
+              "Philanthropy – Environmental and Social Impact | Oracle",
+              "Who We are - Life at Oracle | Careers | Oracle"
+            ],
+            "suggested_quote_candidates": [
+              "As the pace of change accelerates, our mission remains steadfast: to leverage our innovation, technology, and people to help create a better future for our communities and our planet.",
+              "Today, we are accelerating business transformation through the power of AI, and we have integrated AI throughout every layer of our technology stack to unlock new possibilities for our customers, partners, and society at large."
+            ]
+          }
+        },
+        "capital_and_performance_alignment": {
+          "question": "Do investments and performance drivers reinforce the purpose-related business areas?",
+          "score": 4,
+          "score_description": "Investments and growth drivers frequently support purpose-linked capabilities.",
+          "evidence_template": {
+            "required_signals": [
+              "growth driver",
+              "capability investment",
+              "purpose linkage"
+            ],
+            "preferred_sources": [
+              "sec",
+              "web"
+            ],
+            "suggested_evidence_titles": [
+              "Leadership Message - Environmental and Social Impact | Oracle",
+              "Philanthropy – Environmental and Social Impact | Oracle",
+              "Who We are - Life at Oracle | Careers | Oracle"
+            ],
+            "suggested_quote_candidates": [
+              "As the pace of change accelerates, our mission remains steadfast: to leverage our innovation, technology, and people to help create a better future for our communities and our planet.",
+              "Today, we are accelerating business transformation through the power of AI, and we have integrated AI throughout every layer of our technology stack to unlock new possibilities for our customers, partners, and society at large."
+            ]
+          }
+        },
+        "execution_consistency": {
+          "question": "Do products, launches, and multi-year outcomes show sustained execution of the stated purpose?",
+          "score": 3,
+          "score_description": "Several launches or outcomes align with purpose.",
+          "evidence_template": {
+            "required_signals": [
+              "launches or programs",
+              "outcomes",
+              "multi-year continuity"
+            ],
+            "preferred_sources": [
+              "web",
+              "sec"
+            ],
+            "suggested_evidence_titles": [
+              "Leadership Message - Environmental and Social Impact | Oracle",
+              "Philanthropy – Environmental and Social Impact | Oracle",
+              "Who We are - Life at Oracle | Careers | Oracle"
+            ],
+            "suggested_quote_candidates": [
+              "As the pace of change accelerates, our mission remains steadfast: to leverage our innovation, technology, and people to help create a better future for our communities and our planet.",
+              "Today, we are accelerating business transformation through the power of AI, and we have integrated AI throughout every layer of our technology stack to unlock new possibilities for our customers, partners, and society at large."
+            ]
+          }
+        },
+        "core_capability_reinforcement": {
+          "question": "Does the company keep strengthening the core capability most central to its purpose?",
+          "score": 5,
+          "score_description": "The core capability is systematically reinforced across generations of strategy and execution.",
+          "evidence_template": {
+            "required_signals": [
+              "platform or capability language",
+              "reinforcement over time",
+              "purpose linkage"
+            ],
+            "preferred_sources": [
+              "web",
+              "sec"
+            ],
+            "suggested_evidence_titles": [
+              "Leadership Message - Environmental and Social Impact | Oracle",
+              "Philanthropy – Environmental and Social Impact | Oracle",
+              "Who We are - Life at Oracle | Careers | Oracle"
+            ],
+            "suggested_quote_candidates": [
+              "As the pace of change accelerates, our mission remains steadfast: to leverage our innovation, technology, and people to help create a better future for our communities and our planet.",
+              "Today, we are accelerating business transformation through the power of AI, and we have integrated AI throughout every layer of our technology stack to unlock new possibilities for our customers, partners, and society at large."
+            ]
+          }
+        },
+        "industry_impact_breadth": {
+          "question": "Are purpose-related capabilities applied across multiple industries or use cases?",
+          "score": 5,
+          "score_description": "There is broad, sustained multi-industry adoption of purpose-related capabilities.",
+          "evidence_template": {
+            "required_signals": [
+              "multiple industries",
+              "credible use cases",
+              "repeat application"
+            ],
+            "preferred_sources": [
+              "web",
+              "sec"
+            ],
+            "suggested_evidence_titles": [
+              "Leadership Message - Environmental and Social Impact | Oracle",
+              "Philanthropy – Environmental and Social Impact | Oracle",
+              "Who We are - Life at Oracle | Careers | Oracle"
+            ],
+            "suggested_quote_candidates": [
+              "As the pace of change accelerates, our mission remains steadfast: to leverage our innovation, technology, and people to help create a better future for our communities and our planet.",
+              "Today, we are accelerating business transformation through the power of AI, and we have integrated AI throughout every layer of our technology stack to unlock new possibilities for our customers, partners, and society at large."
+            ]
+          }
+        }
+      }
+    }
+  },
+  "openai_review": {
+    "enabled": false,
+    "status": "disabled"
+  }
+}

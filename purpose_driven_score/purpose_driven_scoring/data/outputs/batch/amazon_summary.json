@@ -1,0 +1,610 @@
+{
+  "company_name": "Amazon",
+  "input_files": [
+    "C:\\Users\\Kelno\\OneDrive\\Documents\\purpose_driven_score\\purpose_driven_scoring\\data\\data\\selected_10_companies\\Amazon\\pages.csv",
+    "C:\\Users\\Kelno\\OneDrive\\Documents\\purpose_driven_score\\purpose_driven_scoring\\data\\data\\selected_10_companies\\Amazon\\pages.jsonl",
+    "C:\\Users\\Kelno\\OneDrive\\Documents\\purpose_driven_score\\purpose_driven_scoring\\data\\data\\linkedin_selected_10_companies\\Amazon (1)\\pages (1).jsonl",
+    "C:\\Users\\Kelno\\OneDrive\\Documents\\purpose_driven_score\\purpose_driven_scoring\\data\\data\\10Ks\\edgar\\AMZN\\2020_10K_2020-01-31_full_submission.txt",
+    "C:\\Users\\Kelno\\OneDrive\\Documents\\purpose_driven_score\\purpose_driven_scoring\\data\\data\\10Ks\\edgar\\AMZN\\2021_10K_2021-02-03_full_submission.txt",
+    "C:\\Users\\Kelno\\OneDrive\\Documents\\purpose_driven_score\\purpose_driven_scoring\\data\\data\\10Ks\\edgar\\AMZN\\2022_10K_2022-02-04_full_submission.txt",
+    "C:\\Users\\Kelno\\OneDrive\\Documents\\purpose_driven_score\\purpose_driven_scoring\\data\\data\\10Ks\\edgar\\AMZN\\2023_10K_2023-02-03_full_submission.txt",
+    "C:\\Users\\Kelno\\OneDrive\\Documents\\purpose_driven_score\\purpose_driven_scoring\\data\\data\\10Ks\\edgar\\AMZN\\2024_10K_2024-02-02_full_submission.txt",
+    "C:\\Users\\Kelno\\OneDrive\\Documents\\purpose_driven_score\\purpose_driven_scoring\\data\\data\\10Ks\\edgar\\AMZN\\2025_10K_2025-02-07_full_submission.txt",
+    "C:\\Users\\Kelno\\OneDrive\\Documents\\purpose_driven_score\\purpose_driven_scoring\\data\\data\\10Ks\\edgar\\AMZN\\2026_10K_2026-02-06_full_submission.txt"
+  ],
+  "record_count": 107,
+  "scores": {
+    "purpose_articulation": {
+      "overall": 4.0,
+      "dimensions": {
+        "purpose_presence": 3,
+        "clarity": 3,
+        "historical_consistency": 5,
+        "leadership_centrality": 5,
+        "distinction_from_branding": 4
+      }
+    },
+    "operational_embedding": {
+      "overall": 5.0,
+      "dimensions": {
+        "corporate_strategy_integration": 5,
+        "capital_and_performance_alignment": 5,
+        "employee_embedding": 5,
+        "strategic_decision_justification": 5,
+        "execution_outcome_accountability": 5
+      }
+    },
+    "execution_consistency": {
+      "overall": 5.0,
+      "dimensions": {
+        "corporate_strategy_integration": 5,
+        "capital_and_performance_alignment": 5,
+        "execution_consistency": 5,
+        "core_capability_reinforcement": 5,
+        "industry_impact_breadth": 5
+      }
+    },
+    "aggregate": {
+      "overall": 4.6,
+      "label": "strongly purpose-driven"
+    }
+  },
+  "evidence": {
+    "top_pages": [
+      {
+        "title": "An Amazon interviewer dives deep into how she uses the Leadership Principles",
+        "url": "https://www.aboutamazon.com/news/workplace/what-do-each-of-amazons-leadership-principles-really-mean",
+        "display_role": "leadership",
+        "display_reason": "stakeholder framing, leadership linkage, people embedding",
+        "page_signal_score": 23.7,
+        "display_evidence_score": 16.5,
+        "purpose_hits": 0,
+        "impact_hits": 6,
+        "strategy_hits": 4
+      },
+      {
+        "title": "Amazon data centers aren’t raising your electricity bills—Here’s the data",
+        "url": "https://www.aboutamazon.com/news/sustainability/data-centers-electricity-bills-grid-power-amazon",
+        "display_role": "impact",
+        "display_reason": "explicit purpose language, stakeholder framing, leadership linkage",
+        "page_signal_score": 25.3,
+        "display_evidence_score": 26.0,
+        "purpose_hits": 2,
+        "impact_hits": 16,
+        "strategy_hits": 2
+      },
+      {
+        "title": "Workplace News",
+        "url": "https://www.aboutamazon.com/amazons-workplace-culture",
+        "display_role": "people",
+        "display_reason": "stakeholder framing, leadership linkage, people embedding",
+        "page_signal_score": 26.9,
+        "display_evidence_score": 18.5,
+        "purpose_hits": 0,
+        "impact_hits": 21,
+        "strategy_hits": 9
+      },
+      {
+        "title": "Amazon increases investment in Spain to €33.7 billion to expand data center infrastructure and drive AI innovation across Europe",
+        "url": "https://www.aboutamazon.com/news/company-news/amazon-spain-investment",
+        "display_role": "strategy",
+        "display_reason": "stakeholder framing, leadership linkage, strategy linkage",
+        "page_signal_score": 29.6,
+        "display_evidence_score": 27.0,
+        "purpose_hits": 0,
+        "impact_hits": 33,
+        "strategy_hits": 21
+      },
+      {
+        "title": "Amazon's impact in communities where we live and work",
+        "url": "https://www.aboutamazon.com/impact/community",
+        "display_role": "impact",
+        "display_reason": "explicit purpose language, stakeholder framing, strategy linkage",
+        "page_signal_score": 24.7,
+        "display_evidence_score": 23.0,
+        "purpose_hits": 1,
+        "impact_hits": 16,
+        "strategy_hits": 9
+      }
+    ],
+    "scoring_top_pages": [
+      {
+        "title": "Amazon increases investment in Spain to €33.7 billion to expand data center infrastructure and drive AI innovation across Europe",
+        "url": "https://www.aboutamazon.com/news/company-news/amazon-spain-investment",
+        "page_signal_score": 29.6,
+        "display_evidence_score": 27.0,
+        "purpose_hits": 0,
+        "impact_hits": 33,
+        "strategy_hits": 21
+      },
+      {
+        "title": "Latest news about Sustainability at Amazon",
+        "url": "https://www.aboutamazon.com/sustainability-company-reports-news-updates",
+        "page_signal_score": 25.7,
+        "display_evidence_score": 16.5,
+        "purpose_hits": 1,
+        "impact_hits": 33,
+        "strategy_hits": 3
+      },
+      {
+        "title": "Amazon data centers aren’t raising your electricity bills—Here’s the data",
+        "url": "https://www.aboutamazon.com/news/sustainability/data-centers-electricity-bills-grid-power-amazon",
+        "page_signal_score": 25.3,
+        "display_evidence_score": 26.0,
+        "purpose_hits": 2,
+        "impact_hits": 16,
+        "strategy_hits": 2
+      },
+      {
+        "title": "$2.5 trillion in sales and counting: Celebrating 25 years of Amazon’s partnership with independent sellers",
+        "url": "https://www.aboutamazon.com/news/small-business/amazon-independent-sellers-growth-sales",
+        "page_signal_score": 25.2,
+        "display_evidence_score": 20.5,
+        "purpose_hits": 0,
+        "impact_hits": 9,
+        "strategy_hits": 5
+      },
+      {
+        "title": "How Amazon is helping to build one of the first modular nuclear reactor facilities in the United States",
+        "url": "https://www.aboutamazon.com/news/sustainability/amazon-smr-nuclear-energy",
+        "page_signal_score": 24.9,
+        "display_evidence_score": 16.5,
+        "purpose_hits": 1,
+        "impact_hits": 19,
+        "strategy_hits": 3
+      }
+    ],
+    "years_found": [
+      1934,
+      2000,
+      2005,
+      2006,
+      2009,
+      2010,
+      2011,
+      2012,
+      2013,
+      2014,
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026,
+      2027,
+      2028,
+      2029,
+      2030,
+      2035,
+      2039,
+      2040,
+      2050
+    ],
+    "industries_found": [
+      "consumer",
+      "education",
+      "energy",
+      "finance",
+      "government",
+      "healthcare",
+      "logistics",
+      "manufacturing",
+      "retail",
+      "small business"
+    ],
+    "purpose_examples": [
+      "8 unique benefits and perks available to Amazon employees From exclusive discounts to cancer support, here are some unique benefits you may not know Amazon offers its employees.",
+      "They are a guiding set of tenets which Amazon employees use every day to move forward in situations, solve problems, deal with conflict, and make decisions.",
+      "They are the building blocks of culture at Amazon; they set the standard for how we should work with each other as a group of employees and they maintain standards and consistency across our many functions and geographies.",
+      "Analytical skills can be taught and there are problem-solving methodologies which can help people build that skill too.",
+      "There are certain Leadership Principles that are critical to work at Amazon, and others that are in varying levels across our employees."
+    ]
+  },
+  "scoring_templates": {
+    "purpose_articulation": {
+      "title": "Purpose Articulation",
+      "overall_score": 4.0,
+      "dimensions": {
+        "purpose_presence": {
+          "question": "Does the company articulate why it exists, who it serves, and the impact it seeks to create?",
+          "score": 3,
+          "score_description": "A recognizable purpose statement exists, but stakeholders or intended impact are only partly specified.",
+          "evidence_template": {
+            "required_signals": [
+              "explicit purpose statement",
+              "stakeholder mention",
+              "impact or outcome language"
+            ],
+            "preferred_sources": [
+              "web",
+              "linkedin",
+              "sec"
+            ],
+            "suggested_evidence_titles": [
+              "An Amazon interviewer dives deep into how she uses the Leadership Principles",
+              "Amazon data centers aren’t raising your electricity bills—Here’s the data",
+              "Workplace News"
+            ],
+            "suggested_quote_candidates": [
+              "8 unique benefits and perks available to Amazon employees From exclusive discounts to cancer support, here are some unique benefits you may not know Amazon offers its employees.",
+              "They are a guiding set of tenets which Amazon employees use every day to move forward in situations, solve problems, deal with conflict, and make decisions."
+            ]
+          }
+        },
+        "clarity": {
+          "question": "Is the purpose concrete, outcome-oriented, and distinguishable from brand language?",
+          "score": 3,
+          "score_description": "Some real outcomes or beneficiaries are described.",
+          "evidence_template": {
+            "required_signals": [
+              "observable outcomes",
+              "beneficiary or stakeholder specificity",
+              "low branding dependence"
+            ],
+            "preferred_sources": [
+              "web",
+              "sec"
+            ],
+            "suggested_evidence_titles": [
+              "An Amazon interviewer dives deep into how she uses the Leadership Principles",
+              "Amazon data centers aren’t raising your electricity bills—Here’s the data",
+              "Workplace News"
+            ],
+            "suggested_quote_candidates": [
+              "8 unique benefits and perks available to Amazon employees From exclusive discounts to cancer support, here are some unique benefits you may not know Amazon offers its employees.",
+              "They are a guiding set of tenets which Amazon employees use every day to move forward in situations, solve problems, deal with conflict, and make decisions."
+            ]
+          }
+        },
+        "historical_consistency": {
+          "question": "Has the company maintained a consistent purpose narrative across the 2021-2025 window?",
+          "score": 5,
+          "score_description": "The central purpose remains stable across the full review window.",
+          "evidence_template": {
+            "required_signals": [
+              "multi-year evidence",
+              "repeatable narrative",
+              "cross-year consistency"
+            ],
+            "preferred_sources": [
+              "sec"
+            ],
+            "suggested_evidence_titles": [
+              "An Amazon interviewer dives deep into how she uses the Leadership Principles",
+              "Amazon data centers aren’t raising your electricity bills—Here’s the data",
+              "Workplace News"
+            ],
+            "suggested_quote_candidates": [
+              "8 unique benefits and perks available to Amazon employees From exclusive discounts to cancer support, here are some unique benefits you may not know Amazon offers its employees.",
+              "They are a guiding set of tenets which Amazon employees use every day to move forward in situations, solve problems, deal with conflict, and make decisions."
+            ]
+          }
+        },
+        "leadership_centrality": {
+          "question": "Do leaders repeatedly frame purpose as a guide for decisions or direction?",
+          "score": 5,
+          "score_description": "Purpose clearly functions as a leadership and governance principle.",
+          "evidence_template": {
+            "required_signals": [
+              "leadership co-mentions",
+              "strategy linkage",
+              "repeat mentions"
+            ],
+            "preferred_sources": [
+              "web",
+              "linkedin",
+              "sec"
+            ],
+            "suggested_evidence_titles": [
+              "An Amazon interviewer dives deep into how she uses the Leadership Principles",
+              "Amazon data centers aren’t raising your electricity bills—Here’s the data",
+              "Workplace News"
+            ],
+            "suggested_quote_candidates": [
+              "8 unique benefits and perks available to Amazon employees From exclusive discounts to cancer support, here are some unique benefits you may not know Amazon offers its employees.",
+              "They are a guiding set of tenets which Amazon employees use every day to move forward in situations, solve problems, deal with conflict, and make decisions."
+            ]
+          }
+        },
+        "distinction_from_branding": {
+          "question": "Is purpose embedded in strategy and accountability rather than left as branding?",
+          "score": 4,
+          "score_description": "Purpose appears in strategy or disclosure materials with clear business relevance.",
+          "evidence_template": {
+            "required_signals": [
+              "strategy relevance",
+              "measurement or KPI tie-in",
+              "limited brand-only framing"
+            ],
+            "preferred_sources": [
+              "web",
+              "sec"
+            ],
+            "suggested_evidence_titles": [
+              "An Amazon interviewer dives deep into how she uses the Leadership Principles",
+              "Amazon data centers aren’t raising your electricity bills—Here’s the data",
+              "Workplace News"
+            ],
+            "suggested_quote_candidates": [
+              "8 unique benefits and perks available to Amazon employees From exclusive discounts to cancer support, here are some unique benefits you may not know Amazon offers its employees.",
+              "They are a guiding set of tenets which Amazon employees use every day to move forward in situations, solve problems, deal with conflict, and make decisions."
+            ]
+          }
+        }
+      }
+    },
+    "operational_embedding": {
+      "title": "Operational Embedding",
+      "overall_score": 5.0,
+      "dimensions": {
+        "corporate_strategy_integration": {
+          "question": "Is the stated purpose explicitly integrated into strategic priorities?",
+          "score": 5,
+          "score_description": "Purpose clearly guides long-term strategy.",
+          "evidence_template": {
+            "required_signals": [
+              "strategic priorities",
+              "purpose linkage",
+              "initiative framing"
+            ],
+            "preferred_sources": [
+              "web",
+              "sec"
+            ],
+            "suggested_evidence_titles": [
+              "An Amazon interviewer dives deep into how she uses the Leadership Principles",
+              "Amazon data centers aren’t raising your electricity bills—Here’s the data",
+              "Workplace News"
+            ],
+            "suggested_quote_candidates": [
+              "8 unique benefits and perks available to Amazon employees From exclusive discounts to cancer support, here are some unique benefits you may not know Amazon offers its employees.",
+              "They are a guiding set of tenets which Amazon employees use every day to move forward in situations, solve problems, deal with conflict, and make decisions."
+            ]
+          }
+        },
+        "capital_and_performance_alignment": {
+          "question": "Do investments and resource allocation support purpose-related initiatives?",
+          "score": 5,
+          "score_description": "Capital allocation is consistently justified through purpose and impact goals.",
+          "evidence_template": {
+            "required_signals": [
+              "investment language",
+              "purpose linkage",
+              "multi-year support"
+            ],
+            "preferred_sources": [
+              "sec",
+              "web"
+            ],
+            "suggested_evidence_titles": [
+              "An Amazon interviewer dives deep into how she uses the Leadership Principles",
+              "Amazon data centers aren’t raising your electricity bills—Here’s the data",
+              "Workplace News"
+            ],
+            "suggested_quote_candidates": [
+              "8 unique benefits and perks available to Amazon employees From exclusive discounts to cancer support, here are some unique benefits you may not know Amazon offers its employees.",
+              "They are a guiding set of tenets which Amazon employees use every day to move forward in situations, solve problems, deal with conflict, and make decisions."
+            ]
+          }
+        },
+        "employee_embedding": {
+          "question": "Is purpose reflected in employee programs, incentives, and internal culture?",
+          "score": 5,
+          "score_description": "Purpose is deeply embedded in employee culture and decision-making.",
+          "evidence_template": {
+            "required_signals": [
+              "employee programs",
+              "training or incentives",
+              "purpose linkage"
+            ],
+            "preferred_sources": [
+              "linkedin",
+              "web",
+              "sec"
+            ],
+            "suggested_evidence_titles": [
+              "An Amazon interviewer dives deep into how she uses the Leadership Principles",
+              "Amazon data centers aren’t raising your electricity bills—Here’s the data",
+              "Workplace News"
+            ],
+            "suggested_quote_candidates": [
+              "8 unique benefits and perks available to Amazon employees From exclusive discounts to cancer support, here are some unique benefits you may not know Amazon offers its employees.",
+              "They are a guiding set of tenets which Amazon employees use every day to move forward in situations, solve problems, deal with conflict, and make decisions."
+            ]
+          }
+        },
+        "strategic_decision_justification": {
+          "question": "Are major strategic moves justified using purpose rather than only growth logic?",
+          "score": 5,
+          "score_description": "Purpose is consistently part of the rationale for major decisions.",
+          "evidence_template": {
+            "required_signals": [
+              "major initiative",
+              "decision rationale",
+              "purpose linkage"
+            ],
+            "preferred_sources": [
+              "web",
+              "sec"
+            ],
+            "suggested_evidence_titles": [
+              "An Amazon interviewer dives deep into how she uses the Leadership Principles",
+              "Amazon data centers aren’t raising your electricity bills—Here’s the data",
+              "Workplace News"
+            ],
+            "suggested_quote_candidates": [
+              "8 unique benefits and perks available to Amazon employees From exclusive discounts to cancer support, here are some unique benefits you may not know Amazon offers its employees.",
+              "They are a guiding set of tenets which Amazon employees use every day to move forward in situations, solve problems, deal with conflict, and make decisions."
+            ]
+          }
+        },
+        "execution_outcome_accountability": {
+          "question": "Does the company report measurable progress toward purpose-related outcomes?",
+          "score": 5,
+          "score_description": "A comprehensive KPI framework tracks purpose outcomes over time.",
+          "evidence_template": {
+            "required_signals": [
+              "metrics",
+              "progress reporting",
+              "purpose or impact target"
+            ],
+            "preferred_sources": [
+              "sec",
+              "web"
+            ],
+            "suggested_evidence_titles": [
+              "An Amazon interviewer dives deep into how she uses the Leadership Principles",
+              "Amazon data centers aren’t raising your electricity bills—Here’s the data",
+              "Workplace News"
+            ],
+            "suggested_quote_candidates": [
+              "8 unique benefits and perks available to Amazon employees From exclusive discounts to cancer support, here are some unique benefits you may not know Amazon offers its employees.",
+              "They are a guiding set of tenets which Amazon employees use every day to move forward in situations, solve problems, deal with conflict, and make decisions."
+            ]
+          }
+        }
+      }
+    },
+    "execution_consistency": {
+      "title": "Execution Consistency",
+      "overall_score": 5.0,
+      "dimensions": {
+        "corporate_strategy_integration": {
+          "question": "Is purpose reflected in company-level strategic priorities and long-term direction?",
+          "score": 5,
+          "score_description": "Purpose clearly guides long-term corporate direction.",
+          "evidence_template": {
+            "required_signals": [
+              "strategy continuity",
+              "long-term priority",
+              "purpose linkage"
+            ],
+            "preferred_sources": [
+              "sec",
+              "web"
+            ],
+            "suggested_evidence_titles": [
+              "An Amazon interviewer dives deep into how she uses the Leadership Principles",
+              "Amazon data centers aren’t raising your electricity bills—Here’s the data",
+              "Workplace News"
+            ],
+            "suggested_quote_candidates": [
+              "8 unique benefits and perks available to Amazon employees From exclusive discounts to cancer support, here are some unique benefits you may not know Amazon offers its employees.",
+              "They are a guiding set of tenets which Amazon employees use every day to move forward in situations, solve problems, deal with conflict, and make decisions."
+            ]
+          }
+        },
+        "capital_and_performance_alignment": {
+          "question": "Do investments and performance drivers reinforce the purpose-related business areas?",
+          "score": 5,
+          "score_description": "Capital allocation and performance drivers consistently advance intended purpose outcomes.",
+          "evidence_template": {
+            "required_signals": [
+              "growth driver",
+              "capability investment",
+              "purpose linkage"
+            ],
+            "preferred_sources": [
+              "sec",
+              "web"
+            ],
+            "suggested_evidence_titles": [
+              "An Amazon interviewer dives deep into how she uses the Leadership Principles",
+              "Amazon data centers aren’t raising your electricity bills—Here’s the data",
+              "Workplace News"
+            ],
+            "suggested_quote_candidates": [
+              "8 unique benefits and perks available to Amazon employees From exclusive discounts to cancer support, here are some unique benefits you may not know Amazon offers its employees.",
+              "They are a guiding set of tenets which Amazon employees use every day to move forward in situations, solve problems, deal with conflict, and make decisions."
+            ]
+          }
+        },
+        "execution_consistency": {
+          "question": "Do products, launches, and multi-year outcomes show sustained execution of the stated purpose?",
+          "score": 5,
+          "score_description": "A sustained multi-year execution pattern clearly aligns with purpose.",
+          "evidence_template": {
+            "required_signals": [
+              "launches or programs",
+              "outcomes",
+              "multi-year continuity"
+            ],
+            "preferred_sources": [
+              "web",
+              "sec"
+            ],
+            "suggested_evidence_titles": [
+              "An Amazon interviewer dives deep into how she uses the Leadership Principles",
+              "Amazon data centers aren’t raising your electricity bills—Here’s the data",
+              "Workplace News"
+            ],
+            "suggested_quote_candidates": [
+              "8 unique benefits and perks available to Amazon employees From exclusive discounts to cancer support, here are some unique benefits you may not know Amazon offers its employees.",
+              "They are a guiding set of tenets which Amazon employees use every day to move forward in situations, solve problems, deal with conflict, and make decisions."
+            ]
+          }
+        },
+        "core_capability_reinforcement": {
+          "question": "Does the company keep strengthening the core capability most central to its purpose?",
+          "score": 5,
+          "score_description": "The core capability is systematically reinforced across generations of strategy and execution.",
+          "evidence_template": {
+            "required_signals": [
+              "platform or capability language",
+              "reinforcement over time",
+              "purpose linkage"
+            ],
+            "preferred_sources": [
+              "web",
+              "sec"
+            ],
+            "suggested_evidence_titles": [
+              "An Amazon interviewer dives deep into how she uses the Leadership Principles",
+              "Amazon data centers aren’t raising your electricity bills—Here’s the data",
+              "Workplace News"
+            ],
+            "suggested_quote_candidates": [
+              "8 unique benefits and perks available to Amazon employees From exclusive discounts to cancer support, here are some unique benefits you may not know Amazon offers its employees.",
+              "They are a guiding set of tenets which Amazon employees use every day to move forward in situations, solve problems, deal with conflict, and make decisions."
+            ]
+          }
+        },
+        "industry_impact_breadth": {
+          "question": "Are purpose-related capabilities applied across multiple industries or use cases?",
+          "score": 5,
+          "score_description": "There is broad, sustained multi-industry adoption of purpose-related capabilities.",
+          "evidence_template": {
+            "required_signals": [
+              "multiple industries",
+              "credible use cases",
+              "repeat application"
+            ],
+            "preferred_sources": [
+              "web",
+              "sec"
+            ],
+            "suggested_evidence_titles": [
+              "An Amazon interviewer dives deep into how she uses the Leadership Principles",
+              "Amazon data centers aren’t raising your electricity bills—Here’s the data",
+              "Workplace News"
+            ],
+            "suggested_quote_candidates": [
+              "8 unique benefits and perks available to Amazon employees From exclusive discounts to cancer support, here are some unique benefits you may not know Amazon offers its employees.",
+              "They are a guiding set of tenets which Amazon employees use every day to move forward in situations, solve problems, deal with conflict, and make decisions."
+            ]
+          }
+        }
+      }
+    }
+  },
+  "openai_review": {
+    "enabled": false,
+    "status": "disabled"
+  }
+}

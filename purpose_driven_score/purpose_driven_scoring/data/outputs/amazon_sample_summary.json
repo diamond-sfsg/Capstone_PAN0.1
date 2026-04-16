@@ -1,0 +1,143 @@
+{
+  "company_name": "Amazon",
+  "input_files": [
+    "C:\\Users\\Kelno\\OneDrive\\Documents\\爬虫\\output\\selected_10_companies\\Amazon\\pages.csv",
+    "C:\\Users\\Kelno\\OneDrive\\Documents\\爬虫\\output\\selected_10_companies\\Amazon\\pages.jsonl"
+  ],
+  "record_count": 100,
+  "scores": {
+    "purpose_articulation": {
+      "overall": 3.8,
+      "dimensions": {
+        "purpose_presence": 3,
+        "clarity": 3,
+        "historical_consistency": 5,
+        "leadership_centrality": 5,
+        "distinction_from_branding": 3
+      }
+    },
+    "operational_embedding": {
+      "overall": 5.0,
+      "dimensions": {
+        "corporate_strategy_integration": 5,
+        "capital_and_performance_alignment": 5,
+        "employee_embedding": 5,
+        "strategic_decision_justification": 5,
+        "execution_outcome_accountability": 5
+      }
+    },
+    "execution_consistency": {
+      "overall": 5.0,
+      "dimensions": {
+        "corporate_strategy_integration": 5,
+        "capital_and_performance_alignment": 5,
+        "execution_consistency": 5,
+        "core_capability_reinforcement": 5,
+        "industry_impact_breadth": 5
+      }
+    },
+    "aggregate": {
+      "overall": 4.6,
+      "label": "strongly purpose-driven"
+    }
+  },
+  "evidence": {
+    "top_pages": [
+      {
+        "title": "Amazon increases investment in Spain to €33.7 billion to expand data center infrastructure and drive AI innovation across Europe",
+        "url": "https://www.aboutamazon.com/news/company-news/amazon-spain-investment",
+        "page_signal_score": 34.1,
+        "purpose_hits": 4,
+        "impact_hits": 33,
+        "strategy_hits": 21
+      },
+      {
+        "title": "How Amazon is helping power America's AI future",
+        "url": "https://www.aboutamazon.com/news/aws/amazon-aws-trump-summit-ai-energy-future",
+        "page_signal_score": 29.7,
+        "purpose_hits": 3,
+        "impact_hits": 20,
+        "strategy_hits": 5
+      },
+      {
+        "title": "Amazon News | About Amazon",
+        "url": "https://www.aboutamazon.com/amazon-news-today",
+        "page_signal_score": 29.2,
+        "purpose_hits": 3,
+        "impact_hits": 20,
+        "strategy_hits": 5
+      },
+      {
+        "title": "Amazon Leo set to accelerate satellite production and launch cadence",
+        "url": "https://www.aboutamazon.com/news/amazon-leo/amazon-leo-plans-double-launch-rate-20-missions",
+        "page_signal_score": 27.7,
+        "purpose_hits": 17,
+        "impact_hits": 8,
+        "strategy_hits": 4
+      },
+      {
+        "title": "Workplace News",
+        "url": "https://www.aboutamazon.com/amazons-workplace-culture",
+        "page_signal_score": 26.9,
+        "purpose_hits": 1,
+        "impact_hits": 12,
+        "strategy_hits": 9
+      }
+    ],
+    "years_found": [
+      2000,
+      2005,
+      2006,
+      2009,
+      2010,
+      2011,
+      2012,
+      2013,
+      2014,
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026,
+      2027,
+      2028,
+      2029,
+      2030,
+      2035,
+      2039,
+      2040,
+      2050
+    ],
+    "industries_found": [
+      "consumer",
+      "education",
+      "energy",
+      "finance",
+      "government",
+      "healthcare",
+      "logistics",
+      "manufacturing",
+      "retail",
+      "small business"
+    ],
+    "purpose_examples": [
+      "Amazon co-founded The Climate Pledge in 2019, committing to reach net-zero carbon emissions by 2040 —The Climate Pledge now has more than 550 signatories, including Best Buy, IBM, Microsoft, PepsiCo, Siemens, Unilever, Verizon, and Visa.",
+      "Sustainability Amazon’s newest UK delivery station aims to be the first to achieve new zero carbon certification outside the US The Stockton-on-Tees facility will use AI tracking, carbon-storing materials, and renewable energy to cut emissions by at least 20%.",
+      "Sustainability Charging ahead: Meet Amazon's growing lineup of electric vehicles Our roster of zero-tailpipe emission vehicles helps us deliver packages to customers around the world.",
+      "We focus on real, actionable change within our operations: reducing emissions and water use, improving energy efficiency, and minimizing waste.",
+      "Learn more How we minimize the environmental impact of our buildings Inside Amazon’s approach to decarbonizing its global network of buildings From fulfillment centers to data centers to grocery stores, we’re testing and scaling new tech to push toward net-zero carbon emissions by 2040."
+    ]
+  },
+  "notes": [
+    "This is a heuristic text-analysis implementation of the provided scale.",
+    "Historical consistency is approximated from year and narrative coverage in the available documents.",
+    "Scores are strongest when the input includes annual reports, leadership letters, sustainability reports, careers pages, and strategy disclosures."
+  ]
+}

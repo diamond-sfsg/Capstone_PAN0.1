@@ -1,0 +1,644 @@
+{
+  "company_name": "Chevron",
+  "input_files": [
+    "C:\\Users\\Kelno\\OneDrive\\Documents\\purpose_driven_score\\purpose_driven_scoring\\data\\data\\selected_10_companies\\Chevron_Corporation\\pages.csv",
+    "C:\\Users\\Kelno\\OneDrive\\Documents\\purpose_driven_score\\purpose_driven_scoring\\data\\data\\selected_10_companies\\Chevron_Corporation\\pages.jsonl",
+    "C:\\Users\\Kelno\\OneDrive\\Documents\\purpose_driven_score\\purpose_driven_scoring\\data\\data\\10Ks\\edgar\\CVX\\2019_10K_2019-02-22_full_submission.txt",
+    "C:\\Users\\Kelno\\OneDrive\\Documents\\purpose_driven_score\\purpose_driven_scoring\\data\\data\\10Ks\\edgar\\CVX\\2020_10K_2020-02-21_full_submission.txt",
+    "C:\\Users\\Kelno\\OneDrive\\Documents\\purpose_driven_score\\purpose_driven_scoring\\data\\data\\10Ks\\edgar\\CVX\\2021_10K_2021-02-25_full_submission.txt",
+    "C:\\Users\\Kelno\\OneDrive\\Documents\\purpose_driven_score\\purpose_driven_scoring\\data\\data\\10Ks\\edgar\\CVX\\2022_10K_2022-02-24_full_submission.txt",
+    "C:\\Users\\Kelno\\OneDrive\\Documents\\purpose_driven_score\\purpose_driven_scoring\\data\\data\\10Ks\\edgar\\CVX\\2023_10K_2023-02-23_full_submission.txt",
+    "C:\\Users\\Kelno\\OneDrive\\Documents\\purpose_driven_score\\purpose_driven_scoring\\data\\data\\10Ks\\edgar\\CVX\\2024_10K_2024-02-26_full_submission.txt",
+    "C:\\Users\\Kelno\\OneDrive\\Documents\\purpose_driven_score\\purpose_driven_scoring\\data\\data\\10Ks\\edgar\\CVX\\2025_10K_2025-02-21_full_submission.txt",
+    "C:\\Users\\Kelno\\OneDrive\\Documents\\purpose_driven_score\\purpose_driven_scoring\\data\\data\\10Ks\\edgar\\CVX\\2026_10K_2026-02-24_full_submission.txt"
+  ],
+  "record_count": 106,
+  "scores": {
+    "purpose_articulation": {
+      "overall": 4.4,
+      "dimensions": {
+        "purpose_presence": 4,
+        "clarity": 4,
+        "historical_consistency": 5,
+        "leadership_centrality": 5,
+        "distinction_from_branding": 4
+      }
+    },
+    "operational_embedding": {
+      "overall": 4.8,
+      "dimensions": {
+        "corporate_strategy_integration": 5,
+        "capital_and_performance_alignment": 5,
+        "employee_embedding": 5,
+        "strategic_decision_justification": 4,
+        "execution_outcome_accountability": 5
+      }
+    },
+    "execution_consistency": {
+      "overall": 4.6,
+      "dimensions": {
+        "corporate_strategy_integration": 5,
+        "capital_and_performance_alignment": 5,
+        "execution_consistency": 3,
+        "core_capability_reinforcement": 5,
+        "industry_impact_breadth": 5
+      }
+    },
+    "aggregate": {
+      "overall": 4.58,
+      "label": "strongly purpose-driven"
+    }
+  },
+  "evidence": {
+    "top_pages": [
+      {
+        "title": "Emissions Solutions Newsroom — Chevron",
+        "url": "https://www.chevron.com/newsroom/emissions-solutions",
+        "display_role": "purpose",
+        "display_reason": "explicit purpose language, stakeholder framing, leadership linkage",
+        "page_signal_score": 15.2,
+        "display_evidence_score": 5.5,
+        "purpose_hits": 7,
+        "impact_hits": 4,
+        "strategy_hits": 0
+      },
+      {
+        "title": "Marillyn A. Hewson — Chevron Leadership — Chevron",
+        "url": "https://www.chevron.com/who-we-are/leadership/marillyn-hewson",
+        "display_role": "leadership",
+        "display_reason": "stakeholder framing, leadership linkage, strategy linkage",
+        "page_signal_score": 16.0,
+        "display_evidence_score": 20.0,
+        "purpose_hits": 0,
+        "impact_hits": 5,
+        "strategy_hits": 4
+      },
+      {
+        "title": "Social Investment | Chevron — Chevron",
+        "url": "https://www.chevron.com/sustainability/social-investment",
+        "display_role": "impact",
+        "display_reason": "explicit purpose language, stakeholder framing, strategy linkage",
+        "page_signal_score": 23.3,
+        "display_evidence_score": 23.5,
+        "purpose_hits": 0,
+        "impact_hits": 21,
+        "strategy_hits": 6
+      },
+      {
+        "title": "The Chevron Way — Our Vision & Values — Chevron",
+        "url": "https://www.chevron.com/who-we-are/culture/the-chevron-way",
+        "display_role": "people",
+        "display_reason": "explicit purpose language, stakeholder framing, strategy linkage",
+        "page_signal_score": 25.3,
+        "display_evidence_score": 27.0,
+        "purpose_hits": 5,
+        "impact_hits": 6,
+        "strategy_hits": 1
+      },
+      {
+        "title": "Chevron enters Libya with new block award as part of broader exploration growth strategy — Chevron",
+        "url": "https://www.chevron.com/newsroom/2026/q1/chevron-enters-libya-with-new-block-award-as-part-of-broader-exploration-growth-strategy",
+        "display_role": "strategy",
+        "display_reason": "stakeholder framing, leadership linkage, strategy linkage",
+        "page_signal_score": 22.7,
+        "display_evidence_score": 16.5,
+        "purpose_hits": 0,
+        "impact_hits": 8,
+        "strategy_hits": 9
+      }
+    ],
+    "scoring_top_pages": [
+      {
+        "title": "Supporting STEM education in New Mexico — Chevron",
+        "url": "https://www.chevron.com/newsroom/2025/q4/supporting-stem-education-in-new-mexico",
+        "page_signal_score": 26.7,
+        "display_evidence_score": 22.0,
+        "purpose_hits": 2,
+        "impact_hits": 13,
+        "strategy_hits": 9
+      },
+      {
+        "title": "Who We Are — Chevron",
+        "url": "https://www.chevron.com/who-we-are",
+        "page_signal_score": 26.4,
+        "display_evidence_score": 23.5,
+        "purpose_hits": 2,
+        "impact_hits": 8,
+        "strategy_hits": 0
+      },
+      {
+        "title": "The Chevron Way — Our Vision & Values — Chevron",
+        "url": "https://www.chevron.com/who-we-are/culture/the-chevron-way",
+        "page_signal_score": 25.3,
+        "display_evidence_score": 27.0,
+        "purpose_hits": 5,
+        "impact_hits": 6,
+        "strategy_hits": 1
+      },
+      {
+        "title": "Chevron Website Site Map — Chevron",
+        "url": "https://www.chevron.com/global-pages/site-map",
+        "page_signal_score": 23.5,
+        "display_evidence_score": 15.0,
+        "purpose_hits": 3,
+        "impact_hits": 9,
+        "strategy_hits": 2
+      },
+      {
+        "title": "Chevron announces senior leadership changes — Chevron",
+        "url": "https://www.chevron.com/newsroom/2026/q1/chevron-announces-senior-leadership-changes",
+        "page_signal_score": 23.5,
+        "display_evidence_score": 16.5,
+        "purpose_hits": 0,
+        "impact_hits": 8,
+        "strategy_hits": 4
+      }
+    ],
+    "years_found": [
+      1900,
+      1907,
+      1911,
+      1912,
+      1916,
+      1926,
+      1927,
+      1931,
+      1934,
+      1941,
+      1946,
+      1947,
+      1949,
+      1961,
+      1969,
+      1972,
+      1975,
+      1978,
+      1979,
+      1980,
+      1982,
+      1983,
+      1984,
+      1985,
+      1986,
+      1987,
+      1988,
+      1990,
+      1991,
+      1993,
+      1994,
+      1995,
+      1996,
+      1999,
+      2000,
+      2001,
+      2002,
+      2003,
+      2004,
+      2005,
+      2006,
+      2007,
+      2008,
+      2009,
+      2010,
+      2011,
+      2012,
+      2013,
+      2014,
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026,
+      2027,
+      2028,
+      2030,
+      2050
+    ],
+    "industries_found": [
+      "automotive",
+      "consumer",
+      "education",
+      "energy",
+      "finance",
+      "government",
+      "logistics",
+      "manufacturing",
+      "retail"
+    ],
+    "purpose_examples": [
+      "Environmental Protection Agency’s ENERGY STAR Program and Green Power Partnerships.",
+      "Leading Business Transformation: As Chairman and CEO of Lockheed Martin, led large complex global organization that is in continuing transformation and adaptation, with customers facing technology and geopolitical disruption every day.",
+      "Fellow of the Royal Aeronautical Society and of the American Institute of Aeronautics and Astronautics.",
+      "play pause video People 2023 volunteer highlights The Chevron Humankind is a program in the United States that aligns personal purpose with company purpose to support Chevron’s People Strategy, enrich the employee experience and encourage community involvement.",
+      "Social Investment | Chevron — Chevron At Chevron, we strive to empower people to improve their lives and communities."
+    ]
+  },
+  "scoring_templates": {
+    "purpose_articulation": {
+      "title": "Purpose Articulation",
+      "overall_score": 4.4,
+      "dimensions": {
+        "purpose_presence": {
+          "question": "Does the company articulate why it exists, who it serves, and the impact it seeks to create?",
+          "score": 4,
+          "score_description": "The company clearly explains why it exists and what impact it aims to create.",
+          "evidence_template": {
+            "required_signals": [
+              "explicit purpose statement",
+              "stakeholder mention",
+              "impact or outcome language"
+            ],
+            "preferred_sources": [
+              "web",
+              "linkedin",
+              "sec"
+            ],
+            "suggested_evidence_titles": [
+              "Emissions Solutions Newsroom — Chevron",
+              "Marillyn A. Hewson — Chevron Leadership — Chevron",
+              "Social Investment | Chevron — Chevron"
+            ],
+            "suggested_quote_candidates": [
+              "Environmental Protection Agency’s ENERGY STAR Program and Green Power Partnerships.",
+              "Leading Business Transformation: As Chairman and CEO of Lockheed Martin, led large complex global organization that is in continuing transformation and adaptation, with customers facing technology and geopolitical disruption every day."
+            ]
+          }
+        },
+        "clarity": {
+          "question": "Is the purpose concrete, outcome-oriented, and distinguishable from brand language?",
+          "score": 4,
+          "score_description": "Purpose language is mostly concrete and tied to visible outcomes.",
+          "evidence_template": {
+            "required_signals": [
+              "observable outcomes",
+              "beneficiary or stakeholder specificity",
+              "low branding dependence"
+            ],
+            "preferred_sources": [
+              "web",
+              "sec"
+            ],
+            "suggested_evidence_titles": [
+              "Emissions Solutions Newsroom — Chevron",
+              "Marillyn A. Hewson — Chevron Leadership — Chevron",
+              "Social Investment | Chevron — Chevron"
+            ],
+            "suggested_quote_candidates": [
+              "Environmental Protection Agency’s ENERGY STAR Program and Green Power Partnerships.",
+              "Leading Business Transformation: As Chairman and CEO of Lockheed Martin, led large complex global organization that is in continuing transformation and adaptation, with customers facing technology and geopolitical disruption every day."
+            ]
+          }
+        },
+        "historical_consistency": {
+          "question": "Has the company maintained a consistent purpose narrative across the 2021-2025 window?",
+          "score": 5,
+          "score_description": "The central purpose remains stable across the full review window.",
+          "evidence_template": {
+            "required_signals": [
+              "multi-year evidence",
+              "repeatable narrative",
+              "cross-year consistency"
+            ],
+            "preferred_sources": [
+              "sec"
+            ],
+            "suggested_evidence_titles": [
+              "Emissions Solutions Newsroom — Chevron",
+              "Marillyn A. Hewson — Chevron Leadership — Chevron",
+              "Social Investment | Chevron — Chevron"
+            ],
+            "suggested_quote_candidates": [
+              "Environmental Protection Agency’s ENERGY STAR Program and Green Power Partnerships.",
+              "Leading Business Transformation: As Chairman and CEO of Lockheed Martin, led large complex global organization that is in continuing transformation and adaptation, with customers facing technology and geopolitical disruption every day."
+            ]
+          }
+        },
+        "leadership_centrality": {
+          "question": "Do leaders repeatedly frame purpose as a guide for decisions or direction?",
+          "score": 5,
+          "score_description": "Purpose clearly functions as a leadership and governance principle.",
+          "evidence_template": {
+            "required_signals": [
+              "leadership co-mentions",
+              "strategy linkage",
+              "repeat mentions"
+            ],
+            "preferred_sources": [
+              "web",
+              "linkedin",
+              "sec"
+            ],
+            "suggested_evidence_titles": [
+              "Emissions Solutions Newsroom — Chevron",
+              "Marillyn A. Hewson — Chevron Leadership — Chevron",
+              "Social Investment | Chevron — Chevron"
+            ],
+            "suggested_quote_candidates": [
+              "Environmental Protection Agency’s ENERGY STAR Program and Green Power Partnerships.",
+              "Leading Business Transformation: As Chairman and CEO of Lockheed Martin, led large complex global organization that is in continuing transformation and adaptation, with customers facing technology and geopolitical disruption every day."
+            ]
+          }
+        },
+        "distinction_from_branding": {
+          "question": "Is purpose embedded in strategy and accountability rather than left as branding?",
+          "score": 4,
+          "score_description": "Purpose appears in strategy or disclosure materials with clear business relevance.",
+          "evidence_template": {
+            "required_signals": [
+              "strategy relevance",
+              "measurement or KPI tie-in",
+              "limited brand-only framing"
+            ],
+            "preferred_sources": [
+              "web",
+              "sec"
+            ],
+            "suggested_evidence_titles": [
+              "Emissions Solutions Newsroom — Chevron",
+              "Marillyn A. Hewson — Chevron Leadership — Chevron",
+              "Social Investment | Chevron — Chevron"
+            ],
+            "suggested_quote_candidates": [
+              "Environmental Protection Agency’s ENERGY STAR Program and Green Power Partnerships.",
+              "Leading Business Transformation: As Chairman and CEO of Lockheed Martin, led large complex global organization that is in continuing transformation and adaptation, with customers facing technology and geopolitical disruption every day."
+            ]
+          }
+        }
+      }
+    },
+    "operational_embedding": {
+      "title": "Operational Embedding",
+      "overall_score": 4.8,
+      "dimensions": {
+        "corporate_strategy_integration": {
+          "question": "Is the stated purpose explicitly integrated into strategic priorities?",
+          "score": 5,
+          "score_description": "Purpose clearly guides long-term strategy.",
+          "evidence_template": {
+            "required_signals": [
+              "strategic priorities",
+              "purpose linkage",
+              "initiative framing"
+            ],
+            "preferred_sources": [
+              "web",
+              "sec"
+            ],
+            "suggested_evidence_titles": [
+              "Emissions Solutions Newsroom — Chevron",
+              "Marillyn A. Hewson — Chevron Leadership — Chevron",
+              "Social Investment | Chevron — Chevron"
+            ],
+            "suggested_quote_candidates": [
+              "Environmental Protection Agency’s ENERGY STAR Program and Green Power Partnerships.",
+              "Leading Business Transformation: As Chairman and CEO of Lockheed Martin, led large complex global organization that is in continuing transformation and adaptation, with customers facing technology and geopolitical disruption every day."
+            ]
+          }
+        },
+        "capital_and_performance_alignment": {
+          "question": "Do investments and resource allocation support purpose-related initiatives?",
+          "score": 5,
+          "score_description": "Capital allocation is consistently justified through purpose and impact goals.",
+          "evidence_template": {
+            "required_signals": [
+              "investment language",
+              "purpose linkage",
+              "multi-year support"
+            ],
+            "preferred_sources": [
+              "sec",
+              "web"
+            ],
+            "suggested_evidence_titles": [
+              "Emissions Solutions Newsroom — Chevron",
+              "Marillyn A. Hewson — Chevron Leadership — Chevron",
+              "Social Investment | Chevron — Chevron"
+            ],
+            "suggested_quote_candidates": [
+              "Environmental Protection Agency’s ENERGY STAR Program and Green Power Partnerships.",
+              "Leading Business Transformation: As Chairman and CEO of Lockheed Martin, led large complex global organization that is in continuing transformation and adaptation, with customers facing technology and geopolitical disruption every day."
+            ]
+          }
+        },
+        "employee_embedding": {
+          "question": "Is purpose reflected in employee programs, incentives, and internal culture?",
+          "score": 5,
+          "score_description": "Purpose is deeply embedded in employee culture and decision-making.",
+          "evidence_template": {
+            "required_signals": [
+              "employee programs",
+              "training or incentives",
+              "purpose linkage"
+            ],
+            "preferred_sources": [
+              "linkedin",
+              "web",
+              "sec"
+            ],
+            "suggested_evidence_titles": [
+              "Emissions Solutions Newsroom — Chevron",
+              "Marillyn A. Hewson — Chevron Leadership — Chevron",
+              "Social Investment | Chevron — Chevron"
+            ],
+            "suggested_quote_candidates": [
+              "Environmental Protection Agency’s ENERGY STAR Program and Green Power Partnerships.",
+              "Leading Business Transformation: As Chairman and CEO of Lockheed Martin, led large complex global organization that is in continuing transformation and adaptation, with customers facing technology and geopolitical disruption every day."
+            ]
+          }
+        },
+        "strategic_decision_justification": {
+          "question": "Are major strategic moves justified using purpose rather than only growth logic?",
+          "score": 4,
+          "score_description": "Many strategic initiatives reflect purpose alongside financial goals.",
+          "evidence_template": {
+            "required_signals": [
+              "major initiative",
+              "decision rationale",
+              "purpose linkage"
+            ],
+            "preferred_sources": [
+              "web",
+              "sec"
+            ],
+            "suggested_evidence_titles": [
+              "Emissions Solutions Newsroom — Chevron",
+              "Marillyn A. Hewson — Chevron Leadership — Chevron",
+              "Social Investment | Chevron — Chevron"
+            ],
+            "suggested_quote_candidates": [
+              "Environmental Protection Agency’s ENERGY STAR Program and Green Power Partnerships.",
+              "Leading Business Transformation: As Chairman and CEO of Lockheed Martin, led large complex global organization that is in continuing transformation and adaptation, with customers facing technology and geopolitical disruption every day."
+            ]
+          }
+        },
+        "execution_outcome_accountability": {
+          "question": "Does the company report measurable progress toward purpose-related outcomes?",
+          "score": 5,
+          "score_description": "A comprehensive KPI framework tracks purpose outcomes over time.",
+          "evidence_template": {
+            "required_signals": [
+              "metrics",
+              "progress reporting",
+              "purpose or impact target"
+            ],
+            "preferred_sources": [
+              "sec",
+              "web"
+            ],
+            "suggested_evidence_titles": [
+              "Emissions Solutions Newsroom — Chevron",
+              "Marillyn A. Hewson — Chevron Leadership — Chevron",
+              "Social Investment | Chevron — Chevron"
+            ],
+            "suggested_quote_candidates": [
+              "Environmental Protection Agency’s ENERGY STAR Program and Green Power Partnerships.",
+              "Leading Business Transformation: As Chairman and CEO of Lockheed Martin, led large complex global organization that is in continuing transformation and adaptation, with customers facing technology and geopolitical disruption every day."
+            ]
+          }
+        }
+      }
+    },
+    "execution_consistency": {
+      "title": "Execution Consistency",
+      "overall_score": 4.6,
+      "dimensions": {
+        "corporate_strategy_integration": {
+          "question": "Is purpose reflected in company-level strategic priorities and long-term direction?",
+          "score": 5,
+          "score_description": "Purpose clearly guides long-term corporate direction.",
+          "evidence_template": {
+            "required_signals": [
+              "strategy continuity",
+              "long-term priority",
+              "purpose linkage"
+            ],
+            "preferred_sources": [
+              "sec",
+              "web"
+            ],
+            "suggested_evidence_titles": [
+              "Emissions Solutions Newsroom — Chevron",
+              "Marillyn A. Hewson — Chevron Leadership — Chevron",
+              "Social Investment | Chevron — Chevron"
+            ],
+            "suggested_quote_candidates": [
+              "Environmental Protection Agency’s ENERGY STAR Program and Green Power Partnerships.",
+              "Leading Business Transformation: As Chairman and CEO of Lockheed Martin, led large complex global organization that is in continuing transformation and adaptation, with customers facing technology and geopolitical disruption every day."
+            ]
+          }
+        },
+        "capital_and_performance_alignment": {
+          "question": "Do investments and performance drivers reinforce the purpose-related business areas?",
+          "score": 5,
+          "score_description": "Capital allocation and performance drivers consistently advance intended purpose outcomes.",
+          "evidence_template": {
+            "required_signals": [
+              "growth driver",
+              "capability investment",
+              "purpose linkage"
+            ],
+            "preferred_sources": [
+              "sec",
+              "web"
+            ],
+            "suggested_evidence_titles": [
+              "Emissions Solutions Newsroom — Chevron",
+              "Marillyn A. Hewson — Chevron Leadership — Chevron",
+              "Social Investment | Chevron — Chevron"
+            ],
+            "suggested_quote_candidates": [
+              "Environmental Protection Agency’s ENERGY STAR Program and Green Power Partnerships.",
+              "Leading Business Transformation: As Chairman and CEO of Lockheed Martin, led large complex global organization that is in continuing transformation and adaptation, with customers facing technology and geopolitical disruption every day."
+            ]
+          }
+        },
+        "execution_consistency": {
+          "question": "Do products, launches, and multi-year outcomes show sustained execution of the stated purpose?",
+          "score": 3,
+          "score_description": "Several launches or outcomes align with purpose.",
+          "evidence_template": {
+            "required_signals": [
+              "launches or programs",
+              "outcomes",
+              "multi-year continuity"
+            ],
+            "preferred_sources": [
+              "web",
+              "sec"
+            ],
+            "suggested_evidence_titles": [
+              "Emissions Solutions Newsroom — Chevron",
+              "Marillyn A. Hewson — Chevron Leadership — Chevron",
+              "Social Investment | Chevron — Chevron"
+            ],
+            "suggested_quote_candidates": [
+              "Environmental Protection Agency’s ENERGY STAR Program and Green Power Partnerships.",
+              "Leading Business Transformation: As Chairman and CEO of Lockheed Martin, led large complex global organization that is in continuing transformation and adaptation, with customers facing technology and geopolitical disruption every day."
+            ]
+          }
+        },
+        "core_capability_reinforcement": {
+          "question": "Does the company keep strengthening the core capability most central to its purpose?",
+          "score": 5,
+          "score_description": "The core capability is systematically reinforced across generations of strategy and execution.",
+          "evidence_template": {
+            "required_signals": [
+              "platform or capability language",
+              "reinforcement over time",
+              "purpose linkage"
+            ],
+            "preferred_sources": [
+              "web",
+              "sec"
+            ],
+            "suggested_evidence_titles": [
+              "Emissions Solutions Newsroom — Chevron",
+              "Marillyn A. Hewson — Chevron Leadership — Chevron",
+              "Social Investment | Chevron — Chevron"
+            ],
+            "suggested_quote_candidates": [
+              "Environmental Protection Agency’s ENERGY STAR Program and Green Power Partnerships.",
+              "Leading Business Transformation: As Chairman and CEO of Lockheed Martin, led large complex global organization that is in continuing transformation and adaptation, with customers facing technology and geopolitical disruption every day."
+            ]
+          }
+        },
+        "industry_impact_breadth": {
+          "question": "Are purpose-related capabilities applied across multiple industries or use cases?",
+          "score": 5,
+          "score_description": "There is broad, sustained multi-industry adoption of purpose-related capabilities.",
+          "evidence_template": {
+            "required_signals": [
+              "multiple industries",
+              "credible use cases",
+              "repeat application"
+            ],
+            "preferred_sources": [
+              "web",
+              "sec"
+            ],
+            "suggested_evidence_titles": [
+              "Emissions Solutions Newsroom — Chevron",
+              "Marillyn A. Hewson — Chevron Leadership — Chevron",
+              "Social Investment | Chevron — Chevron"
+            ],
+            "suggested_quote_candidates": [
+              "Environmental Protection Agency’s ENERGY STAR Program and Green Power Partnerships.",
+              "Leading Business Transformation: As Chairman and CEO of Lockheed Martin, led large complex global organization that is in continuing transformation and adaptation, with customers facing technology and geopolitical disruption every day."
+            ]
+          }
+        }
+      }
+    }
+  },
+  "openai_review": {
+    "enabled": false,
+    "status": "disabled"
+  }
+}

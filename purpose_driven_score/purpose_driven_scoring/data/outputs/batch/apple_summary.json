@@ -1,0 +1,591 @@
+{
+  "company_name": "Apple",
+  "input_files": [
+    "C:\\Users\\Kelno\\OneDrive\\Documents\\purpose_driven_score\\purpose_driven_scoring\\data\\data\\selected_10_companies\\Apple_Inc\\pages.csv",
+    "C:\\Users\\Kelno\\OneDrive\\Documents\\purpose_driven_score\\purpose_driven_scoring\\data\\data\\selected_10_companies\\Apple_Inc\\pages.jsonl",
+    "C:\\Users\\Kelno\\OneDrive\\Documents\\purpose_driven_score\\purpose_driven_scoring\\data\\data\\10Ks\\edgar\\AAPL\\2016_10K_2016-10-26_full_submission.txt",
+    "C:\\Users\\Kelno\\OneDrive\\Documents\\purpose_driven_score\\purpose_driven_scoring\\data\\data\\10Ks\\edgar\\AAPL\\2017_10K_2017-11-03_full_submission.txt",
+    "C:\\Users\\Kelno\\OneDrive\\Documents\\purpose_driven_score\\purpose_driven_scoring\\data\\data\\10Ks\\edgar\\AAPL\\2018_10K_2018-11-05_full_submission.txt",
+    "C:\\Users\\Kelno\\OneDrive\\Documents\\purpose_driven_score\\purpose_driven_scoring\\data\\data\\10Ks\\edgar\\AAPL\\2019_10K_2019-10-31_full_submission.txt",
+    "C:\\Users\\Kelno\\OneDrive\\Documents\\purpose_driven_score\\purpose_driven_scoring\\data\\data\\10Ks\\edgar\\AAPL\\2020_10K_2020-10-30_full_submission.txt",
+    "C:\\Users\\Kelno\\OneDrive\\Documents\\purpose_driven_score\\purpose_driven_scoring\\data\\data\\10Ks\\edgar\\AAPL\\2021_10K_2021-10-29_full_submission.txt",
+    "C:\\Users\\Kelno\\OneDrive\\Documents\\purpose_driven_score\\purpose_driven_scoring\\data\\data\\10Ks\\edgar\\AAPL\\2022_10K_2022-10-28_full_submission.txt",
+    "C:\\Users\\Kelno\\OneDrive\\Documents\\purpose_driven_score\\purpose_driven_scoring\\data\\data\\10Ks\\edgar\\AAPL\\2023_10K_2023-11-03_full_submission.txt",
+    "C:\\Users\\Kelno\\OneDrive\\Documents\\purpose_driven_score\\purpose_driven_scoring\\data\\data\\10Ks\\edgar\\AAPL\\2024_10K_2024-11-01_full_submission.txt",
+    "C:\\Users\\Kelno\\OneDrive\\Documents\\purpose_driven_score\\purpose_driven_scoring\\data\\data\\10Ks\\edgar\\AAPL\\2025_10K_2025-10-31_full_submission.txt"
+  ],
+  "record_count": 108,
+  "scores": {
+    "purpose_articulation": {
+      "overall": 3.0,
+      "dimensions": {
+        "purpose_presence": 0,
+        "clarity": 2,
+        "historical_consistency": 5,
+        "leadership_centrality": 3,
+        "distinction_from_branding": 5
+      }
+    },
+    "operational_embedding": {
+      "overall": 3.4,
+      "dimensions": {
+        "corporate_strategy_integration": 3,
+        "capital_and_performance_alignment": 2,
+        "employee_embedding": 5,
+        "strategic_decision_justification": 2,
+        "execution_outcome_accountability": 5
+      }
+    },
+    "execution_consistency": {
+      "overall": 3.2,
+      "dimensions": {
+        "corporate_strategy_integration": 3,
+        "capital_and_performance_alignment": 2,
+        "execution_consistency": 2,
+        "core_capability_reinforcement": 4,
+        "industry_impact_breadth": 5
+      }
+    },
+    "aggregate": {
+      "overall": 3.18,
+      "label": "moderately purpose-driven"
+    }
+  },
+  "evidence": {
+    "top_pages": [
+      {
+        "title": "Wanda Austin to join Apple’s board of directors - Apple",
+        "url": "https://www.apple.com/newsroom/2024/01/wanda-austin-to-join-apples-board-of-directors",
+        "display_role": "leadership",
+        "display_reason": "explicit purpose language, stakeholder framing, leadership linkage",
+        "page_signal_score": 21.4,
+        "display_evidence_score": 17.5,
+        "purpose_hits": 2,
+        "impact_hits": 7,
+        "strategy_hits": 4
+      },
+      {
+        "title": "Apple Store Roles and Opportunities - Careers at Apple",
+        "url": "https://www.apple.com/careers/us/work-at-apple/retail.html",
+        "display_role": "people",
+        "display_reason": "stakeholder framing, leadership linkage, people embedding",
+        "page_signal_score": 19.3,
+        "display_evidence_score": 14.5,
+        "purpose_hits": 0,
+        "impact_hits": 16,
+        "strategy_hits": 3
+      },
+      {
+        "title": "Monica Lozano joins Apple’s board of directors - Apple",
+        "url": "https://www.apple.com/newsroom/2021/01/monica-lozano-joins-apples-board-of-directors",
+        "display_role": "leadership",
+        "display_reason": "stakeholder framing, leadership linkage, people embedding",
+        "page_signal_score": 15.7,
+        "display_evidence_score": 16.5,
+        "purpose_hits": 0,
+        "impact_hits": 9,
+        "strategy_hits": 1
+      },
+      {
+        "title": "Apple Leadership - Deirdre O’Brien - Apple",
+        "url": "https://www.apple.com/leadership/deirdre-obrien",
+        "display_role": "leadership",
+        "display_reason": "stakeholder framing, leadership linkage, people embedding",
+        "page_signal_score": 12.5,
+        "display_evidence_score": 14.5,
+        "purpose_hits": 0,
+        "impact_hits": 4,
+        "strategy_hits": 0
+      },
+      {
+        "title": "Alex Gorsky joins Apple’s board of directors - Apple",
+        "url": "https://www.apple.com/newsroom/2021/11/alex-gorsky-joins-apples-board-of-directors",
+        "display_role": "leadership",
+        "display_reason": "stakeholder framing, leadership linkage, people embedding",
+        "page_signal_score": 15.4,
+        "display_evidence_score": 13.5,
+        "purpose_hits": 0,
+        "impact_hits": 10,
+        "strategy_hits": 0
+      }
+    ],
+    "scoring_top_pages": [
+      {
+        "title": "Wanda Austin to join Apple’s board of directors - Apple",
+        "url": "https://www.apple.com/newsroom/2024/01/wanda-austin-to-join-apples-board-of-directors",
+        "page_signal_score": 21.4,
+        "display_evidence_score": 17.5,
+        "purpose_hits": 2,
+        "impact_hits": 7,
+        "strategy_hits": 4
+      },
+      {
+        "title": "2019_10K_2019-10-31_full_submission",
+        "url": "",
+        "page_signal_score": 9.8,
+        "display_evidence_score": -1.8,
+        "purpose_hits": 0,
+        "impact_hits": 6,
+        "strategy_hits": 0
+      }
+    ],
+    "years_found": [
+      1934,
+      1968,
+      1975,
+      1977,
+      1979,
+      1982,
+      1983,
+      1986,
+      1988,
+      1989,
+      1995,
+      1997,
+      1998,
+      1999,
+      2002,
+      2003,
+      2005,
+      2008,
+      2009,
+      2010,
+      2011,
+      2012,
+      2013,
+      2014,
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2030
+    ],
+    "industries_found": [
+      "consumer",
+      "education",
+      "energy",
+      "finance",
+      "government",
+      "healthcare",
+      "logistics",
+      "manufacturing",
+      "retail",
+      "small business"
+    ],
+    "purpose_examples": [
+      "“She’s an extraordinary leader, and her invaluable experience and expertise will support our mission of leaving the world better than we found it.” “Wanda has long been a leader in unleashing the potential of cutting-edge technology,” said Arthur Levinson, the chair of Apple’s board of directors.",
+      "“Wanda has spent decades advancing technology on behalf of humanity, and we’re thrilled to welcome her to Apple’s board of directors,” said Tim Cook, Apple’s CEO.",
+      "“I’m honored to join Apple’s board of directors, and I look forward to being part of a company that’s always creating new ways to empower people all over the world.” The board has a longstanding policy that directors generally may not stand for reelection after reaching age 75.",
+      "Specialist Discover customers’ needs, then follow up with the right solutions.",
+      "Find available Technical Specialist roles Creative Use your own creative talents to inspire customers."
+    ]
+  },
+  "scoring_templates": {
+    "purpose_articulation": {
+      "title": "Purpose Articulation",
+      "overall_score": 3.0,
+      "dimensions": {
+        "purpose_presence": {
+          "question": "Does the company articulate why it exists, who it serves, and the impact it seeks to create?",
+          "score": 0,
+          "score_description": "No identifiable purpose or mission statement.",
+          "evidence_template": {
+            "required_signals": [
+              "explicit purpose statement",
+              "stakeholder mention",
+              "impact or outcome language"
+            ],
+            "preferred_sources": [
+              "web",
+              "linkedin",
+              "sec"
+            ],
+            "suggested_evidence_titles": [
+              "Wanda Austin to join Apple’s board of directors - Apple",
+              "Apple Store Roles and Opportunities - Careers at Apple",
+              "Monica Lozano joins Apple’s board of directors - Apple"
+            ],
+            "suggested_quote_candidates": [
+              "“She’s an extraordinary leader, and her invaluable experience and expertise will support our mission of leaving the world better than we found it.” “Wanda has long been a leader in unleashing the potential of cutting-edge technology,” said Arthur Levinson, the chair of Apple’s board of directors.",
+              "“Wanda has spent decades advancing technology on behalf of humanity, and we’re thrilled to welcome her to Apple’s board of directors,” said Tim Cook, Apple’s CEO."
+            ]
+          }
+        },
+        "clarity": {
+          "question": "Is the purpose concrete, outcome-oriented, and distinguishable from brand language?",
+          "score": 2,
+          "score_description": "Purpose is partly visible but still abstract.",
+          "evidence_template": {
+            "required_signals": [
+              "observable outcomes",
+              "beneficiary or stakeholder specificity",
+              "low branding dependence"
+            ],
+            "preferred_sources": [
+              "web",
+              "sec"
+            ],
+            "suggested_evidence_titles": [
+              "Wanda Austin to join Apple’s board of directors - Apple",
+              "Apple Store Roles and Opportunities - Careers at Apple",
+              "Monica Lozano joins Apple’s board of directors - Apple"
+            ],
+            "suggested_quote_candidates": [
+              "“She’s an extraordinary leader, and her invaluable experience and expertise will support our mission of leaving the world better than we found it.” “Wanda has long been a leader in unleashing the potential of cutting-edge technology,” said Arthur Levinson, the chair of Apple’s board of directors.",
+              "“Wanda has spent decades advancing technology on behalf of humanity, and we’re thrilled to welcome her to Apple’s board of directors,” said Tim Cook, Apple’s CEO."
+            ]
+          }
+        },
+        "historical_consistency": {
+          "question": "Has the company maintained a consistent purpose narrative across the 2021-2025 window?",
+          "score": 5,
+          "score_description": "The central purpose remains stable across the full review window.",
+          "evidence_template": {
+            "required_signals": [
+              "multi-year evidence",
+              "repeatable narrative",
+              "cross-year consistency"
+            ],
+            "preferred_sources": [
+              "sec"
+            ],
+            "suggested_evidence_titles": [
+              "Wanda Austin to join Apple’s board of directors - Apple",
+              "Apple Store Roles and Opportunities - Careers at Apple",
+              "Monica Lozano joins Apple’s board of directors - Apple"
+            ],
+            "suggested_quote_candidates": [
+              "“She’s an extraordinary leader, and her invaluable experience and expertise will support our mission of leaving the world better than we found it.” “Wanda has long been a leader in unleashing the potential of cutting-edge technology,” said Arthur Levinson, the chair of Apple’s board of directors.",
+              "“Wanda has spent decades advancing technology on behalf of humanity, and we’re thrilled to welcome her to Apple’s board of directors,” said Tim Cook, Apple’s CEO."
+            ]
+          }
+        },
+        "leadership_centrality": {
+          "question": "Do leaders repeatedly frame purpose as a guide for decisions or direction?",
+          "score": 3,
+          "score_description": "Leadership occasionally links purpose to direction or priorities.",
+          "evidence_template": {
+            "required_signals": [
+              "leadership co-mentions",
+              "strategy linkage",
+              "repeat mentions"
+            ],
+            "preferred_sources": [
+              "web",
+              "linkedin",
+              "sec"
+            ],
+            "suggested_evidence_titles": [
+              "Wanda Austin to join Apple’s board of directors - Apple",
+              "Apple Store Roles and Opportunities - Careers at Apple",
+              "Monica Lozano joins Apple’s board of directors - Apple"
+            ],
+            "suggested_quote_candidates": [
+              "“She’s an extraordinary leader, and her invaluable experience and expertise will support our mission of leaving the world better than we found it.” “Wanda has long been a leader in unleashing the potential of cutting-edge technology,” said Arthur Levinson, the chair of Apple’s board of directors.",
+              "“Wanda has spent decades advancing technology on behalf of humanity, and we’re thrilled to welcome her to Apple’s board of directors,” said Tim Cook, Apple’s CEO."
+            ]
+          }
+        },
+        "distinction_from_branding": {
+          "question": "Is purpose embedded in strategy and accountability rather than left as branding?",
+          "score": 5,
+          "score_description": "Purpose clearly informs strategy, resource allocation, and measurable commitments.",
+          "evidence_template": {
+            "required_signals": [
+              "strategy relevance",
+              "measurement or KPI tie-in",
+              "limited brand-only framing"
+            ],
+            "preferred_sources": [
+              "web",
+              "sec"
+            ],
+            "suggested_evidence_titles": [
+              "Wanda Austin to join Apple’s board of directors - Apple",
+              "Apple Store Roles and Opportunities - Careers at Apple",
+              "Monica Lozano joins Apple’s board of directors - Apple"
+            ],
+            "suggested_quote_candidates": [
+              "“She’s an extraordinary leader, and her invaluable experience and expertise will support our mission of leaving the world better than we found it.” “Wanda has long been a leader in unleashing the potential of cutting-edge technology,” said Arthur Levinson, the chair of Apple’s board of directors.",
+              "“Wanda has spent decades advancing technology on behalf of humanity, and we’re thrilled to welcome her to Apple’s board of directors,” said Tim Cook, Apple’s CEO."
+            ]
+          }
+        }
+      }
+    },
+    "operational_embedding": {
+      "title": "Operational Embedding",
+      "overall_score": 3.4,
+      "dimensions": {
+        "corporate_strategy_integration": {
+          "question": "Is the stated purpose explicitly integrated into strategic priorities?",
+          "score": 3,
+          "score_description": "Purpose appears in strategy narratives but inconsistently.",
+          "evidence_template": {
+            "required_signals": [
+              "strategic priorities",
+              "purpose linkage",
+              "initiative framing"
+            ],
+            "preferred_sources": [
+              "web",
+              "sec"
+            ],
+            "suggested_evidence_titles": [
+              "Wanda Austin to join Apple’s board of directors - Apple",
+              "Apple Store Roles and Opportunities - Careers at Apple",
+              "Monica Lozano joins Apple’s board of directors - Apple"
+            ],
+            "suggested_quote_candidates": [
+              "“She’s an extraordinary leader, and her invaluable experience and expertise will support our mission of leaving the world better than we found it.” “Wanda has long been a leader in unleashing the potential of cutting-edge technology,” said Arthur Levinson, the chair of Apple’s board of directors.",
+              "“Wanda has spent decades advancing technology on behalf of humanity, and we’re thrilled to welcome her to Apple’s board of directors,” said Tim Cook, Apple’s CEO."
+            ]
+          }
+        },
+        "capital_and_performance_alignment": {
+          "question": "Do investments and resource allocation support purpose-related initiatives?",
+          "score": 2,
+          "score_description": "Indirect support exists but is weakly articulated.",
+          "evidence_template": {
+            "required_signals": [
+              "investment language",
+              "purpose linkage",
+              "multi-year support"
+            ],
+            "preferred_sources": [
+              "sec",
+              "web"
+            ],
+            "suggested_evidence_titles": [
+              "Wanda Austin to join Apple’s board of directors - Apple",
+              "Apple Store Roles and Opportunities - Careers at Apple",
+              "Monica Lozano joins Apple’s board of directors - Apple"
+            ],
+            "suggested_quote_candidates": [
+              "“She’s an extraordinary leader, and her invaluable experience and expertise will support our mission of leaving the world better than we found it.” “Wanda has long been a leader in unleashing the potential of cutting-edge technology,” said Arthur Levinson, the chair of Apple’s board of directors.",
+              "“Wanda has spent decades advancing technology on behalf of humanity, and we’re thrilled to welcome her to Apple’s board of directors,” said Tim Cook, Apple’s CEO."
+            ]
+          }
+        },
+        "employee_embedding": {
+          "question": "Is purpose reflected in employee programs, incentives, and internal culture?",
+          "score": 5,
+          "score_description": "Purpose is deeply embedded in employee culture and decision-making.",
+          "evidence_template": {
+            "required_signals": [
+              "employee programs",
+              "training or incentives",
+              "purpose linkage"
+            ],
+            "preferred_sources": [
+              "linkedin",
+              "web",
+              "sec"
+            ],
+            "suggested_evidence_titles": [
+              "Wanda Austin to join Apple’s board of directors - Apple",
+              "Apple Store Roles and Opportunities - Careers at Apple",
+              "Monica Lozano joins Apple’s board of directors - Apple"
+            ],
+            "suggested_quote_candidates": [
+              "“She’s an extraordinary leader, and her invaluable experience and expertise will support our mission of leaving the world better than we found it.” “Wanda has long been a leader in unleashing the potential of cutting-edge technology,” said Arthur Levinson, the chair of Apple’s board of directors.",
+              "“Wanda has spent decades advancing technology on behalf of humanity, and we’re thrilled to welcome her to Apple’s board of directors,” said Tim Cook, Apple’s CEO."
+            ]
+          }
+        },
+        "strategic_decision_justification": {
+          "question": "Are major strategic moves justified using purpose rather than only growth logic?",
+          "score": 2,
+          "score_description": "Occasional purpose references exist.",
+          "evidence_template": {
+            "required_signals": [
+              "major initiative",
+              "decision rationale",
+              "purpose linkage"
+            ],
+            "preferred_sources": [
+              "web",
+              "sec"
+            ],
+            "suggested_evidence_titles": [
+              "Wanda Austin to join Apple’s board of directors - Apple",
+              "Apple Store Roles and Opportunities - Careers at Apple",
+              "Monica Lozano joins Apple’s board of directors - Apple"
+            ],
+            "suggested_quote_candidates": [
+              "“She’s an extraordinary leader, and her invaluable experience and expertise will support our mission of leaving the world better than we found it.” “Wanda has long been a leader in unleashing the potential of cutting-edge technology,” said Arthur Levinson, the chair of Apple’s board of directors.",
+              "“Wanda has spent decades advancing technology on behalf of humanity, and we’re thrilled to welcome her to Apple’s board of directors,” said Tim Cook, Apple’s CEO."
+            ]
+          }
+        },
+        "execution_outcome_accountability": {
+          "question": "Does the company report measurable progress toward purpose-related outcomes?",
+          "score": 5,
+          "score_description": "A comprehensive KPI framework tracks purpose outcomes over time.",
+          "evidence_template": {
+            "required_signals": [
+              "metrics",
+              "progress reporting",
+              "purpose or impact target"
+            ],
+            "preferred_sources": [
+              "sec",
+              "web"
+            ],
+            "suggested_evidence_titles": [
+              "Wanda Austin to join Apple’s board of directors - Apple",
+              "Apple Store Roles and Opportunities - Careers at Apple",
+              "Monica Lozano joins Apple’s board of directors - Apple"
+            ],
+            "suggested_quote_candidates": [
+              "“She’s an extraordinary leader, and her invaluable experience and expertise will support our mission of leaving the world better than we found it.” “Wanda has long been a leader in unleashing the potential of cutting-edge technology,” said Arthur Levinson, the chair of Apple’s board of directors.",
+              "“Wanda has spent decades advancing technology on behalf of humanity, and we’re thrilled to welcome her to Apple’s board of directors,” said Tim Cook, Apple’s CEO."
+            ]
+          }
+        }
+      }
+    },
+    "execution_consistency": {
+      "title": "Execution Consistency",
+      "overall_score": 3.2,
+      "dimensions": {
+        "corporate_strategy_integration": {
+          "question": "Is purpose reflected in company-level strategic priorities and long-term direction?",
+          "score": 3,
+          "score_description": "Purpose appears in strategic narratives but unevenly.",
+          "evidence_template": {
+            "required_signals": [
+              "strategy continuity",
+              "long-term priority",
+              "purpose linkage"
+            ],
+            "preferred_sources": [
+              "sec",
+              "web"
+            ],
+            "suggested_evidence_titles": [
+              "Wanda Austin to join Apple’s board of directors - Apple",
+              "Apple Store Roles and Opportunities - Careers at Apple",
+              "Monica Lozano joins Apple’s board of directors - Apple"
+            ],
+            "suggested_quote_candidates": [
+              "“She’s an extraordinary leader, and her invaluable experience and expertise will support our mission of leaving the world better than we found it.” “Wanda has long been a leader in unleashing the potential of cutting-edge technology,” said Arthur Levinson, the chair of Apple’s board of directors.",
+              "“Wanda has spent decades advancing technology on behalf of humanity, and we’re thrilled to welcome her to Apple’s board of directors,” said Tim Cook, Apple’s CEO."
+            ]
+          }
+        },
+        "capital_and_performance_alignment": {
+          "question": "Do investments and performance drivers reinforce the purpose-related business areas?",
+          "score": 2,
+          "score_description": "Some indirect support exists.",
+          "evidence_template": {
+            "required_signals": [
+              "growth driver",
+              "capability investment",
+              "purpose linkage"
+            ],
+            "preferred_sources": [
+              "sec",
+              "web"
+            ],
+            "suggested_evidence_titles": [
+              "Wanda Austin to join Apple’s board of directors - Apple",
+              "Apple Store Roles and Opportunities - Careers at Apple",
+              "Monica Lozano joins Apple’s board of directors - Apple"
+            ],
+            "suggested_quote_candidates": [
+              "“She’s an extraordinary leader, and her invaluable experience and expertise will support our mission of leaving the world better than we found it.” “Wanda has long been a leader in unleashing the potential of cutting-edge technology,” said Arthur Levinson, the chair of Apple’s board of directors.",
+              "“Wanda has spent decades advancing technology on behalf of humanity, and we’re thrilled to welcome her to Apple’s board of directors,” said Tim Cook, Apple’s CEO."
+            ]
+          }
+        },
+        "execution_consistency": {
+          "question": "Do products, launches, and multi-year outcomes show sustained execution of the stated purpose?",
+          "score": 2,
+          "score_description": "Some related initiatives exist but appear isolated.",
+          "evidence_template": {
+            "required_signals": [
+              "launches or programs",
+              "outcomes",
+              "multi-year continuity"
+            ],
+            "preferred_sources": [
+              "web",
+              "sec"
+            ],
+            "suggested_evidence_titles": [
+              "Wanda Austin to join Apple’s board of directors - Apple",
+              "Apple Store Roles and Opportunities - Careers at Apple",
+              "Monica Lozano joins Apple’s board of directors - Apple"
+            ],
+            "suggested_quote_candidates": [
+              "“She’s an extraordinary leader, and her invaluable experience and expertise will support our mission of leaving the world better than we found it.” “Wanda has long been a leader in unleashing the potential of cutting-edge technology,” said Arthur Levinson, the chair of Apple’s board of directors.",
+              "“Wanda has spent decades advancing technology on behalf of humanity, and we’re thrilled to welcome her to Apple’s board of directors,” said Tim Cook, Apple’s CEO."
+            ]
+          }
+        },
+        "core_capability_reinforcement": {
+          "question": "Does the company keep strengthening the core capability most central to its purpose?",
+          "score": 4,
+          "score_description": "The company consistently strengthens a purpose-linked core capability.",
+          "evidence_template": {
+            "required_signals": [
+              "platform or capability language",
+              "reinforcement over time",
+              "purpose linkage"
+            ],
+            "preferred_sources": [
+              "web",
+              "sec"
+            ],
+            "suggested_evidence_titles": [
+              "Wanda Austin to join Apple’s board of directors - Apple",
+              "Apple Store Roles and Opportunities - Careers at Apple",
+              "Monica Lozano joins Apple’s board of directors - Apple"
+            ],
+            "suggested_quote_candidates": [
+              "“She’s an extraordinary leader, and her invaluable experience and expertise will support our mission of leaving the world better than we found it.” “Wanda has long been a leader in unleashing the potential of cutting-edge technology,” said Arthur Levinson, the chair of Apple’s board of directors.",
+              "“Wanda has spent decades advancing technology on behalf of humanity, and we’re thrilled to welcome her to Apple’s board of directors,” said Tim Cook, Apple’s CEO."
+            ]
+          }
+        },
+        "industry_impact_breadth": {
+          "question": "Are purpose-related capabilities applied across multiple industries or use cases?",
+          "score": 5,
+          "score_description": "There is broad, sustained multi-industry adoption of purpose-related capabilities.",
+          "evidence_template": {
+            "required_signals": [
+              "multiple industries",
+              "credible use cases",
+              "repeat application"
+            ],
+            "preferred_sources": [
+              "web",
+              "sec"
+            ],
+            "suggested_evidence_titles": [
+              "Wanda Austin to join Apple’s board of directors - Apple",
+              "Apple Store Roles and Opportunities - Careers at Apple",
+              "Monica Lozano joins Apple’s board of directors - Apple"
+            ],
+            "suggested_quote_candidates": [
+              "“She’s an extraordinary leader, and her invaluable experience and expertise will support our mission of leaving the world better than we found it.” “Wanda has long been a leader in unleashing the potential of cutting-edge technology,” said Arthur Levinson, the chair of Apple’s board of directors.",
+              "“Wanda has spent decades advancing technology on behalf of humanity, and we’re thrilled to welcome her to Apple’s board of directors,” said Tim Cook, Apple’s CEO."
+            ]
+          }
+        }
+      }
+    }
+  },
+  "openai_review": {
+    "enabled": false,
+    "status": "disabled"
+  }
+}

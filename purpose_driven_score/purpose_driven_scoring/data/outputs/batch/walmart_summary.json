@@ -1,0 +1,582 @@
+{
+  "company_name": "Walmart",
+  "input_files": [
+    "C:\\Users\\Kelno\\OneDrive\\Documents\\purpose_driven_score\\purpose_driven_scoring\\data\\data\\selected_10_companies\\Walmart\\pages.csv",
+    "C:\\Users\\Kelno\\OneDrive\\Documents\\purpose_driven_score\\purpose_driven_scoring\\data\\data\\selected_10_companies\\Walmart\\pages.jsonl",
+    "C:\\Users\\Kelno\\OneDrive\\Documents\\purpose_driven_score\\purpose_driven_scoring\\data\\data\\linkedin_selected_10_companies\\Walmart (1)\\pages (1).jsonl",
+    "C:\\Users\\Kelno\\OneDrive\\Documents\\purpose_driven_score\\purpose_driven_scoring\\data\\data\\10Ks\\edgar\\WMT\\2023_10K_2023-03-17_full_submission.txt",
+    "C:\\Users\\Kelno\\OneDrive\\Documents\\purpose_driven_score\\purpose_driven_scoring\\data\\data\\10Ks\\edgar\\WMT\\2024_10K_2024-03-15_full_submission.txt",
+    "C:\\Users\\Kelno\\OneDrive\\Documents\\purpose_driven_score\\purpose_driven_scoring\\data\\data\\10Ks\\edgar\\WMT\\2025_10K_2025-03-14_full_submission.txt",
+    "C:\\Users\\Kelno\\OneDrive\\Documents\\purpose_driven_score\\purpose_driven_scoring\\data\\data\\10Ks\\edgar\\WMT\\2026_10K_2026-03-13_full_submission.txt"
+  ],
+  "record_count": 104,
+  "scores": {
+    "purpose_articulation": {
+      "overall": 2.0,
+      "dimensions": {
+        "purpose_presence": 0,
+        "clarity": 1,
+        "historical_consistency": 3,
+        "leadership_centrality": 3,
+        "distinction_from_branding": 3
+      }
+    },
+    "operational_embedding": {
+      "overall": 1.8,
+      "dimensions": {
+        "corporate_strategy_integration": 2,
+        "capital_and_performance_alignment": 2,
+        "employee_embedding": 2,
+        "strategic_decision_justification": 0,
+        "execution_outcome_accountability": 3
+      }
+    },
+    "execution_consistency": {
+      "overall": 1.6,
+      "dimensions": {
+        "corporate_strategy_integration": 1,
+        "capital_and_performance_alignment": 2,
+        "execution_consistency": 0,
+        "core_capability_reinforcement": 1,
+        "industry_impact_breadth": 4
+      }
+    },
+    "aggregate": {
+      "overall": 1.82,
+      "label": "weakly evidenced"
+    }
+  },
+  "evidence": {
+    "top_pages": [
+      {
+        "title": "Purpose",
+        "url": "https://corporate.walmart.com/purpose",
+        "display_role": "purpose",
+        "display_reason": "explicit purpose language, stakeholder framing, leadership linkage",
+        "page_signal_score": 10.6,
+        "display_evidence_score": 14.0,
+        "purpose_hits": 0,
+        "impact_hits": 3,
+        "strategy_hits": 0
+      },
+      {
+        "title": "Walmart Foundation",
+        "url": "https://corporate.walmart.com/purpose/philanthropy",
+        "display_role": "impact",
+        "display_reason": "stakeholder framing, leadership linkage, strategy linkage",
+        "page_signal_score": 19.3,
+        "display_evidence_score": 17.0,
+        "purpose_hits": 0,
+        "impact_hits": 18,
+        "strategy_hits": 4
+      },
+      {
+        "title": "Walmart Careers",
+        "url": "https://corporate.walmart.com/careers",
+        "display_role": "people",
+        "display_reason": "stakeholder framing, leadership linkage, strategy linkage",
+        "page_signal_score": 19.2,
+        "display_evidence_score": 9.5,
+        "purpose_hits": 0,
+        "impact_hits": 12,
+        "strategy_hits": 6
+      },
+      {
+        "title": "Sustainability",
+        "url": "https://corporate.walmart.com/purpose/sustainability",
+        "display_role": "purpose",
+        "display_reason": "explicit purpose language, stakeholder framing, leadership linkage",
+        "page_signal_score": 11.6,
+        "display_evidence_score": 11.5,
+        "purpose_hits": 1,
+        "impact_hits": 4,
+        "strategy_hits": 0
+      },
+      {
+        "title": "Suppliers",
+        "url": "https://corporate.walmart.com/suppliers",
+        "display_role": "about",
+        "display_reason": "stakeholder framing, leadership linkage",
+        "page_signal_score": 5.3,
+        "display_evidence_score": 10.0,
+        "purpose_hits": 0,
+        "impact_hits": 1,
+        "strategy_hits": 0
+      }
+    ],
+    "scoring_top_pages": [
+      {
+        "title": "Walmart Foundation",
+        "url": "https://corporate.walmart.com/purpose/philanthropy",
+        "page_signal_score": 19.3,
+        "display_evidence_score": 17.0,
+        "purpose_hits": 0,
+        "impact_hits": 18,
+        "strategy_hits": 4
+      },
+      {
+        "title": "Sustainability",
+        "url": "https://corporate.walmart.com/purpose/sustainability",
+        "page_signal_score": 11.6,
+        "display_evidence_score": 11.5,
+        "purpose_hits": 1,
+        "impact_hits": 4,
+        "strategy_hits": 0
+      },
+      {
+        "title": "Purpose",
+        "url": "https://corporate.walmart.com/purpose",
+        "page_signal_score": 10.6,
+        "display_evidence_score": 14.0,
+        "purpose_hits": 0,
+        "impact_hits": 3,
+        "strategy_hits": 0
+      },
+      {
+        "title": "Working at Walmart",
+        "url": "https://corporate.walmart.com/about/working-at-walmart",
+        "page_signal_score": 10.1,
+        "display_evidence_score": 1.0,
+        "purpose_hits": 0,
+        "impact_hits": 1,
+        "strategy_hits": 3
+      },
+      {
+        "title": "Community",
+        "url": "https://corporate.walmart.com/purpose/community",
+        "page_signal_score": 9.7,
+        "display_evidence_score": 13.0,
+        "purpose_hits": 0,
+        "impact_hits": 2,
+        "strategy_hits": 0
+      }
+    ],
+    "years_found": [
+      1934,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ],
+    "industries_found": [
+      "consumer",
+      "education",
+      "energy",
+      "finance",
+      "government",
+      "healthcare",
+      "manufacturing",
+      "retail",
+      "small business"
+    ],
+    "purpose_examples": [
+      "Purpose We aim to build a better world — helping people live better and renew the planet while building thriving, resilient communities.",
+      "Walmart Foundation Walmart.org, through the combined philanthropic efforts of both Walmart and the Walmart Foundation, creates opportunities for people to live better every day.",
+      "Today, Walmart.org, through the combined philanthropic efforts of both Walmart and the Walmart Foundation, creates opportunities for people to live better every day.",
+      "Learn More Our Work Uplifting all communities is at the heart of our philanthropy.",
+      "Creating Opportunity Learn More Advancing Sustainability Learn More Strengthening Community Learn More Center for Racial Equity Learn More Our Impact Learn more about our grantees and the lives we're changing together Show More $2B In FY2025, Walmart.org donated $2.0 billion through cash and in-kind donations globally."
+    ]
+  },
+  "scoring_templates": {
+    "purpose_articulation": {
+      "title": "Purpose Articulation",
+      "overall_score": 2.0,
+      "dimensions": {
+        "purpose_presence": {
+          "question": "Does the company articulate why it exists, who it serves, and the impact it seeks to create?",
+          "score": 0,
+          "score_description": "No identifiable purpose or mission statement.",
+          "evidence_template": {
+            "required_signals": [
+              "explicit purpose statement",
+              "stakeholder mention",
+              "impact or outcome language"
+            ],
+            "preferred_sources": [
+              "web",
+              "linkedin",
+              "sec"
+            ],
+            "suggested_evidence_titles": [
+              "Purpose",
+              "Walmart Foundation",
+              "Walmart Careers"
+            ],
+            "suggested_quote_candidates": [
+              "Purpose We aim to build a better world — helping people live better and renew the planet while building thriving, resilient communities.",
+              "Walmart Foundation Walmart.org, through the combined philanthropic efforts of both Walmart and the Walmart Foundation, creates opportunities for people to live better every day."
+            ]
+          }
+        },
+        "clarity": {
+          "question": "Is the purpose concrete, outcome-oriented, and distinguishable from brand language?",
+          "score": 1,
+          "score_description": "Messaging is primarily promotional or brand-oriented.",
+          "evidence_template": {
+            "required_signals": [
+              "observable outcomes",
+              "beneficiary or stakeholder specificity",
+              "low branding dependence"
+            ],
+            "preferred_sources": [
+              "web",
+              "sec"
+            ],
+            "suggested_evidence_titles": [
+              "Purpose",
+              "Walmart Foundation",
+              "Walmart Careers"
+            ],
+            "suggested_quote_candidates": [
+              "Purpose We aim to build a better world — helping people live better and renew the planet while building thriving, resilient communities.",
+              "Walmart Foundation Walmart.org, through the combined philanthropic efforts of both Walmart and the Walmart Foundation, creates opportunities for people to live better every day."
+            ]
+          }
+        },
+        "historical_consistency": {
+          "question": "Has the company maintained a consistent purpose narrative across the 2021-2025 window?",
+          "score": 3,
+          "score_description": "Core idea persists, though wording or emphasis changes materially.",
+          "evidence_template": {
+            "required_signals": [
+              "multi-year evidence",
+              "repeatable narrative",
+              "cross-year consistency"
+            ],
+            "preferred_sources": [
+              "sec"
+            ],
+            "suggested_evidence_titles": [
+              "Purpose",
+              "Walmart Foundation",
+              "Walmart Careers"
+            ],
+            "suggested_quote_candidates": [
+              "Purpose We aim to build a better world — helping people live better and renew the planet while building thriving, resilient communities.",
+              "Walmart Foundation Walmart.org, through the combined philanthropic efforts of both Walmart and the Walmart Foundation, creates opportunities for people to live better every day."
+            ]
+          }
+        },
+        "leadership_centrality": {
+          "question": "Do leaders repeatedly frame purpose as a guide for decisions or direction?",
+          "score": 3,
+          "score_description": "Leadership occasionally links purpose to direction or priorities.",
+          "evidence_template": {
+            "required_signals": [
+              "leadership co-mentions",
+              "strategy linkage",
+              "repeat mentions"
+            ],
+            "preferred_sources": [
+              "web",
+              "linkedin",
+              "sec"
+            ],
+            "suggested_evidence_titles": [
+              "Purpose",
+              "Walmart Foundation",
+              "Walmart Careers"
+            ],
+            "suggested_quote_candidates": [
+              "Purpose We aim to build a better world — helping people live better and renew the planet while building thriving, resilient communities.",
+              "Walmart Foundation Walmart.org, through the combined philanthropic efforts of both Walmart and the Walmart Foundation, creates opportunities for people to live better every day."
+            ]
+          }
+        },
+        "distinction_from_branding": {
+          "question": "Is purpose embedded in strategy and accountability rather than left as branding?",
+          "score": 3,
+          "score_description": "Purpose appears in both messaging and operational contexts.",
+          "evidence_template": {
+            "required_signals": [
+              "strategy relevance",
+              "measurement or KPI tie-in",
+              "limited brand-only framing"
+            ],
+            "preferred_sources": [
+              "web",
+              "sec"
+            ],
+            "suggested_evidence_titles": [
+              "Purpose",
+              "Walmart Foundation",
+              "Walmart Careers"
+            ],
+            "suggested_quote_candidates": [
+              "Purpose We aim to build a better world — helping people live better and renew the planet while building thriving, resilient communities.",
+              "Walmart Foundation Walmart.org, through the combined philanthropic efforts of both Walmart and the Walmart Foundation, creates opportunities for people to live better every day."
+            ]
+          }
+        }
+      }
+    },
+    "operational_embedding": {
+      "title": "Operational Embedding",
+      "overall_score": 1.8,
+      "dimensions": {
+        "corporate_strategy_integration": {
+          "question": "Is the stated purpose explicitly integrated into strategic priorities?",
+          "score": 2,
+          "score_description": "Purpose is mentioned but not tied to strategic priorities.",
+          "evidence_template": {
+            "required_signals": [
+              "strategic priorities",
+              "purpose linkage",
+              "initiative framing"
+            ],
+            "preferred_sources": [
+              "web",
+              "sec"
+            ],
+            "suggested_evidence_titles": [
+              "Purpose",
+              "Walmart Foundation",
+              "Walmart Careers"
+            ],
+            "suggested_quote_candidates": [
+              "Purpose We aim to build a better world — helping people live better and renew the planet while building thriving, resilient communities.",
+              "Walmart Foundation Walmart.org, through the combined philanthropic efforts of both Walmart and the Walmart Foundation, creates opportunities for people to live better every day."
+            ]
+          }
+        },
+        "capital_and_performance_alignment": {
+          "question": "Do investments and resource allocation support purpose-related initiatives?",
+          "score": 2,
+          "score_description": "Indirect support exists but is weakly articulated.",
+          "evidence_template": {
+            "required_signals": [
+              "investment language",
+              "purpose linkage",
+              "multi-year support"
+            ],
+            "preferred_sources": [
+              "sec",
+              "web"
+            ],
+            "suggested_evidence_titles": [
+              "Purpose",
+              "Walmart Foundation",
+              "Walmart Careers"
+            ],
+            "suggested_quote_candidates": [
+              "Purpose We aim to build a better world — helping people live better and renew the planet while building thriving, resilient communities.",
+              "Walmart Foundation Walmart.org, through the combined philanthropic efforts of both Walmart and the Walmart Foundation, creates opportunities for people to live better every day."
+            ]
+          }
+        },
+        "employee_embedding": {
+          "question": "Is purpose reflected in employee programs, incentives, and internal culture?",
+          "score": 2,
+          "score_description": "Limited programs connect loosely to purpose.",
+          "evidence_template": {
+            "required_signals": [
+              "employee programs",
+              "training or incentives",
+              "purpose linkage"
+            ],
+            "preferred_sources": [
+              "linkedin",
+              "web",
+              "sec"
+            ],
+            "suggested_evidence_titles": [
+              "Purpose",
+              "Walmart Foundation",
+              "Walmart Careers"
+            ],
+            "suggested_quote_candidates": [
+              "Purpose We aim to build a better world — helping people live better and renew the planet while building thriving, resilient communities.",
+              "Walmart Foundation Walmart.org, through the combined philanthropic efforts of both Walmart and the Walmart Foundation, creates opportunities for people to live better every day."
+            ]
+          }
+        },
+        "strategic_decision_justification": {
+          "question": "Are major strategic moves justified using purpose rather than only growth logic?",
+          "score": 0,
+          "score_description": "No purpose connection in strategic decisions.",
+          "evidence_template": {
+            "required_signals": [
+              "major initiative",
+              "decision rationale",
+              "purpose linkage"
+            ],
+            "preferred_sources": [
+              "web",
+              "sec"
+            ],
+            "suggested_evidence_titles": [
+              "Purpose",
+              "Walmart Foundation",
+              "Walmart Careers"
+            ],
+            "suggested_quote_candidates": [
+              "Purpose We aim to build a better world — helping people live better and renew the planet while building thriving, resilient communities.",
+              "Walmart Foundation Walmart.org, through the combined philanthropic efforts of both Walmart and the Walmart Foundation, creates opportunities for people to live better every day."
+            ]
+          }
+        },
+        "execution_outcome_accountability": {
+          "question": "Does the company report measurable progress toward purpose-related outcomes?",
+          "score": 3,
+          "score_description": "Some measurable KPIs are reported.",
+          "evidence_template": {
+            "required_signals": [
+              "metrics",
+              "progress reporting",
+              "purpose or impact target"
+            ],
+            "preferred_sources": [
+              "sec",
+              "web"
+            ],
+            "suggested_evidence_titles": [
+              "Purpose",
+              "Walmart Foundation",
+              "Walmart Careers"
+            ],
+            "suggested_quote_candidates": [
+              "Purpose We aim to build a better world — helping people live better and renew the planet while building thriving, resilient communities.",
+              "Walmart Foundation Walmart.org, through the combined philanthropic efforts of both Walmart and the Walmart Foundation, creates opportunities for people to live better every day."
+            ]
+          }
+        }
+      }
+    },
+    "execution_consistency": {
+      "title": "Execution Consistency",
+      "overall_score": 1.6,
+      "dimensions": {
+        "corporate_strategy_integration": {
+          "question": "Is purpose reflected in company-level strategic priorities and long-term direction?",
+          "score": 1,
+          "score_description": "Purpose appears only in high-level messaging.",
+          "evidence_template": {
+            "required_signals": [
+              "strategy continuity",
+              "long-term priority",
+              "purpose linkage"
+            ],
+            "preferred_sources": [
+              "sec",
+              "web"
+            ],
+            "suggested_evidence_titles": [
+              "Purpose",
+              "Walmart Foundation",
+              "Walmart Careers"
+            ],
+            "suggested_quote_candidates": [
+              "Purpose We aim to build a better world — helping people live better and renew the planet while building thriving, resilient communities.",
+              "Walmart Foundation Walmart.org, through the combined philanthropic efforts of both Walmart and the Walmart Foundation, creates opportunities for people to live better every day."
+            ]
+          }
+        },
+        "capital_and_performance_alignment": {
+          "question": "Do investments and performance drivers reinforce the purpose-related business areas?",
+          "score": 2,
+          "score_description": "Some indirect support exists.",
+          "evidence_template": {
+            "required_signals": [
+              "growth driver",
+              "capability investment",
+              "purpose linkage"
+            ],
+            "preferred_sources": [
+              "sec",
+              "web"
+            ],
+            "suggested_evidence_titles": [
+              "Purpose",
+              "Walmart Foundation",
+              "Walmart Careers"
+            ],
+            "suggested_quote_candidates": [
+              "Purpose We aim to build a better world — helping people live better and renew the planet while building thriving, resilient communities.",
+              "Walmart Foundation Walmart.org, through the combined philanthropic efforts of both Walmart and the Walmart Foundation, creates opportunities for people to live better every day."
+            ]
+          }
+        },
+        "execution_consistency": {
+          "question": "Do products, launches, and multi-year outcomes show sustained execution of the stated purpose?",
+          "score": 0,
+          "score_description": "No visible execution pattern tied to purpose.",
+          "evidence_template": {
+            "required_signals": [
+              "launches or programs",
+              "outcomes",
+              "multi-year continuity"
+            ],
+            "preferred_sources": [
+              "web",
+              "sec"
+            ],
+            "suggested_evidence_titles": [
+              "Purpose",
+              "Walmart Foundation",
+              "Walmart Careers"
+            ],
+            "suggested_quote_candidates": [
+              "Purpose We aim to build a better world — helping people live better and renew the planet while building thriving, resilient communities.",
+              "Walmart Foundation Walmart.org, through the combined philanthropic efforts of both Walmart and the Walmart Foundation, creates opportunities for people to live better every day."
+            ]
+          }
+        },
+        "core_capability_reinforcement": {
+          "question": "Does the company keep strengthening the core capability most central to its purpose?",
+          "score": 1,
+          "score_description": "A core capability is named but weakly supported.",
+          "evidence_template": {
+            "required_signals": [
+              "platform or capability language",
+              "reinforcement over time",
+              "purpose linkage"
+            ],
+            "preferred_sources": [
+              "web",
+              "sec"
+            ],
+            "suggested_evidence_titles": [
+              "Purpose",
+              "Walmart Foundation",
+              "Walmart Careers"
+            ],
+            "suggested_quote_candidates": [
+              "Purpose We aim to build a better world — helping people live better and renew the planet while building thriving, resilient communities.",
+              "Walmart Foundation Walmart.org, through the combined philanthropic efforts of both Walmart and the Walmart Foundation, creates opportunities for people to live better every day."
+            ]
+          }
+        },
+        "industry_impact_breadth": {
+          "question": "Are purpose-related capabilities applied across multiple industries or use cases?",
+          "score": 4,
+          "score_description": "Purpose-related capabilities clearly apply across multiple industries or pathways.",
+          "evidence_template": {
+            "required_signals": [
+              "multiple industries",
+              "credible use cases",
+              "repeat application"
+            ],
+            "preferred_sources": [
+              "web",
+              "sec"
+            ],
+            "suggested_evidence_titles": [
+              "Purpose",
+              "Walmart Foundation",
+              "Walmart Careers"
+            ],
+            "suggested_quote_candidates": [
+              "Purpose We aim to build a better world — helping people live better and renew the planet while building thriving, resilient communities.",
+              "Walmart Foundation Walmart.org, through the combined philanthropic efforts of both Walmart and the Walmart Foundation, creates opportunities for people to live better every day."
+            ]
+          }
+        }
+      }
+    }
+  },
+  "openai_review": {
+    "enabled": false,
+    "status": "disabled"
+  }
+}

@@ -1,0 +1,540 @@
+{
+  "company_name": "Netflix",
+  "input_files": [
+    "C:\\Users\\Kelno\\OneDrive\\Documents\\purpose_driven_score\\purpose_driven_scoring\\data\\data\\selected_10_companies\\Netflix\\pages.csv",
+    "C:\\Users\\Kelno\\OneDrive\\Documents\\purpose_driven_score\\purpose_driven_scoring\\data\\data\\selected_10_companies\\Netflix\\pages.jsonl",
+    "C:\\Users\\Kelno\\OneDrive\\Documents\\purpose_driven_score\\purpose_driven_scoring\\data\\data\\linkedin_selected_10_companies\\Netflix (1)\\pages (1).jsonl",
+    "C:\\Users\\Kelno\\OneDrive\\Documents\\purpose_driven_score\\purpose_driven_scoring\\data\\data\\10Ks\\edgar\\NFLX\\2023_10K_2023-01-26_full_submission.txt",
+    "C:\\Users\\Kelno\\OneDrive\\Documents\\purpose_driven_score\\purpose_driven_scoring\\data\\data\\10Ks\\edgar\\NFLX\\2024_10K_2024-01-26_full_submission.txt",
+    "C:\\Users\\Kelno\\OneDrive\\Documents\\purpose_driven_score\\purpose_driven_scoring\\data\\data\\10Ks\\edgar\\NFLX\\2025_10K_2025-01-27_full_submission.txt",
+    "C:\\Users\\Kelno\\OneDrive\\Documents\\purpose_driven_score\\purpose_driven_scoring\\data\\data\\10Ks\\edgar\\NFLX\\2026_10K_2026-01-23_full_submission.txt"
+  ],
+  "record_count": 16,
+  "scores": {
+    "purpose_articulation": {
+      "overall": 2.4,
+      "dimensions": {
+        "purpose_presence": 0,
+        "clarity": 1,
+        "historical_consistency": 3,
+        "leadership_centrality": 3,
+        "distinction_from_branding": 5
+      }
+    },
+    "operational_embedding": {
+      "overall": 3.2,
+      "dimensions": {
+        "corporate_strategy_integration": 3,
+        "capital_and_performance_alignment": 3,
+        "employee_embedding": 5,
+        "strategic_decision_justification": 0,
+        "execution_outcome_accountability": 5
+      }
+    },
+    "execution_consistency": {
+      "overall": 3.2,
+      "dimensions": {
+        "corporate_strategy_integration": 5,
+        "capital_and_performance_alignment": 3,
+        "execution_consistency": 0,
+        "core_capability_reinforcement": 4,
+        "industry_impact_breadth": 4
+      }
+    },
+    "aggregate": {
+      "overall": 2.88,
+      "label": "emerging or mixed"
+    }
+  },
+  "evidence": {
+    "top_pages": [
+      {
+        "title": "Work Life Philosophy - Careers at Netflix",
+        "url": "https://jobs.netflix.com/work-life-philosophy",
+        "display_role": "people",
+        "display_reason": "stakeholder framing, strategy linkage, people embedding",
+        "page_signal_score": 14.6,
+        "display_evidence_score": 9.0,
+        "purpose_hits": 0,
+        "impact_hits": 19,
+        "strategy_hits": 7
+      },
+      {
+        "title": "Inclusion at Netflix - Careers at Netflix",
+        "url": "https://jobs.netflix.com/inclusion",
+        "display_role": "people",
+        "display_reason": "stakeholder framing, people embedding",
+        "page_signal_score": 11.6,
+        "display_evidence_score": 5.0,
+        "purpose_hits": 0,
+        "impact_hits": 8,
+        "strategy_hits": 0
+      },
+      {
+        "title": "Netflix Culture Memo - Careers at Netflix",
+        "url": "https://jobs.netflix.com/culture",
+        "display_role": "people",
+        "display_reason": "stakeholder framing, people embedding",
+        "page_signal_score": 8.8,
+        "display_evidence_score": 5.0,
+        "purpose_hits": 0,
+        "impact_hits": 3,
+        "strategy_hits": 0
+      },
+      {
+        "title": "Netflix Office Locations - Careers at Netflix",
+        "url": "https://jobs.netflix.com/locations",
+        "display_role": "people",
+        "display_reason": "stakeholder framing, people embedding",
+        "page_signal_score": 4.1,
+        "display_evidence_score": 2.0,
+        "purpose_hits": 0,
+        "impact_hits": 2,
+        "strategy_hits": 0
+      }
+    ],
+    "scoring_top_pages": [
+      {
+        "title": "About Netflix - Made In America",
+        "url": "https://about.netflix.com/en/impact/made-in-america",
+        "page_signal_score": 15.3,
+        "display_evidence_score": 16.5,
+        "purpose_hits": 0,
+        "impact_hits": 3,
+        "strategy_hits": 4
+      },
+      {
+        "title": "2023_10K_2023-01-26_full_submission",
+        "url": "",
+        "page_signal_score": 2.8,
+        "display_evidence_score": -1.8,
+        "purpose_hits": 0,
+        "impact_hits": 1,
+        "strategy_hits": 0
+      }
+    ],
+    "years_found": [
+      1934,
+      2016,
+      2020,
+      2022,
+      2023,
+      2024,
+      2025,
+      2030
+    ],
+    "industries_found": [
+      "education",
+      "energy",
+      "finance"
+    ],
+    "purpose_examples": [
+      "For Netflix, a big part of our focus on excellence is hiring people who are great at what they do and creating an environment where talent can thrive.",
+      "Our parental leave policy is: \"take care of your child and yourself.\" We encourage employees to think about the time they’ll need as a parent and have a conversation with their manager and talent partners to determine what's best for them and Netflix.",
+      "We don’t have a prescribed 9-to-5 workday, so we don’t have prescribed time off policies for salaried employees, either.",
+      "Family Forming & Reproductive Health Netflix offers a global family forming benefit to support employees looking for preservation, fertility, surrogacy, and/or adoption options.",
+      "These benefits are available to employees and their spouse/domestic partner, regardless of marital status, gender, or sexual orientation."
+    ]
+  },
+  "scoring_templates": {
+    "purpose_articulation": {
+      "title": "Purpose Articulation",
+      "overall_score": 2.4,
+      "dimensions": {
+        "purpose_presence": {
+          "question": "Does the company articulate why it exists, who it serves, and the impact it seeks to create?",
+          "score": 0,
+          "score_description": "No identifiable purpose or mission statement.",
+          "evidence_template": {
+            "required_signals": [
+              "explicit purpose statement",
+              "stakeholder mention",
+              "impact or outcome language"
+            ],
+            "preferred_sources": [
+              "web",
+              "linkedin",
+              "sec"
+            ],
+            "suggested_evidence_titles": [
+              "Work Life Philosophy - Careers at Netflix",
+              "Inclusion at Netflix - Careers at Netflix",
+              "Netflix Culture Memo - Careers at Netflix"
+            ],
+            "suggested_quote_candidates": [
+              "For Netflix, a big part of our focus on excellence is hiring people who are great at what they do and creating an environment where talent can thrive.",
+              "Our parental leave policy is: \"take care of your child and yourself.\" We encourage employees to think about the time they’ll need as a parent and have a conversation with their manager and talent partners to determine what's best for them and Netflix."
+            ]
+          }
+        },
+        "clarity": {
+          "question": "Is the purpose concrete, outcome-oriented, and distinguishable from brand language?",
+          "score": 1,
+          "score_description": "Messaging is primarily promotional or brand-oriented.",
+          "evidence_template": {
+            "required_signals": [
+              "observable outcomes",
+              "beneficiary or stakeholder specificity",
+              "low branding dependence"
+            ],
+            "preferred_sources": [
+              "web",
+              "sec"
+            ],
+            "suggested_evidence_titles": [
+              "Work Life Philosophy - Careers at Netflix",
+              "Inclusion at Netflix - Careers at Netflix",
+              "Netflix Culture Memo - Careers at Netflix"
+            ],
+            "suggested_quote_candidates": [
+              "For Netflix, a big part of our focus on excellence is hiring people who are great at what they do and creating an environment where talent can thrive.",
+              "Our parental leave policy is: \"take care of your child and yourself.\" We encourage employees to think about the time they’ll need as a parent and have a conversation with their manager and talent partners to determine what's best for them and Netflix."
+            ]
+          }
+        },
+        "historical_consistency": {
+          "question": "Has the company maintained a consistent purpose narrative across the 2021-2025 window?",
+          "score": 3,
+          "score_description": "Core idea persists, though wording or emphasis changes materially.",
+          "evidence_template": {
+            "required_signals": [
+              "multi-year evidence",
+              "repeatable narrative",
+              "cross-year consistency"
+            ],
+            "preferred_sources": [
+              "sec"
+            ],
+            "suggested_evidence_titles": [
+              "Work Life Philosophy - Careers at Netflix",
+              "Inclusion at Netflix - Careers at Netflix",
+              "Netflix Culture Memo - Careers at Netflix"
+            ],
+            "suggested_quote_candidates": [
+              "For Netflix, a big part of our focus on excellence is hiring people who are great at what they do and creating an environment where talent can thrive.",
+              "Our parental leave policy is: \"take care of your child and yourself.\" We encourage employees to think about the time they’ll need as a parent and have a conversation with their manager and talent partners to determine what's best for them and Netflix."
+            ]
+          }
+        },
+        "leadership_centrality": {
+          "question": "Do leaders repeatedly frame purpose as a guide for decisions or direction?",
+          "score": 3,
+          "score_description": "Leadership occasionally links purpose to direction or priorities.",
+          "evidence_template": {
+            "required_signals": [
+              "leadership co-mentions",
+              "strategy linkage",
+              "repeat mentions"
+            ],
+            "preferred_sources": [
+              "web",
+              "linkedin",
+              "sec"
+            ],
+            "suggested_evidence_titles": [
+              "Work Life Philosophy - Careers at Netflix",
+              "Inclusion at Netflix - Careers at Netflix",
+              "Netflix Culture Memo - Careers at Netflix"
+            ],
+            "suggested_quote_candidates": [
+              "For Netflix, a big part of our focus on excellence is hiring people who are great at what they do and creating an environment where talent can thrive.",
+              "Our parental leave policy is: \"take care of your child and yourself.\" We encourage employees to think about the time they’ll need as a parent and have a conversation with their manager and talent partners to determine what's best for them and Netflix."
+            ]
+          }
+        },
+        "distinction_from_branding": {
+          "question": "Is purpose embedded in strategy and accountability rather than left as branding?",
+          "score": 5,
+          "score_description": "Purpose clearly informs strategy, resource allocation, and measurable commitments.",
+          "evidence_template": {
+            "required_signals": [
+              "strategy relevance",
+              "measurement or KPI tie-in",
+              "limited brand-only framing"
+            ],
+            "preferred_sources": [
+              "web",
+              "sec"
+            ],
+            "suggested_evidence_titles": [
+              "Work Life Philosophy - Careers at Netflix",
+              "Inclusion at Netflix - Careers at Netflix",
+              "Netflix Culture Memo - Careers at Netflix"
+            ],
+            "suggested_quote_candidates": [
+              "For Netflix, a big part of our focus on excellence is hiring people who are great at what they do and creating an environment where talent can thrive.",
+              "Our parental leave policy is: \"take care of your child and yourself.\" We encourage employees to think about the time they’ll need as a parent and have a conversation with their manager and talent partners to determine what's best for them and Netflix."
+            ]
+          }
+        }
+      }
+    },
+    "operational_embedding": {
+      "title": "Operational Embedding",
+      "overall_score": 3.2,
+      "dimensions": {
+        "corporate_strategy_integration": {
+          "question": "Is the stated purpose explicitly integrated into strategic priorities?",
+          "score": 3,
+          "score_description": "Purpose appears in strategy narratives but inconsistently.",
+          "evidence_template": {
+            "required_signals": [
+              "strategic priorities",
+              "purpose linkage",
+              "initiative framing"
+            ],
+            "preferred_sources": [
+              "web",
+              "sec"
+            ],
+            "suggested_evidence_titles": [
+              "Work Life Philosophy - Careers at Netflix",
+              "Inclusion at Netflix - Careers at Netflix",
+              "Netflix Culture Memo - Careers at Netflix"
+            ],
+            "suggested_quote_candidates": [
+              "For Netflix, a big part of our focus on excellence is hiring people who are great at what they do and creating an environment where talent can thrive.",
+              "Our parental leave policy is: \"take care of your child and yourself.\" We encourage employees to think about the time they’ll need as a parent and have a conversation with their manager and talent partners to determine what's best for them and Netflix."
+            ]
+          }
+        },
+        "capital_and_performance_alignment": {
+          "question": "Do investments and resource allocation support purpose-related initiatives?",
+          "score": 3,
+          "score_description": "Several investments align with purpose-related initiatives.",
+          "evidence_template": {
+            "required_signals": [
+              "investment language",
+              "purpose linkage",
+              "multi-year support"
+            ],
+            "preferred_sources": [
+              "sec",
+              "web"
+            ],
+            "suggested_evidence_titles": [
+              "Work Life Philosophy - Careers at Netflix",
+              "Inclusion at Netflix - Careers at Netflix",
+              "Netflix Culture Memo - Careers at Netflix"
+            ],
+            "suggested_quote_candidates": [
+              "For Netflix, a big part of our focus on excellence is hiring people who are great at what they do and creating an environment where talent can thrive.",
+              "Our parental leave policy is: \"take care of your child and yourself.\" We encourage employees to think about the time they’ll need as a parent and have a conversation with their manager and talent partners to determine what's best for them and Netflix."
+            ]
+          }
+        },
+        "employee_embedding": {
+          "question": "Is purpose reflected in employee programs, incentives, and internal culture?",
+          "score": 5,
+          "score_description": "Purpose is deeply embedded in employee culture and decision-making.",
+          "evidence_template": {
+            "required_signals": [
+              "employee programs",
+              "training or incentives",
+              "purpose linkage"
+            ],
+            "preferred_sources": [
+              "linkedin",
+              "web",
+              "sec"
+            ],
+            "suggested_evidence_titles": [
+              "Work Life Philosophy - Careers at Netflix",
+              "Inclusion at Netflix - Careers at Netflix",
+              "Netflix Culture Memo - Careers at Netflix"
+            ],
+            "suggested_quote_candidates": [
+              "For Netflix, a big part of our focus on excellence is hiring people who are great at what they do and creating an environment where talent can thrive.",
+              "Our parental leave policy is: \"take care of your child and yourself.\" We encourage employees to think about the time they’ll need as a parent and have a conversation with their manager and talent partners to determine what's best for them and Netflix."
+            ]
+          }
+        },
+        "strategic_decision_justification": {
+          "question": "Are major strategic moves justified using purpose rather than only growth logic?",
+          "score": 0,
+          "score_description": "No purpose connection in strategic decisions.",
+          "evidence_template": {
+            "required_signals": [
+              "major initiative",
+              "decision rationale",
+              "purpose linkage"
+            ],
+            "preferred_sources": [
+              "web",
+              "sec"
+            ],
+            "suggested_evidence_titles": [
+              "Work Life Philosophy - Careers at Netflix",
+              "Inclusion at Netflix - Careers at Netflix",
+              "Netflix Culture Memo - Careers at Netflix"
+            ],
+            "suggested_quote_candidates": [
+              "For Netflix, a big part of our focus on excellence is hiring people who are great at what they do and creating an environment where talent can thrive.",
+              "Our parental leave policy is: \"take care of your child and yourself.\" We encourage employees to think about the time they’ll need as a parent and have a conversation with their manager and talent partners to determine what's best for them and Netflix."
+            ]
+          }
+        },
+        "execution_outcome_accountability": {
+          "question": "Does the company report measurable progress toward purpose-related outcomes?",
+          "score": 5,
+          "score_description": "A comprehensive KPI framework tracks purpose outcomes over time.",
+          "evidence_template": {
+            "required_signals": [
+              "metrics",
+              "progress reporting",
+              "purpose or impact target"
+            ],
+            "preferred_sources": [
+              "sec",
+              "web"
+            ],
+            "suggested_evidence_titles": [
+              "Work Life Philosophy - Careers at Netflix",
+              "Inclusion at Netflix - Careers at Netflix",
+              "Netflix Culture Memo - Careers at Netflix"
+            ],
+            "suggested_quote_candidates": [
+              "For Netflix, a big part of our focus on excellence is hiring people who are great at what they do and creating an environment where talent can thrive.",
+              "Our parental leave policy is: \"take care of your child and yourself.\" We encourage employees to think about the time they’ll need as a parent and have a conversation with their manager and talent partners to determine what's best for them and Netflix."
+            ]
+          }
+        }
+      }
+    },
+    "execution_consistency": {
+      "title": "Execution Consistency",
+      "overall_score": 3.2,
+      "dimensions": {
+        "corporate_strategy_integration": {
+          "question": "Is purpose reflected in company-level strategic priorities and long-term direction?",
+          "score": 5,
+          "score_description": "Purpose clearly guides long-term corporate direction.",
+          "evidence_template": {
+            "required_signals": [
+              "strategy continuity",
+              "long-term priority",
+              "purpose linkage"
+            ],
+            "preferred_sources": [
+              "sec",
+              "web"
+            ],
+            "suggested_evidence_titles": [
+              "Work Life Philosophy - Careers at Netflix",
+              "Inclusion at Netflix - Careers at Netflix",
+              "Netflix Culture Memo - Careers at Netflix"
+            ],
+            "suggested_quote_candidates": [
+              "For Netflix, a big part of our focus on excellence is hiring people who are great at what they do and creating an environment where talent can thrive.",
+              "Our parental leave policy is: \"take care of your child and yourself.\" We encourage employees to think about the time they’ll need as a parent and have a conversation with their manager and talent partners to determine what's best for them and Netflix."
+            ]
+          }
+        },
+        "capital_and_performance_alignment": {
+          "question": "Do investments and performance drivers reinforce the purpose-related business areas?",
+          "score": 3,
+          "score_description": "Several major investments align with purpose-related capabilities.",
+          "evidence_template": {
+            "required_signals": [
+              "growth driver",
+              "capability investment",
+              "purpose linkage"
+            ],
+            "preferred_sources": [
+              "sec",
+              "web"
+            ],
+            "suggested_evidence_titles": [
+              "Work Life Philosophy - Careers at Netflix",
+              "Inclusion at Netflix - Careers at Netflix",
+              "Netflix Culture Memo - Careers at Netflix"
+            ],
+            "suggested_quote_candidates": [
+              "For Netflix, a big part of our focus on excellence is hiring people who are great at what they do and creating an environment where talent can thrive.",
+              "Our parental leave policy is: \"take care of your child and yourself.\" We encourage employees to think about the time they’ll need as a parent and have a conversation with their manager and talent partners to determine what's best for them and Netflix."
+            ]
+          }
+        },
+        "execution_consistency": {
+          "question": "Do products, launches, and multi-year outcomes show sustained execution of the stated purpose?",
+          "score": 0,
+          "score_description": "No visible execution pattern tied to purpose.",
+          "evidence_template": {
+            "required_signals": [
+              "launches or programs",
+              "outcomes",
+              "multi-year continuity"
+            ],
+            "preferred_sources": [
+              "web",
+              "sec"
+            ],
+            "suggested_evidence_titles": [
+              "Work Life Philosophy - Careers at Netflix",
+              "Inclusion at Netflix - Careers at Netflix",
+              "Netflix Culture Memo - Careers at Netflix"
+            ],
+            "suggested_quote_candidates": [
+              "For Netflix, a big part of our focus on excellence is hiring people who are great at what they do and creating an environment where talent can thrive.",
+              "Our parental leave policy is: \"take care of your child and yourself.\" We encourage employees to think about the time they’ll need as a parent and have a conversation with their manager and talent partners to determine what's best for them and Netflix."
+            ]
+          }
+        },
+        "core_capability_reinforcement": {
+          "question": "Does the company keep strengthening the core capability most central to its purpose?",
+          "score": 4,
+          "score_description": "The company consistently strengthens a purpose-linked core capability.",
+          "evidence_template": {
+            "required_signals": [
+              "platform or capability language",
+              "reinforcement over time",
+              "purpose linkage"
+            ],
+            "preferred_sources": [
+              "web",
+              "sec"
+            ],
+            "suggested_evidence_titles": [
+              "Work Life Philosophy - Careers at Netflix",
+              "Inclusion at Netflix - Careers at Netflix",
+              "Netflix Culture Memo - Careers at Netflix"
+            ],
+            "suggested_quote_candidates": [
+              "For Netflix, a big part of our focus on excellence is hiring people who are great at what they do and creating an environment where talent can thrive.",
+              "Our parental leave policy is: \"take care of your child and yourself.\" We encourage employees to think about the time they’ll need as a parent and have a conversation with their manager and talent partners to determine what's best for them and Netflix."
+            ]
+          }
+        },
+        "industry_impact_breadth": {
+          "question": "Are purpose-related capabilities applied across multiple industries or use cases?",
+          "score": 4,
+          "score_description": "Purpose-related capabilities clearly apply across multiple industries or pathways.",
+          "evidence_template": {
+            "required_signals": [
+              "multiple industries",
+              "credible use cases",
+              "repeat application"
+            ],
+            "preferred_sources": [
+              "web",
+              "sec"
+            ],
+            "suggested_evidence_titles": [
+              "Work Life Philosophy - Careers at Netflix",
+              "Inclusion at Netflix - Careers at Netflix",
+              "Netflix Culture Memo - Careers at Netflix"
+            ],
+            "suggested_quote_candidates": [
+              "For Netflix, a big part of our focus on excellence is hiring people who are great at what they do and creating an environment where talent can thrive.",
+              "Our parental leave policy is: \"take care of your child and yourself.\" We encourage employees to think about the time they’ll need as a parent and have a conversation with their manager and talent partners to determine what's best for them and Netflix."
+            ]
+          }
+        }
+      }
+    }
+  },
+  "openai_review": {
+    "enabled": false,
+    "status": "disabled"
+  }
+}
