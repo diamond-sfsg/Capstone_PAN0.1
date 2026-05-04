@@ -1,0 +1,100 @@
+EVIDENCE BUCKET V1 DIAGNOSTICS
+================================================================================
+input_file : E:\OneDrive - UC Irvine\spring\PAN_purpose0.1\data\phase2\evidence_score_v1.csv
+output_dir : E:\OneDrive - UC Irvine\spring\PAN_purpose0.1\data\phase2\evidence_buckets_v1
+rows       : 21,663
+
+THRESHOLDS
+================================================================================
+purpose_articulation
+  score_col : pa_sum_score
+  threshold : 0.9
+  selected  : 5,374
+  rate      : 0.2481
+
+history_consistency
+  score_col : hc_sum_score
+  threshold : 0.95
+  selected  : 4,928
+  rate      : 0.2275
+
+strategy_alignment
+  score_col : sa_sum_score
+  threshold : 0.85
+  selected  : 4,952
+  rate      : 0.2286
+
+OVERLAP COUNT DISTRIBUTION
+================================================================================
+0 bucket(s): 12,459 (0.5751)
+1 bucket(s): 4,295 (0.1983)
+2 bucket(s): 3,768 (0.1739)
+3 bucket(s): 1,141 (0.0527)
+
+OVERLAP TYPE DISTRIBUTION
+================================================================================
+NONE: 12,459 (0.5751)
+PA: 2,041 (0.0942)
+SA: 1,881 (0.0868)
+PA_HC: 1,838 (0.0848)
+HC_SA: 1,576 (0.0728)
+PA_HC_SA: 1,141 (0.0527)
+HC: 373 (0.0172)
+PA_SA: 354 (0.0163)
+
+PAIRWISE EXACT CHUNK OVERLAP
+================================================================================
+purpose_articulation vs history_consistency
+  purpose_articulation count        : 5,374
+  history_consistency count        : 4,928
+  intersection          : 2,979
+  union                 : 7,323
+  jaccard               : 0.4068
+  containment in purpose_articulation: 0.5543
+  containment in history_consistency: 0.6045
+
+purpose_articulation vs strategy_alignment
+  purpose_articulation count        : 5,374
+  strategy_alignment count        : 4,952
+  intersection          : 1,495
+  union                 : 8,831
+  jaccard               : 0.1693
+  containment in purpose_articulation: 0.2782
+  containment in strategy_alignment: 0.3019
+
+history_consistency vs strategy_alignment
+  history_consistency count        : 4,928
+  strategy_alignment count        : 4,952
+  intersection          : 2,717
+  union                 : 7,163
+  jaccard               : 0.3793
+  containment in history_consistency: 0.5513
+  containment in strategy_alignment: 0.5487
+
+PAIRWISE DUPLICATE-GROUP OVERLAP
+================================================================================
+purpose_articulation vs history_consistency
+  duplicate groups in purpose_articulation: 314
+  duplicate groups in history_consistency: 321
+  group intersection         : 245
+  group union                : 390
+  group jaccard              : 0.6282
+
+purpose_articulation vs strategy_alignment
+  duplicate groups in purpose_articulation: 314
+  duplicate groups in strategy_alignment: 219
+  group intersection         : 136
+  group union                : 397
+  group jaccard              : 0.3426
+
+history_consistency vs strategy_alignment
+  duplicate groups in history_consistency: 321
+  duplicate groups in strategy_alignment: 219
+  group intersection         : 170
+  group union                : 370
+  group jaccard              : 0.4595
+
+REVIEW SUMMARY
+================================================================================
+needs review: 5,395
+review rate : 0.2490

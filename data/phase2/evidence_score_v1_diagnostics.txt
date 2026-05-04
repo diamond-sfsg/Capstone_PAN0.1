@@ -1,0 +1,69 @@
+EVIDENCE SCORE V1 DIAGNOSTICS
+================================================================================
+rows: 21663
+columns: 43
+
+SCORE COLUMN SUMMARY
+================================================================================
+                          count      mean       std       min       25%       50%       75%       max
+pa_lexical_score        21663.0  0.103403  0.191954 -0.729325  0.000000  0.000000  0.163327  2.986128
+pa_tfidf_score          21663.0  0.075069  0.056033  0.000000  0.026836  0.071353  0.116595  0.467040
+pa_embedding_score      21663.0  0.087835  0.046285  0.000000  0.060029  0.095313  0.123268  0.244230
+pa_metadata_score       21663.0  0.500000  0.000000  0.500000  0.500000  0.500000  0.500000  0.500000
+pa_prompt_score         21663.0  0.006601  0.092115  0.000000  0.000000  0.000000  0.000000  2.000000
+pa_sum_score            21663.0  0.772908  0.272457 -0.029473  0.597114  0.695432  0.897423  3.776216
+hc_lexical_score        21663.0  0.089839  0.187210 -0.729325  0.000000  0.000000  0.142966  2.612373
+hc_tfidf_score          21663.0  0.087600  0.063965  0.000000  0.032420  0.085221  0.135084  0.383638
+hc_embedding_score      21663.0  0.118997  0.061519  0.000000  0.081462  0.128793  0.166156  0.326059
+hc_metadata_score       21663.0  0.500000  0.000000  0.500000  0.500000  0.500000  0.500000  0.500000
+hc_prompt_score         21663.0  0.060449  0.352464  0.000000  0.000000  0.000000  0.000000  5.500000
+hc_history_bonus_score  21663.0  0.004720  0.018850  0.000000  0.000000  0.000000  0.000000  0.080000
+hc_sum_score            21663.0  0.861604  0.488891  0.028606  0.632400  0.763587  0.925824  7.546777
+sa_lexical_score        21663.0  0.110254  0.298951 -0.729325  0.000000  0.000000  0.000000  5.224746
+sa_tfidf_score          21663.0  0.050561  0.043707  0.000000  0.012113  0.043807  0.078736  0.302830
+sa_embedding_score      21663.0  0.109044  0.057323  0.000000  0.075937  0.118118  0.152135  0.351030
+sa_metadata_score       21663.0  0.500000  0.000000  0.500000  0.500000  0.500000  0.500000  0.500000
+sa_prompt_score         21663.0  0.065550  0.336840  0.000000  0.000000  0.000000  0.000000  5.000000
+sa_sum_score            21663.0  0.835408  0.549646 -0.027593  0.594850  0.678340  0.807459  7.640054
+
+TOP 10 BY pa_sum_score
+================================================================================
+                                                        chunk_id           company   year       source section  pa_sum_score
+official_web|johnson_&_johnson||johnson_&_johnson_9|0001|dup0000 Johnson_&_Johnson    NaN official_web     NaN      3.776216
+                             edgar|meta|2025|meta_2025_risk|0001              META 2025.0        edgar item 1a      3.678245
+                             edgar|meta|2026|meta_2026_risk|0001              META 2026.0        edgar item 1a      3.678080
+                            edgar|meta|2026|meta_2026_other|0256              META 2026.0        edgar item 16      3.456697
+                     official_web|amazon||amazon_57|0001|dup0004            Amazon    NaN official_web     NaN      3.453646
+                        official_web|cisco||cisco_6|0001|dup0000             Cisco    NaN official_web     NaN      3.379189
+                            edgar|meta|2025|meta_2025_other|0256              META 2025.0        edgar item 16      3.241316
+                            edgar|orcl|2021|orcl_2021_other|0305              ORCL 2021.0        edgar item 15      3.068393
+                    edgar|orcl|2019|orcl_2019_other|0017|dup0000              ORCL 2019.0        edgar item 15      2.994939
+                    edgar|orcl|2019|orcl_2019_other|0067|dup0001              ORCL 2019.0        edgar item 16      2.994323
+
+TOP 10 BY hc_sum_score
+================================================================================
+                                                   chunk_id        company   year       source section  hc_sum_score
+                official_web|amazon||amazon_76|0001|dup0025         Amazon    NaN official_web     NaN      7.546777
+                          edgar|wmt|2023|wmt_2023_risk|0004            WMT 2023.0        edgar item 1a      6.179144
+                          edgar|wmt|2023|wmt_2023_risk|0022            WMT 2023.0        edgar item 1a      5.963961
+                          edgar|wmt|2024|wmt_2024_risk|0022            WMT 2024.0        edgar item 1a      5.889325
+                    edgar|csco|2022|csco_2022_business|0004           CSCO 2022.0        edgar  item 1      5.776146
+                official_web|amazon||amazon_34|0001|dup0004         Amazon    NaN official_web     NaN      5.759405
+                official_web|amazon||amazon_52|0001|dup0001         Amazon    NaN official_web     NaN      5.690200
+                    edgar|orcl|2024|orcl_2024_business|0021           ORCL 2024.0        edgar  item 1      5.521695
+official_web|meta_platforms||meta_platforms_29|0001|dup0000 Meta_Platforms    NaN official_web     NaN      5.475695
+                    edgar|orcl|2024|orcl_2024_business|0001           ORCL 2024.0        edgar  item 1      5.453538
+
+TOP 10 BY sa_sum_score
+================================================================================
+                            chunk_id company   year source   section  sa_sum_score
+ edgar|csco|2020|csco_2020_risk|0470    CSCO 2020.0  edgar   item 1a      7.640054
+ edgar|orcl|2017|orcl_2017_mdna|0004    ORCL 2017.0  edgar    item 7      7.218781
+  edgar|cvx|2026|cvx_2026_other|0859     CVX 2026.0  edgar item 1202      7.177835
+  edgar|cvx|2026|cvx_2026_other|0858     CVX 2026.0  edgar item 1202      6.833383
+ edgar|csco|2021|csco_2021_risk|0438    CSCO 2021.0  edgar   item 1a      6.502637
+edgar|amzn|2024|amzn_2024_other|0473    AMZN 2024.0  edgar   item 16      5.857666
+  edgar|cvx|2026|cvx_2026_other|0823     CVX 2026.0  edgar item 1202      5.799323
+ edgar|csco|2020|csco_2020_risk|0438    CSCO 2020.0  edgar   item 1a      5.794151
+ edgar|csco|2023|csco_2023_risk|0163    CSCO 2023.0  edgar   item 1a      5.734007
+edgar|amzn|2023|amzn_2023_other|0557    AMZN 2023.0  edgar   item 16      5.561753

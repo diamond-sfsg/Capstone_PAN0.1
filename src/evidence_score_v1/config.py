@@ -1,102 +1,378 @@
 from __future__ import annotations
 
+from dataclasses import dataclass, field
 from pathlib import Path
+from typing import Sequence
 
-# ------------------------------------------------------------------------------
-# Project paths
-# ------------------------------------------------------------------------------
 
-PROJECT_ROOT = Path(__file__).resolve().parents[2]
-PACKAGE_ROOT = PROJECT_ROOT / "src" / "evidence_score1.0"
-DATA_ROOT = PROJECT_ROOT / "data"
-CLEAN_DATA_ROOT = DATA_ROOT / "clean_2.0"
-PHASE2_OUTPUT_ROOT = DATA_ROOT / "phase2"
+CONFIG_FILE = Path(__file__).resolve()
+PROJECT_ROOT = CONFIG_FILE.parents[2]   # evidence_score_v1 -> src -> project root
 
-INPUT_CSV = CLEAN_DATA_ROOT / "unified_chunks_v3.csv"
+DATA_DIR = PROJECT_ROOT / "data"
+CLEAN_DIR = DATA_DIR / "clean_2.0"
+PHASE2_DIR = DATA_DIR / "phase2"
 
-# Create output dir if needed
-PHASE2_OUTPUT_ROOT.mkdir(parents=True, exist_ok=True)
-
-# ------------------------------------------------------------------------------
-# General runtime config
-# ------------------------------------------------------------------------------
-
+DUPLICATE_GROUP_COL = "duplicate_group"
+SIMILARITY_SCOPE_COL = "similarity_scope"
+YEAR_COL = "year"
+COMPANY_COL = "company"
+CHUNK_ID_COL = "chunk_id"
 TEXT_COL = "text_clean"
-RAW_TEXT_COL = "text_raw"
 
-MIN_TOKEN_COUNT = 20
+DEFAULT_INPUT_CSV = CLEAN_DIR / "unified_chunks_v3.csv"
+EVIDENCE_MATRIX_OUTPUT_PATH = PHASE2_DIR / "evidence_score_v1.csv"
+DEFAULT_DIAGNOSTICS_TXT = PHASE2_DIR / "evidence_score_v1_diagnostics.txt"
 
-# Drop rules for retrieval stage
-DROP_QUALITY_FLAGS = {"garbled_text"}
-DROP_TOO_LONG = True
-TOO_LONG_FLAG = "too_long"
+HISTORY_BONUS_PER_EXTRA_YEAR = 0.08
+HISTORY_BONUS_MAX = 0.40
+CROSS_YEAR_SCOPE_VALUE = "cross_year_recurring"
 
-# Optional safeguard threshold if token_count exists
-MAX_TOKEN_COUNT = 340
+DIMENSION_PREFIX = {
+    "purpose_articulation": "pa",
+    "history_consistency": "hc",
+    "strategy_alignment": "sa",
+}
 
-# Keep duplicates for now; only preserve the flag for later analysis
-KEEP_DUPLICATES = True
 
-# ------------------------------------------------------------------------------
-# Required columns from unified_chunks_v3.csv
-# ------------------------------------------------------------------------------
+@dataclass(frozen=True)
+class TfidfConfig:
+    lowercase: bool = True
+    stop_words: str = "english"
+    ngram_range: tuple[int, int] = (1, 2)
+    min_df: int = 2
+    max_df: float = 0.9
+    sublinear_tf: bool = True
+    max_features: int | None = 30000
 
-REQUIRED_COLUMNS = [
-    "chunk_id",
-    "doc_id",
-    "company",
-    "year",
-    "source",
-    "source_file",
-    "section",
-    "subsection",
-    "text_raw",
-    "text_clean",
-    "token_count",
-    "char_count",
-    "is_short_text",
-    "is_duplicate_like",
-    "duplicate_group",
-    "quality_flag",
-    "normalize_version",
-]
 
-# ------------------------------------------------------------------------------
-# Output schema for purpose_articulation evidence retrieval
-# ------------------------------------------------------------------------------
+@dataclass(frozen=True)
+class PromptPatternGroup:
+    name: str
+    patterns: Sequence[str]
+    weight: float = 1.0
 
-PURPOSE_OUTPUT_COLUMNS = [
-    "chunk_id",
-    "doc_id",
-    "company",
-    "year",
-    "source",
-    "source_file",
-    "section",
-    "subsection",
-    "token_count",
-    "quality_flag",
-    "is_duplicate_like",
-    "retrieval_status",
-    "text_clean",
-    "lexical_score",
-    "tfidf_score",
-    "embedding_score",
-    "metadata_score",
-    "lexical_rank",
-    "tfidf_rank",
-    "embedding_rank",
-    "metadata_rank",
-]
 
-# ------------------------------------------------------------------------------
-# Embedding config
-# ------------------------------------------------------------------------------
+@dataclass(frozen=True)
+class DimensionConfig:
+    name: str
+    query_text: str
+    core_phrases: Sequence[str]
+    support_phrases: Sequence[str]
+    negative_phrases: Sequence[str]
+    preferred_sections: Sequence[str]
+    preferred_sources: Sequence[str]
+    prompt_pattern_groups: Sequence[PromptPatternGroup] = field(default_factory=tuple)
 
-# Keep this here so later you can swap providers without touching other modules.
-EMBEDDING_PROVIDER = "openai"
-EMBEDDING_MODEL = "text-embedding-3-small"
 
-# Whether current run should actually call embeddings.
-# For scaffold stage, this can remain False.
-ENABLE_EMBEDDING = False
+PURPOSE_ARTICULATION = DimensionConfig(
+    name="purpose_articulation",
+    query_text=(
+        "clear articulation of organizational purpose mission reason for existence "
+        "beyond profit stakeholder value long term value values identity"
+    ),
+    core_phrases=(
+        "purpose",
+        "our purpose",
+        "mission",
+        "our mission",
+        "why we exist",
+        "reason for existence",
+        "reason for being",
+        "beyond profit",
+        "clear purpose",
+    ),
+    support_phrases=(
+        "values",
+        "belief",
+        "vision",
+        "identity",
+        "stakeholders",
+        "communities",
+        "customers",
+        "employees",
+        "society",
+        "long-term value",
+    ),
+    negative_phrases=(
+        "risk factors",
+        "forward-looking statements",
+        "legal proceedings",
+        "table of contents",
+        "glossary",
+    ),
+    preferred_sections=(
+        "mission",
+        "purpose",
+        "about",
+        "values",
+        "ceo letter",
+        "shareholder letter",
+        "sustainability",
+        "our company",
+    ),
+    preferred_sources=(
+        "official_web",
+        "edgar",
+        "linkedin",
+    ),
+    prompt_pattern_groups=(
+        PromptPatternGroup(
+            name="explicit_purpose",
+            patterns=(
+                r"\bwe exist to\b",
+                r"\bour purpose is to\b",
+                r"\bour mission is to\b",
+                r"\bwhy we exist\b",
+                r"\breason for existence\b",
+            ),
+            weight=2.0,
+        ),
+        PromptPatternGroup(
+            name="beyond_profit",
+            patterns=(
+                r"\bbeyond profit\b",
+                r"\bmore than profit\b",
+                r"\bnot only profit\b",
+                r"\bcreate value for society\b",
+            ),
+            weight=1.5,
+        ),
+        PromptPatternGroup(
+            name="stakeholder_focus",
+            patterns=(
+                r"\bfor our customers\b",
+                r"\bfor communities\b",
+                r"\bfor employees\b",
+                r"\bfor society\b",
+                r"\bfor patients\b",
+            ),
+            weight=1.25,
+        ),
+    ),
+)
+
+
+HISTORY_CONSISTENCY = DimensionConfig(
+    name="history_consistency",
+    query_text=(
+        "consistent articulation of purpose and strategy across years continuity over time "
+        "enduring mission repeated long term commitment recurring stakeholder oriented "
+        "purpose statements and sustained strategic direction"
+    ),
+    core_phrases=(
+        "remain committed",
+        "long-term commitment",
+        "over time",
+        "continue to",
+        "continuity",
+        "consistent",
+        "enduring",
+        "for decades",
+        "for generations",
+        "year after year",
+    ),
+    support_phrases=(
+        "purpose",
+        "our purpose",
+        "mission",
+        "our mission",
+        "why we exist",
+        "values",
+        "identity",
+        "strategy",
+        "strategic priority",
+        "capital allocation",
+        "investment",
+        "resource allocation",
+        "business initiative",
+        "long-term strategy",
+    ),
+    negative_phrases=(
+        "risk factors",
+        "forward-looking statements",
+        "legal proceedings",
+        "quarterly results",
+        "temporary initiative",
+        "table of contents",
+    ),
+    preferred_sections=(
+        "ceo letter",
+        "shareholder letter",
+        "annual report",
+        "about",
+        "purpose",
+        "values",
+        "strategy",
+        "sustainability",
+        "our company",
+    ),
+    preferred_sources=(
+        "official_web",
+        "edgar",
+        "linkedin",
+    ),
+    prompt_pattern_groups=(
+        PromptPatternGroup(
+            name="continuity_signal",
+            patterns=(
+                r"\bremain committed to\b",
+                r"\bcontinue to\b",
+                r"\bover time\b",
+                r"\byear after year\b",
+                r"\bfor decades\b",
+                r"\bfor generations\b",
+                r"\blong[- ]term commitment\b",
+            ),
+            weight=2.0,
+        ),
+        PromptPatternGroup(
+            name="purpose_continuity",
+            patterns=(
+                r"\bour purpose remains\b",
+                r"\bconsistent with our mission\b",
+                r"\bwe continue to pursue our mission\b",
+                r"\bwe remain committed to our purpose\b",
+            ),
+            weight=1.75,
+        ),
+        PromptPatternGroup(
+            name="strategy_continuity",
+            patterns=(
+                r"\blong[- ]term strategy\b",
+                r"\bcontinue to invest in\b",
+                r"\bsustained investment in\b",
+                r"\bconsistent strategic priority\b",
+            ),
+            weight=1.5,
+        ),
+    ),
+)
+
+
+STRATEGY_ALIGNMENT = DimensionConfig(
+    name="strategy_alignment",
+    query_text=(
+        "alignment between organizational purpose and strategy capital allocation "
+        "investment priorities resource deployment operating priorities business "
+        "initiatives execution plans and strategic decisions"
+    ),
+    core_phrases=(
+        "strategy",
+        "strategic priority",
+        "capital allocation",
+        "investment",
+        "resource allocation",
+        "operating model",
+        "business initiative",
+        "execution plan",
+        "long-term strategy",
+        "growth strategy",
+    ),
+    support_phrases=(
+        "priorities",
+        "roadmap",
+        "transformation",
+        "innovation",
+        "initiative",
+        "program",
+        "capabilities",
+        "resource deployment",
+        "portfolio",
+        "expansion",
+        "decision-making",
+    ),
+    negative_phrases=(
+        "risk factors",
+        "forward-looking statements",
+        "legal proceedings",
+        "table of contents",
+        "glossary",
+    ),
+    preferred_sections=(
+        "strategy",
+        "business strategy",
+        "capital allocation",
+        "management discussion",
+        "operating model",
+        "innovation",
+        "growth",
+        "ceo letter",
+        "shareholder letter",
+    ),
+    preferred_sources=(
+        "edgar",
+        "official_web",
+        "linkedin",
+    ),
+    prompt_pattern_groups=(
+        PromptPatternGroup(
+            name="purpose_to_strategy_link",
+            patterns=(
+                r"\bour strategy is to\b",
+                r"\bto deliver on our purpose\b",
+                r"\bto advance our mission\b",
+                r"\baligned with our purpose\b",
+                r"\bin support of our mission\b",
+            ),
+            weight=2.0,
+        ),
+        PromptPatternGroup(
+            name="resource_allocation_signal",
+            patterns=(
+                r"\bcapital allocation\b",
+                r"\binvest in\b",
+                r"\binvestment in\b",
+                r"\bresource allocation\b",
+                r"\bdeploy capital\b",
+                r"\ballocate resources\b",
+            ),
+            weight=1.75,
+        ),
+        PromptPatternGroup(
+            name="execution_priority_signal",
+            patterns=(
+                r"\bstrategic priority\b",
+                r"\boperating priority\b",
+                r"\bkey initiative\b",
+                r"\blong[- ]term strategy\b",
+                r"\bgrowth strategy\b",
+                r"\bexecution plan\b",
+            ),
+            weight=1.5,
+        ),
+    ),
+)
+
+
+DEFAULT_TFIDF_CONFIG = TfidfConfig()
+
+SUPPORTED_DIMENSIONS: tuple[str, ...] = (
+    PURPOSE_ARTICULATION.name,
+    HISTORY_CONSISTENCY.name,
+    STRATEGY_ALIGNMENT.name,
+)
+
+DIMENSION_SCORE_COLUMNS = {
+    "purpose_articulation": [
+        "pa_lexical_score",
+        "pa_tfidf_score",
+        "pa_embedding_score",
+        "pa_metadata_score",
+        "pa_prompt_score",
+    ],
+    "history_consistency": [
+        "hc_lexical_score",
+        "hc_tfidf_score",
+        "hc_embedding_score",
+        "hc_metadata_score",
+        "hc_prompt_score",
+        "hc_history_bonus_score",
+    ],
+    "strategy_alignment": [
+        "sa_lexical_score",
+        "sa_tfidf_score",
+        "sa_embedding_score",
+        "sa_metadata_score",
+        "sa_prompt_score",
+    ],
+}

@@ -21,9 +21,10 @@ env/
 *.pem
 
 # =========================
-# 3. Raw Data（重点！！！）
+# 3. Raw Data & API KEY（重点！！！）
 # =========================
 data/raw/
+configs/config.py
 
 # 但保留结构（可选）
 !data/raw/.gitkeep
@@ -79,8 +80,6 @@ Thumbs.db
 # 9. Exceptions（重要）
 # =========================
 # 保留最终干净数据（可选）
-!data/clean/unified_corpus.csv
-!data/clean/unified_corpus.db
 
-# 保留配置
-!configs/
+
+# 保留配置(可选)
