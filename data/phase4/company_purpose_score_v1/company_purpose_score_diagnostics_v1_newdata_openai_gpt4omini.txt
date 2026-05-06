@@ -1,0 +1,22 @@
+COMPANY PURPOSE SCORE V1 DIAGNOSTICS
+================================================================================
+run_version: v1_newdata_openai_gpt4omini
+rows scored: 47
+evidence rows used: 791
+
+SCORE SUMMARY
+================================================================================
+pa_final_score: mean=1.0213, median=1.0000, min=0.0000, max=2.0000
+hc_final_score: mean=1.8511, median=2.0000, min=0.0000, max=3.0000
+sa_final_score: mean=1.6170, median=2.0000, min=0.0000, max=4.0000
+company_purpose_score_0_100: mean=22.2336, median=25.0000, min=10.0000, max=40.0000
+confidence: mean=0.8149, median=0.8000, min=0.8000, max=0.9000
+
+PURPOSE LABEL DISTRIBUTION
+================================================================================
+False: 47
+
+HUMAN REVIEW
+================================================================================
+needs_human_review: 39
+review_rate: 0.8298

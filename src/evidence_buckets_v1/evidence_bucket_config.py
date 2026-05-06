@@ -4,7 +4,7 @@ from pathlib import Path
 # project_root/src/evidence_buckets_v1/evidence_bucket_config.py
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
-INPUT_FILE = PROJECT_ROOT / "data" / "phase2" / "evidence_score_v1.csv"
+INPUT_FILE = PROJECT_ROOT / "data" / "phase2" / "evidence_score_v1_newdata.csv"
 
 OUTPUT_DIR = (
     PROJECT_ROOT
@@ -18,22 +18,22 @@ BUCKET_CONFIG = {
         "short": "pa",
         "score_col": "pa_sum_score",
         "threshold": 0.90,
-        "output_csv": "purpose_articulation_evidence_v1.csv",
-        "output_db": "purpose_articulation_evidence_v1.db",
+        "output_csv": "purpose_articulation_evidence_v1_newdata.csv",
+        "output_db": "purpose_articulation_evidence_v1_newdata.db",
     },
     "history_consistency": {
         "short": "hc",
         "score_col": "hc_sum_score",
         "threshold": 0.95,
-        "output_csv": "history_consistency_evidence_v1.csv",
-        "output_db": "history_consistency_evidence_v1.db",
+        "output_csv": "history_consistency_evidence_v1_newdata.csv",
+        "output_db": "history_consistency_evidence_v1_newdata.db",
     },
     "strategy_alignment": {
         "short": "sa",
         "score_col": "sa_sum_score",
         "threshold": 0.85,
-        "output_csv": "strategy_alignment_evidence_v1.csv",
-        "output_db": "strategy_alignment_evidence_v1.db",
+        "output_csv": "strategy_alignment_evidence_v1_newdata.csv",
+        "output_db": "strategy_alignment_evidence_v1_newdata.db",
     },
 }
 

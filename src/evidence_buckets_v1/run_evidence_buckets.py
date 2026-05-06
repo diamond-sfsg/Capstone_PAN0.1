@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 import sqlite3
 import sys
 from itertools import combinations
@@ -254,8 +256,8 @@ def duplicate_group_overlap_report(df: pd.DataFrame) -> list[str]:
 
 
 def export_membership_and_review(df: pd.DataFrame) -> None:
-    membership_path = OUTPUT_DIR / "evidence_bucket_membership_v1.csv"
-    review_path = OUTPUT_DIR / "evidence_overlap_review_v1.csv"
+    membership_path = OUTPUT_DIR / "evidence_bucket_membership_v1_newdata.csv"
+    review_path = OUTPUT_DIR / "evidence_overlap_review_v1_newdata.csv"
 
     membership_cols = safe_cols(
         df,
@@ -356,7 +358,7 @@ def write_diagnostics(df: pd.DataFrame) -> None:
     lines.append(f"review rate : {review_rate:.4f}")
     lines.append("")
 
-    diagnostics_path = OUTPUT_DIR / "evidence_overlap_diagnostics_v1.txt"
+    diagnostics_path = OUTPUT_DIR / "evidence_overlap_diagnostics_v1_newdata.txt"
     diagnostics_path.write_text("\n".join(lines), encoding="utf-8")
 
     print(f"[EXPORT] diagnostics: {diagnostics_path}")
@@ -367,7 +369,7 @@ def main() -> None:
         raise FileNotFoundError(
             f"Input file not found: {INPUT_FILE}\n"
             "Expected output from Phase 2 scoring: "
-            "data/phase2/evidence_score_v1.csv"
+            "data/phase2/evidence_score_v1_newdata.csv"
         )
 
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)

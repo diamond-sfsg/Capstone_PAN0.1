@@ -25,6 +25,7 @@ env/
 # =========================
 data/raw/
 configs/config.py
+data/edgar_by_type/
 
 # 但保留结构（可选）
 !data/raw/.gitkeep

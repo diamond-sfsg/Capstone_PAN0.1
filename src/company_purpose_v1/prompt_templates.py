@@ -1,7 +1,9 @@
+from __future__ import annotations
+
 import json
 from typing import Any
 
-from company_purpose_score_v1.rubric_config import PURPOSE_RUBRIC
+from company_purpose_v1.rubric_config import PURPOSE_RUBRIC
 
 
 SYSTEM_PROMPT = """
@@ -28,7 +30,7 @@ def _format_evidence_pack(evidence_pack: dict[str, list[dict[str, Any]]]) -> str
 
     for dimension, rows in evidence_pack.items():
         rubric = PURPOSE_RUBRIC[dimension]
-        sections.append(f"\n## {dimension} — {rubric['label']}")
+        sections.append(f"\n## {dimension} - {rubric['label']}")
 
         if not rows:
             sections.append("No retrieved evidence.")

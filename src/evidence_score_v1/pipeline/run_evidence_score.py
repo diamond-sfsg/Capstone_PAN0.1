@@ -1,18 +1,31 @@
 from __future__ import annotations
 
+import sys
 from pathlib import Path
 
 import pandas as pd
 
-from ..collect_scores import compute_dimension_score_frame, merge_dimension_frames
-from ..config import DEFAULT_DIAGNOSTICS_TXT, DEFAULT_INPUT_CSV, PHASE2_DIR
-from ..data_loader import load_chunk_corpus
-from ..dimension_registry import get_dimension_config, get_dimension_prefix
-from ..text_normalize import add_retrieval_text_columns
+CURRENT_FILE = Path(__file__).resolve()
+PROJECT_ROOT = CURRENT_FILE.parents[3]
+SRC_DIR = PROJECT_ROOT / "src"
+
+if str(SRC_DIR) not in sys.path:
+    sys.path.insert(0, str(SRC_DIR))
+
+from evidence_score_v1.collect_scores import compute_dimension_score_frame, merge_dimension_frames
+from evidence_score_v1.config import (
+    DEFAULT_DIAGNOSTICS_TXT,
+    DEFAULT_INPUT_CSV,
+    EVIDENCE_MATRIX_OUTPUT_PATH,
+    PHASE2_DIR,
+)
+from evidence_score_v1.data_loader import load_chunk_corpus
+from evidence_score_v1.dimension_registry import get_dimension_config, get_dimension_prefix
+from evidence_score_v1.text_normalize import add_retrieval_text_columns
 
 
-OUTPUT_CSV = PHASE2_DIR / "evidence_score_v1.csv"
-OUTPUT_DIAGNOSTICS = PHASE2_DIR / "evidence_score_v1_diagnostics.txt"
+OUTPUT_CSV = EVIDENCE_MATRIX_OUTPUT_PATH
+OUTPUT_DIAGNOSTICS = DEFAULT_DIAGNOSTICS_TXT
 
 
 def _write_diagnostics(df: pd.DataFrame, output_path: Path) -> None:

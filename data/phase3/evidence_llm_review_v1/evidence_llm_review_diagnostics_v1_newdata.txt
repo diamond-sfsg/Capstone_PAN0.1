@@ -1,0 +1,48 @@
+EVIDENCE LLM REVIEW V1 DIAGNOSTICS
+================================================================================
+provider    : openai
+run_version : evidence_llm_review_v1_newdata
+rows        : 1,777
+review rows : 1,744
+review rate : 0.9814
+
+ROWS BY BUCKET
+================================================================================
+strategy_alignment: 687
+purpose_articulation: 575
+history_consistency: 515
+
+LLM STATUS
+================================================================================
+ok: 1,777
+
+COMMON SCORE SUMMARY
+================================================================================
+llm_bucket_relevance_score: mean=1.1964, median=1.0000, min=0.0000, max=5.0000
+llm_evidence_specificity_score: mean=1.3067, median=1.0000, min=0.0000, max=4.0000
+llm_source_context_score: mean=2.2651, median=2.0000, min=0.0000, max=4.0000
+llm_boilerplate_risk_score: mean=4.3506, median=4.0000, min=1.0000, max=5.0000
+llm_credibility_score: mean=1.6331, median=1.0000, min=0.0000, max=4.0000
+llm_confidence: mean=0.8293, median=0.9000, min=0.7000, max=1.0000
+
+PA-ONLY SCORE SUMMARY
+================================================================================
+llm_purpose_clarity_score: mean=0.6365, median=0.0000, min=0.0000, max=5.0000
+llm_beyond_profit_score: mean=0.7357, median=0.0000, min=0.0000, max=4.0000
+llm_commitment_tone_score: mean=1.0104, median=1.0000, min=0.0000, max=4.0000
+llm_authenticity_score: mean=0.9704, median=1.0000, min=0.0000, max=4.0000
+llm_pa_tone_context_score: mean=0.8330, median=0.0000, min=0.0000, max=4.0000
+
+HUMAN REVIEW REASON CODES
+================================================================================
+llm_marked_review;low_relevance;low_credibility;high_boilerplate: 1,532
+llm_marked_review: 120
+llm_marked_review;high_boilerplate: 53
+ok: 33
+llm_marked_review;low_relevance;high_boilerplate: 28
+llm_marked_review;low_relevance: 9
+llm_marked_review;low_relevance;low_credibility: 2
+
+ERROR SAMPLE
+================================================================================
+No LLM errors.

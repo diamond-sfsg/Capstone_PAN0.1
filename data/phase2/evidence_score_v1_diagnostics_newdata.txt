@@ -1,0 +1,69 @@
+EVIDENCE SCORE V1 DIAGNOSTICS
+================================================================================
+rows: 2187
+columns: 43
+
+SCORE COLUMN SUMMARY
+================================================================================
+                         count      mean       std       min       25%       50%       75%       max
+pa_lexical_score        2187.0  0.197834  0.263346 -0.729325  0.000000  0.142966  0.334107  2.986128
+pa_tfidf_score          2187.0  0.007768  0.012761  0.000000  0.000000  0.000000  0.012677  0.109317
+pa_embedding_score      2187.0  0.058299  0.028139  0.002842  0.038813  0.053853  0.072172  0.195967
+pa_metadata_score       2187.0  0.500000  0.000000  0.500000  0.500000  0.500000  0.500000  0.500000
+pa_prompt_score         2187.0  0.030636  0.195088  0.000000  0.000000  0.000000  0.000000  2.000000
+pa_sum_score            2187.0  0.794537  0.351239 -0.195578  0.551581  0.707552  0.909003  3.655350
+hc_lexical_score        2187.0  0.171167  0.236875 -0.729325  0.000000  0.142966  0.285931  1.925640
+hc_tfidf_score          2187.0  0.010571  0.013755  0.000000  0.000000  0.006483  0.014924  0.138910
+hc_embedding_score      2187.0  0.083880  0.030399  0.005420  0.061023  0.083626  0.105041  0.252098
+hc_metadata_score       2187.0  0.500000  0.000000  0.500000  0.500000  0.500000  0.500000  0.500000
+hc_prompt_score         2187.0  0.282350  0.747640  0.000000  0.000000  0.000000  0.000000  5.500000
+hc_history_bonus_score  2187.0  0.002707  0.014468  0.000000  0.000000  0.000000  0.000000  0.080000
+hc_sum_score            2187.0  1.050675  0.907712 -0.165346  0.574953  0.720699  0.927663  7.327467
+sa_lexical_score        2187.0  0.188887  0.310471 -0.729325  0.000000  0.000000  0.285931  2.508398
+sa_tfidf_score          2187.0  0.008712  0.012392  0.000000  0.000000  0.004396  0.012531  0.159331
+sa_embedding_score      2187.0  0.091071  0.038080  0.009948  0.063388  0.087677  0.114219  0.252402
+sa_metadata_score       2187.0  0.500000  0.000000  0.500000  0.500000  0.500000  0.500000  0.500000
+sa_prompt_score         2187.0  0.109168  0.455034  0.000000  0.000000  0.000000  0.000000  5.000000
+sa_sum_score            2187.0  0.897838  0.659205 -0.180027  0.579607  0.642395  0.927620  6.923949
+
+TOP 10 BY pa_sum_score
+================================================================================
+                                                            chunk_id             company   year       source section  pa_sum_score
+    official_web|johnson_&_johnson||johnson_&_johnson_9|0001|dup0000   Johnson_&_Johnson    NaN official_web     NaN      3.655350
+                                 edgar|meta|2025|meta_2025_mdna|0009                META 2025.0        edgar  item 7      3.374239
+                            official_web|cisco||cisco_6|0001|dup0000               Cisco    NaN official_web     NaN      3.356027
+                         official_web|amazon||amazon_57|0001|dup0004              Amazon    NaN official_web     NaN      3.251492
+official_web|chevron_corporation||chevron_corporation_4|0001|dup0000 Chevron_Corporation    NaN official_web     NaN      2.927873
+                          official_web|amazon||amazon_2|0001|dup0000              Amazon    NaN official_web     NaN      2.784503
+                         official_web|amazon||amazon_10|0001|dup0002              Amazon    NaN official_web     NaN      2.628866
+                                 edgar|amzn|2021|amzn_2021_mdna|0009                AMZN 2021.0        edgar  item 7      2.615778
+                                 edgar|amzn|2020|amzn_2020_mdna|0009                AMZN 2020.0        edgar  item 7      2.610766
+                                 edgar|amzn|2025|amzn_2025_mdna|0010                AMZN 2025.0        edgar  item 7      2.597789
+
+TOP 10 BY hc_sum_score
+================================================================================
+                                                   chunk_id        company   year       source section  hc_sum_score
+                official_web|amazon||amazon_76|0001|dup0025         Amazon    NaN official_web     NaN      7.327467
+                          edgar|wmt|2026|wmt_2026_mdna|0020            WMT 2026.0        edgar  item 7      5.793551
+                          edgar|wmt|2025|wmt_2025_mdna|0021            WMT 2025.0        edgar  item 7      5.668305
+                          edgar|wmt|2023|wmt_2023_mdna|0006            WMT 2023.0        edgar  item 7      5.613883
+                official_web|amazon||amazon_34|0001|dup0004         Amazon    NaN official_web     NaN      5.587485
+                official_web|amazon||amazon_52|0001|dup0001         Amazon    NaN official_web     NaN      5.494128
+                        edgar|orcl|2021|orcl_2021_mdna|0023           ORCL 2021.0        edgar  item 7      5.463449
+                        edgar|orcl|2022|orcl_2022_mdna|0011           ORCL 2022.0        edgar  item 7      5.448500
+official_web|meta_platforms||meta_platforms_29|0001|dup0000 Meta_Platforms    NaN official_web     NaN      5.301470
+                    edgar|orcl|2025|orcl_2025_business|0018           ORCL 2025.0        edgar  item 1      5.296949
+
+TOP 10 BY sa_sum_score
+================================================================================
+                                                             chunk_id             company   year       source section  sa_sum_score
+                                  edgar|orcl|2017|orcl_2017_mdna|0003                ORCL 2017.0        edgar  item 7      6.923949
+                                    edgar|wmt|2023|wmt_2023_mdna|0005                 WMT 2023.0        edgar  item 7      5.246012
+                                  edgar|csco|2025|csco_2025_mdna|0010                CSCO 2025.0        edgar  item 7      5.129065
+                              edgar|csco|2022|csco_2022_business|0016                CSCO 2022.0        edgar  item 1      5.063312
+official_web|chevron_corporation||chevron_corporation_87|0001|dup0000 Chevron_Corporation    NaN official_web     NaN      5.008236
+                                  edgar|meta|2025|meta_2025_mdna|0002                META 2025.0        edgar  item 7      4.954189
+                                    edgar|wmt|2026|wmt_2026_mdna|0049                 WMT 2026.0        edgar  item 7      4.893072
+                                    edgar|wmt|2023|wmt_2023_mdna|0003                 WMT 2023.0        edgar  item 7      4.825692
+                              edgar|csco|2023|csco_2023_business|0014                CSCO 2023.0        edgar  item 1      4.800192
+official_web|chevron_corporation||chevron_corporation_60|0001|dup0006 Chevron_Corporation    NaN official_web     NaN      4.792015

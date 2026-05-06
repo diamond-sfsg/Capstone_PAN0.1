@@ -1,21 +1,22 @@
-import os
-import re
 import json
+import re
 from pathlib import Path
+from typing import Dict, List, Optional, Tuple
+
 from bs4 import BeautifulSoup
-from typing import List, Dict
+
 
 # =========================
 # Config
 # =========================
 
-RAW_DIR = Path("data/raw/edgar")
+RAW_DIR = Path("data/edgar_by_type")
 OUTPUT_PATH = Path("data/clean/edgar_clean.jsonl")
 
 TARGET_SECTIONS = [
     "item 1",
     "item 1a",
-    "item 7"
+    "item 7",
 ]
 
 SECTION_MAP = {
@@ -23,149 +24,253 @@ SECTION_MAP = {
     "item 1a": "risk",
     "item 7": "mdna",
 }
+
+SECTION_HEADERS = {
+    "item 1": [
+        "business",
+    ],
+    "item 1a": [
+        "risk factors",
+        "the business, financial condition and operating results",
+    ],
+    "item 7": [
+        "management's discussion and analysis of financial condition and results of operations",
+        "managements discussion and analysis of financial condition and results of operations",
+        "management discussion and analysis of financial condition and results of operations",
+    ],
+}
+
+
 # =========================
 # Cleaning Utils
 # =========================
 
 def clean_html(text: str) -> str:
-    """Remove HTML tags and normalize whitespace"""
+    """Remove HTML tags and normalize whitespace while preserving line breaks."""
     soup = BeautifulSoup(text, "html.parser")
-    clean_text = soup.get_text(separator=" ")
-    clean_text = re.sub(r"\s+", " ", clean_text)
-    return clean_text.strip()
+
+    for tag in soup(["script", "style", "noscript", "svg"]):
+        tag.decompose()
+
+    extracted = soup.get_text(separator="\n")
+    return clean_text(extracted)
+
+
+def clean_text(text: str) -> str:
+    if not text:
+        return ""
+    text = text.replace("\x00", " ")
+    text = text.replace("\u2019", "'").replace("\u2018", "'")
+    text = text.replace("\u201c", '"').replace("\u201d", '"')
+    text = re.sub(r"[ \t\r\f\v]+", " ", text)
+    text = re.sub(r"\n\s*\n\s*\n+", "\n\n", text)
+    return text.strip()
 
 
 def remove_boilerplate(text: str) -> str:
-    """Remove common SEC boilerplate"""
     patterns = [
         r"forward-looking statements.*?risks and uncertainties",
         r"safe harbor.*?forward-looking statements",
     ]
 
-    text_lower = text.lower()
-
+    cleaned = text
     for pattern in patterns:
-        text_lower = re.sub(pattern, "", text_lower, flags=re.DOTALL)
+        cleaned = re.sub(pattern, "", cleaned, flags=re.IGNORECASE | re.DOTALL)
 
-    return text_lower
+    return clean_text(cleaned)
 
 
-def extract_sections(text: str) -> Dict[str, str]:
-    """
-    Extract key 10-K sections (Item 1, 1A, 7)
-    """
-
-    sections = {}
-
-    # Normalize
+def normalize_heading(text: str) -> str:
     text = text.lower()
+    text = text.replace("\u2019", "'").replace("\u2018", "'")
+    text = re.sub(r"[^a-z0-9\s']", " ", text)
+    text = re.sub(r"\s+", " ", text)
+    return text.strip()
 
-    # Regex split by Item
-    matches = list(re.finditer(r"(item\s+\d+[a]?)", text))
+
+def extract_sections_by_item(text: str) -> Dict[str, str]:
+    sections = {}
+    normalized = normalize_heading(text)
+    matches = list(re.finditer(r"\bitem\s+(\d+[a-z]?)\b", normalized))
 
     for i, match in enumerate(matches):
+        item_name = f"item {match.group(1)}"
+        if item_name not in TARGET_SECTIONS:
+            continue
+
         start = match.start()
-        item_name = match.group().strip()
+        end = len(normalized)
+        for next_match in matches[i + 1:]:
+            next_item = f"item {next_match.group(1)}"
+            if next_item != item_name:
+                end = next_match.start()
+                break
 
-        end = matches[i + 1].start() if i + 1 < len(matches) else len(text)
-        section_text = text[start:end]
-
-        if any(target in item_name for target in TARGET_SECTIONS):
+        section_text = normalized[start:end].strip()
+        if len(section_text) > 300:
             sections[item_name] = section_text
 
     return sections
 
 
-def split_into_paragraphs(text: str) -> List[str]:
-    """
-    Split text into semantic paragraphs
-    """
-    paragraphs = re.split(r"\n\s*\n", text)
-    paragraphs = [p.strip() for p in paragraphs if len(p.strip()) > 50]
-    return paragraphs
+def find_first_line(lines: List[str], needles: List[str], start: int = 0) -> Optional[int]:
+    for idx in range(start, len(lines)):
+        normalized = normalize_heading(lines[idx])
+        if any(needle in normalized for needle in needles):
+            return idx
+    return None
+
+
+def extract_sections_by_headers(text: str) -> Dict[str, str]:
+    lines = [line.strip() for line in text.splitlines() if line.strip()]
+    if not lines:
+        return {}
+
+    starts: List[Tuple[str, int]] = []
+    for item_name in TARGET_SECTIONS:
+        idx = find_first_line(lines, SECTION_HEADERS[item_name])
+        if idx is not None:
+            starts.append((item_name, idx))
+
+    starts = sorted(set(starts), key=lambda x: x[1])
+    if not starts:
+        return {}
+
+    sections = {}
+    for i, (item_name, start) in enumerate(starts):
+        end = starts[i + 1][1] if i + 1 < len(starts) else len(lines)
+        section_text = "\n".join(lines[start:end]).strip()
+        if len(section_text) > 300:
+            sections[item_name] = clean_text(section_text)
+
+    return sections
+
+
+def extract_sections(text: str) -> Dict[str, str]:
+    sections = extract_sections_by_item(text)
+    if sections:
+        return sections
+
+    sections = extract_sections_by_headers(text)
+    if sections:
+        return sections
+
+    return {"10k_full_text": text}
+
+
+def read_metadata(metadata_path: Path) -> Dict:
+    if not metadata_path.exists():
+        return {}
+    try:
+        return json.loads(metadata_path.read_text(encoding="utf-8"))
+    except Exception as exc:
+        print(f"[WARN] Failed to read metadata {metadata_path}: {exc}")
+        return {}
+
+
+def find_metadata_path(file_path: Path) -> Path:
+    relative = file_path.relative_to(RAW_DIR / file_path.parts[-3])
+    ticker = relative.parts[0]
+    stem = file_path.stem.replace("_full_submission", "")
+    return RAW_DIR / "metadata_json" / ticker / f"{stem}.json"
+
+
+def read_filing_text(file_path: Path) -> str:
+    raw = file_path.read_text(encoding="utf-8", errors="ignore")
+    if file_path.suffix.lower() in {".htm", ".html"}:
+        raw = clean_html(raw)
+    return remove_boilerplate(raw)
+
+
+def extract_year(file_path: Path, metadata: Dict) -> int:
+    for key in ["filing_year", "report_year", "year"]:
+        value = metadata.get(key)
+        if value:
+            return int(str(value)[:4])
+
+    match = re.search(r"(20\d{2})", file_path.name)
+    if not match:
+        raise ValueError(f"Cannot infer year from {file_path}")
+    return int(match.group(1))
+
+
+def process_file(file_path: Path, ticker: str) -> List[Dict]:
+    metadata = read_metadata(find_metadata_path(file_path))
+    text = read_filing_text(file_path)
+    sections = extract_sections(text)
+    year = extract_year(file_path, metadata)
+
+    records = []
+    company_name = metadata.get("company_name")
+    filing_date = metadata.get("filing_date")
+    accession_number = metadata.get("accession_number")
+
+    for section_name, section_text in sections.items():
+        normalized_section = SECTION_MAP.get(section_name.lower(), "10k_full_text")
+        doc_id = f"{ticker}_{year}_{normalized_section}"
+
+        records.append({
+            "doc_id": doc_id,
+            "chunk_id": doc_id,
+            "company": ticker,
+            "ticker": ticker,
+            "year": year,
+            "source": "edgar",
+            "source_type": "10k_section",
+            "doc_type": normalized_section,
+            "section": section_name,
+            "page_title": f"{ticker} {year} 10-K {normalized_section}",
+            "url": None,
+            "text": section_text,
+            "metadata": {
+                "file_name": file_path.name,
+                "file_path": str(file_path),
+                "company_name": company_name,
+                "filing_date": filing_date,
+                "accession_number": accession_number,
+                "form": metadata.get("form"),
+            },
+        })
+
+    return records
+
+
+def iter_filing_files() -> List[Path]:
+    txt_dir = RAW_DIR / "txt"
+    html_dir = RAW_DIR / "html"
+
+    if txt_dir.exists():
+        return sorted(txt_dir.glob("*/*_full_submission.txt"))
+
+    if html_dir.exists():
+        return sorted(list(html_dir.glob("*/*.htm")) + list(html_dir.glob("*/*.html")))
+
+    return []
 
 
 # =========================
 # Main Pipeline
 # =========================
 
-def process_file(file_path: Path, ticker: str) -> List[Dict]:
-    """
-    Process one EDGAR file into cleaned chunks
-    """
-
-    with open(file_path, "r", encoding="utf-8", errors="ignore") as f:
-        raw_text = f.read()
-
-    # Step 1: clean HTML
-    text = clean_html(raw_text)
-
-    # Step 2: remove boilerplate
-    text = remove_boilerplate(text)
-
-    # Step 3: extract sections
-    sections = extract_sections(text)
-
-    records = []
-
-    year_match = re.search(r"(20\d{2})", file_path.name)
-    year = year_match.group(1) if year_match else "unknown"
-
-    for section_name, section_text in sections.items():
-
-        paragraphs = split_into_paragraphs(section_text)
-
-        for i, para in enumerate(paragraphs):
-
-            normalized_section = SECTION_MAP.get(section_name.lower(), "other")
-
-            record = {
-                "doc_id": f"{ticker}_{year}_{normalized_section}",
-                "chunk_id": f"{ticker}_{year}_{normalized_section}_{i}",
-                "company": ticker,
-                "ticker": ticker,
-                "year": int(year),
-                "source": "edgar",
-                "source_type": "10k_section",
-                "doc_type": normalized_section,
-                "section": section_name,
-                "page_title": None,
-                "url": None,
-                "text": para,
-                "metadata": {
-                "file_name": file_path.name
-                }
-            }
-
-            records.append(record)
-
-    return records
-
-
 def run_pipeline():
     all_records = []
+    filing_files = iter_filing_files()
 
-    for ticker_dir in RAW_DIR.iterdir():
-        if not ticker_dir.is_dir():
-            continue
+    if not filing_files:
+        raise FileNotFoundError(f"No EDGAR files found under {RAW_DIR}")
 
-        ticker = ticker_dir.name
+    for file_path in filing_files:
+        ticker = file_path.parent.name
+        print(f"[INFO] Processing EDGAR filing: {ticker} / {file_path.name}")
+        all_records.extend(process_file(file_path, ticker))
 
-        for file in ticker_dir.glob("*full_submission.txt"):
-
-            print(f"Processing {file}...")
-
-            records = process_file(file, ticker)
-            all_records.extend(records)
-
-    # Save JSONL
     OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
 
     with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
         for record in all_records:
-            f.write(json.dumps(record) + "\n")
+            f.write(json.dumps(record, ensure_ascii=False) + "\n")
 
-    print(f"\nSaved {len(all_records)} records to {OUTPUT_PATH}")
+    print(f"[DONE] Saved {len(all_records)} EDGAR records to {OUTPUT_PATH}")
 
 
 if __name__ == "__main__":

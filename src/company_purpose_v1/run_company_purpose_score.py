@@ -1,15 +1,25 @@
+from __future__ import annotations
+
 import argparse
 import json
 import os
+import re
 import sys
 import time
+import urllib.error
+import urllib.request
 from datetime import datetime
 from pathlib import Path
 from typing import Any
 
 import pandas as pd
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.metrics.pairwise import cosine_similarity
+
+try:
+    from sklearn.feature_extraction.text import TfidfVectorizer
+    from sklearn.metrics.pairwise import cosine_similarity
+except ImportError:
+    TfidfVectorizer = None
+    cosine_similarity = None
 
 
 CURRENT_FILE = Path(__file__).resolve()
@@ -19,15 +29,21 @@ SRC_DIR = PROJECT_ROOT / "src"
 if str(SRC_DIR) not in sys.path:
     sys.path.insert(0, str(SRC_DIR))
 
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
+
 
 from company_purpose_v1.purpose_score_config import (
     PHASE3_INPUT_FILE,
     PHASE4_OUTPUT_DIR,
-    OUTPUT_FILES,
-    RUN_VERSION,
-    LLM_PROVIDER,
-    LLM_MODEL_ENV_VAR,
-    LLM_API_KEY_ENV_VAR,
+    OUTPUT_FILE_TEMPLATES,
+    DEFAULT_PROVIDER,
+    DEFAULT_OPENAI_MODEL,
+    DEFAULT_ANTHROPIC_MODEL,
+    OPENAI_MODEL_ENV_VAR,
+    OPENAI_API_KEY_ENV_VAR,
+    ANTHROPIC_MODEL_ENV_VAR,
+    ANTHROPIC_API_KEY_ENV_VAR,
     TEMPERATURE,
     MAX_OUTPUT_TOKENS,
     COMPANY_COL,
@@ -46,8 +62,8 @@ from company_purpose_v1.purpose_score_config import (
     DEFAULT_SOURCE_WEIGHT,
 )
 
-from company_purpose_score_v1.rubric_config import DIMENSION_QUERIES
-from company_purpose_score_v1.prompt_templates import (
+from company_purpose_v1.rubric_config import DIMENSION_QUERIES
+from company_purpose_v1.prompt_templates import (
     SYSTEM_PROMPT,
     build_company_purpose_prompt,
 )
@@ -60,6 +76,34 @@ def load_env_if_available() -> None:
     except ImportError:
         pass
 
+    if os.getenv(OPENAI_API_KEY_ENV_VAR) and os.getenv(ANTHROPIC_API_KEY_ENV_VAR):
+        return
+
+    try:
+        from configs.config import CLAUDE_API_KEY, OPENAI_API_KEY
+    except ImportError:
+        return
+
+    if OPENAI_API_KEY and not os.getenv(OPENAI_API_KEY_ENV_VAR):
+        os.environ[OPENAI_API_KEY_ENV_VAR] = OPENAI_API_KEY
+    if CLAUDE_API_KEY and not os.getenv(ANTHROPIC_API_KEY_ENV_VAR):
+        os.environ[ANTHROPIC_API_KEY_ENV_VAR] = CLAUDE_API_KEY
+
+
+def model_slug(model: str) -> str:
+    return re.sub(r"[^a-z0-9]+", "", model.lower())
+
+
+def build_run_version(provider: str, model: str) -> str:
+    return f"v1_newdata_{provider}_{model_slug(model)}"
+
+
+def output_files_for_run(run_version: str) -> dict[str, str]:
+    return {
+        key: template.format(run_version=run_version)
+        for key, template in OUTPUT_FILE_TEMPLATES.items()
+    }
+
 
 def get_openai_client():
     try:
@@ -67,21 +111,36 @@ def get_openai_client():
     except ImportError as exc:
         raise ImportError("Run: pip install openai python-dotenv scikit-learn") from exc
 
-    api_key = os.getenv(LLM_API_KEY_ENV_VAR)
+    api_key = os.getenv(OPENAI_API_KEY_ENV_VAR)
     if not api_key:
-        raise EnvironmentError(f"Missing API key: {LLM_API_KEY_ENV_VAR}")
+        raise EnvironmentError(f"Missing API key: {OPENAI_API_KEY_ENV_VAR}")
 
     return OpenAI(api_key=api_key)
 
 
-def get_model_name() -> str:
-    model = os.getenv(LLM_MODEL_ENV_VAR)
-    if not model:
-        raise EnvironmentError(
-            f"Missing model env var: {LLM_MODEL_ENV_VAR}\n"
-            "Example: OPENAI_MODEL=gpt-4o-mini"
-        )
-    return model
+def get_anthropic_api_key() -> str:
+    api_key = os.getenv(ANTHROPIC_API_KEY_ENV_VAR)
+    if not api_key:
+        raise EnvironmentError(f"Missing API key: {ANTHROPIC_API_KEY_ENV_VAR}")
+    return api_key
+
+
+def resolve_model_name(provider: str, requested_model: str | None) -> str:
+    if requested_model:
+        return requested_model
+    if provider == "openai":
+        return os.getenv(OPENAI_MODEL_ENV_VAR) or DEFAULT_OPENAI_MODEL
+    if provider == "anthropic":
+        return os.getenv(ANTHROPIC_MODEL_ENV_VAR) or DEFAULT_ANTHROPIC_MODEL
+    raise ValueError(f"Unsupported provider: {provider}")
+
+
+def get_client_for_provider(provider: str):
+    if provider == "openai":
+        return get_openai_client()
+    if provider == "anthropic":
+        return get_anthropic_api_key()
+    raise ValueError(f"Unsupported provider: {provider}")
 
 
 def get_text(row: pd.Series) -> str:
@@ -192,20 +251,38 @@ def compute_tfidf_similarity(texts: list[str], query: str) -> list[float]:
 
     corpus = texts + [query]
 
-    try:
-        vectorizer = TfidfVectorizer(
-            lowercase=True,
-            stop_words="english",
-            ngram_range=(1, 2),
-            min_df=1,
-            max_df=1.0,
-            sublinear_tf=True,
-        )
-        X = vectorizer.fit_transform(corpus)
-        sims = cosine_similarity(X[:-1], X[-1]).flatten()
-        return sims.tolist()
-    except ValueError:
+    if TfidfVectorizer is not None and cosine_similarity is not None:
+        try:
+            vectorizer = TfidfVectorizer(
+                lowercase=True,
+                stop_words="english",
+                ngram_range=(1, 2),
+                min_df=1,
+                max_df=1.0,
+                sublinear_tf=True,
+            )
+            X = vectorizer.fit_transform(corpus)
+            sims = cosine_similarity(X[:-1], X[-1]).flatten()
+            return sims.tolist()
+        except ValueError:
+            return [0.0] * len(texts)
+
+    query_tokens = set(re.findall(r"[a-z0-9]+", query.lower()))
+    if not query_tokens:
         return [0.0] * len(texts)
+
+    scores = []
+    for text in texts:
+        tokens = re.findall(r"[a-z0-9]+", str(text).lower())
+        token_set = set(tokens)
+        if not token_set:
+            scores.append(0.0)
+            continue
+        overlap = len(query_tokens & token_set)
+        denominator = (len(query_tokens) ** 0.5) * (len(token_set) ** 0.5)
+        scores.append(overlap / denominator if denominator else 0.0)
+
+    return scores
 
 
 def source_weight(source: Any) -> float:
@@ -430,6 +507,93 @@ def call_openai_company_score(
     return fallback, "", last_error
 
 
+def call_anthropic_company_score(
+    api_key: str,
+    model: str,
+    prompt: str,
+    company: str,
+    year: int,
+    max_retries: int = 3,
+) -> tuple[dict[str, Any], str, str]:
+    last_error = ""
+
+    payload = {
+        "model": model,
+        "system": SYSTEM_PROMPT,
+        "messages": [{"role": "user", "content": prompt}],
+        "temperature": TEMPERATURE,
+        "max_tokens": MAX_OUTPUT_TOKENS,
+    }
+
+    for attempt in range(1, max_retries + 1):
+        try:
+            request = urllib.request.Request(
+                "https://api.anthropic.com/v1/messages",
+                data=json.dumps(payload).encode("utf-8"),
+                headers={
+                    "x-api-key": api_key,
+                    "anthropic-version": "2023-06-01",
+                    "content-type": "application/json",
+                },
+                method="POST",
+            )
+
+            with urllib.request.urlopen(request, timeout=120) as response:
+                response_payload = json.loads(response.read().decode("utf-8"))
+
+            raw_text = "".join(
+                part.get("text", "")
+                for part in response_payload.get("content", [])
+                if part.get("type") == "text"
+            )
+            parsed = extract_json_object(raw_text)
+            normalized = normalize_score_result(parsed, company=company, year=year)
+
+            return normalized, raw_text, ""
+
+        except urllib.error.HTTPError as exc:
+            detail = exc.read().decode("utf-8", errors="replace")
+            last_error = f"{exc.code} {exc.reason}: {detail}"
+            if attempt < max_retries:
+                time.sleep(2 * attempt)
+        except Exception as exc:
+            last_error = str(exc)
+            if attempt < max_retries:
+                time.sleep(2 * attempt)
+
+    fallback = normalize_score_result({}, company=company, year=year)
+    fallback["needs_human_review"] = True
+
+    return fallback, "", last_error
+
+
+def call_company_score(
+    provider: str,
+    client,
+    model: str,
+    prompt: str,
+    company: str,
+    year: int,
+) -> tuple[dict[str, Any], str, str]:
+    if provider == "openai":
+        return call_openai_company_score(
+            client=client,
+            model=model,
+            prompt=prompt,
+            company=company,
+            year=year,
+        )
+    if provider == "anthropic":
+        return call_anthropic_company_score(
+            api_key=client,
+            model=model,
+            prompt=prompt,
+            company=company,
+            year=year,
+        )
+    raise ValueError(f"Unsupported provider: {provider}")
+
+
 def count_evidence_by_dimension(pack: dict[str, list[dict[str, Any]]]) -> dict[str, int]:
     return {
         f"{dimension}_evidence_count": len(rows)
@@ -442,6 +606,8 @@ def process_targets(
     targets: pd.DataFrame,
     client,
     model: str,
+    provider: str,
+    run_version: str,
 ) -> tuple[pd.DataFrame, pd.DataFrame]:
     score_rows = []
     evidence_pack_rows = []
@@ -462,7 +628,8 @@ def process_targets(
             evidence_pack=pack,
         )
 
-        score_result, raw_response, error_message = call_openai_company_score(
+        score_result, raw_response, error_message = call_company_score(
+            provider=provider,
             client=client,
             model=model,
             prompt=prompt,
@@ -471,9 +638,9 @@ def process_targets(
         )
 
         score_result.update(evidence_counts)
-        score_result["llm_provider"] = LLM_PROVIDER
+        score_result["llm_provider"] = provider
         score_result["llm_model"] = model
-        score_result["purpose_score_run_version"] = RUN_VERSION
+        score_result["purpose_score_run_version"] = run_version
         score_result["purpose_score_timestamp"] = datetime.now().isoformat(timespec="seconds")
         score_result["score_status"] = "ok" if not error_message else "error"
         score_result["score_error_message"] = error_message
@@ -527,12 +694,17 @@ def aggregate_company_scores(company_year_df: pd.DataFrame) -> pd.DataFrame:
     )
 
 
-def write_diagnostics(company_year_df: pd.DataFrame, evidence_pack_df: pd.DataFrame) -> None:
+def write_diagnostics(
+    company_year_df: pd.DataFrame,
+    evidence_pack_df: pd.DataFrame,
+    output_files: dict[str, str],
+    run_version: str,
+) -> None:
     lines = []
 
     lines.append("COMPANY PURPOSE SCORE V1 DIAGNOSTICS")
     lines.append("=" * 80)
-    lines.append(f"run_version: {RUN_VERSION}")
+    lines.append(f"run_version: {run_version}")
     lines.append(f"rows scored: {len(company_year_df):,}")
     lines.append(f"evidence rows used: {len(evidence_pack_df):,}")
     lines.append("")
@@ -571,7 +743,7 @@ def write_diagnostics(company_year_df: pd.DataFrame, evidence_pack_df: pd.DataFr
         lines.append(f"needs_human_review: {count:,}")
         lines.append(f"review_rate: {rate:.4f}")
 
-    path = PHASE4_OUTPUT_DIR / OUTPUT_FILES["diagnostics"]
+    path = PHASE4_OUTPUT_DIR / output_files["diagnostics"]
     path.write_text("\n".join(lines), encoding="utf-8")
 
     print(f"[EXPORT] diagnostics: {path}")
@@ -583,6 +755,20 @@ def parse_args():
     )
     parser.add_argument("--limit", type=int, default=None, help="Limit number of company-year targets.")
     parser.add_argument("--force", action="store_true", help="Overwrite existing outputs.")
+    parser.add_argument(
+        "--provider",
+        choices=["openai", "anthropic"],
+        default=DEFAULT_PROVIDER,
+        help="LLM provider to use.",
+    )
+    parser.add_argument(
+        "--model",
+        default=None,
+        help=(
+            "Optional model override. Defaults to gpt-4o-mini for OpenAI "
+            "and claude-sonnet-4-20250514 for Anthropic."
+        ),
+    )
     return parser.parse_args()
 
 
@@ -590,15 +776,19 @@ def main() -> None:
     args = parse_args()
 
     load_env_if_available()
+    provider = args.provider
+    model = resolve_model_name(provider=provider, requested_model=args.model)
+    run_version = build_run_version(provider=provider, model=model)
+    output_files = output_files_for_run(run_version)
 
     if not PHASE3_INPUT_FILE.exists():
         raise FileNotFoundError(f"Phase 3 input not found: {PHASE3_INPUT_FILE}")
 
     PHASE4_OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
-    company_year_path = PHASE4_OUTPUT_DIR / OUTPUT_FILES["company_year_scores"]
-    company_path = PHASE4_OUTPUT_DIR / OUTPUT_FILES["company_scores"]
-    evidence_pack_path = PHASE4_OUTPUT_DIR / OUTPUT_FILES["evidence_pack"]
+    company_year_path = PHASE4_OUTPUT_DIR / output_files["company_year_scores"]
+    company_path = PHASE4_OUTPUT_DIR / output_files["company_scores"]
+    evidence_pack_path = PHASE4_OUTPUT_DIR / output_files["evidence_pack"]
 
     if company_year_path.exists() and not args.force:
         raise FileExistsError(
@@ -615,15 +805,19 @@ def main() -> None:
 
     print(f"[INFO] evidence rows: {len(df):,}")
     print(f"[INFO] company-year targets: {len(targets):,}")
+    print(f"[INFO] provider: {provider}")
+    print(f"[INFO] model: {model}")
+    print(f"[INFO] run_version: {run_version}")
 
-    client = get_openai_client()
-    model = get_model_name()
+    client = get_client_for_provider(provider)
 
     company_year_df, evidence_pack_df = process_targets(
         df=df,
         targets=targets,
         client=client,
         model=model,
+        provider=provider,
+        run_version=run_version,
     )
 
     company_df = aggregate_company_scores(company_year_df)
@@ -636,7 +830,7 @@ def main() -> None:
     print(f"[EXPORT] company scores     : {company_path}")
     print(f"[EXPORT] evidence pack      : {evidence_pack_path}")
 
-    write_diagnostics(company_year_df, evidence_pack_df)
+    write_diagnostics(company_year_df, evidence_pack_df, output_files, run_version)
 
     print("\nDONE: Phase 4 company purpose scoring complete.")
 

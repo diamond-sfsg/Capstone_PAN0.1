@@ -13,7 +13,7 @@ LLM_MODEL_ENV_VAR = "OPENAI_MODEL"
 LLM_API_KEY_ENV_VAR = "OPENAI_API_KEY"
 DEFAULT_LLM_MODEL = "gpt-4o-mini"
 
-RUN_VERSION = "evidence_llm_review_v1"
+RUN_VERSION = "evidence_llm_review_v1_newdata"
 TEMPERATURE = 0
 MAX_OUTPUT_TOKENS = 500
 MAX_ROWS_PER_BUCKET = None
@@ -53,23 +53,23 @@ OPTIONAL_CONTEXT_COLS = [
 
 EVIDENCE_POOL_CONFIG = {
     "purpose_articulation": {
-        "input_csv": "purpose_articulation_evidence_v1.csv",
+        "input_csv": "purpose_articulation_evidence_v1_newdata.csv",
     },
     "history_consistency": {
-        "input_csv": "history_consistency_evidence_v1.csv",
+        "input_csv": "history_consistency_evidence_v1_newdata.csv",
     },
     "strategy_alignment": {
-        "input_csv": "strategy_alignment_evidence_v1.csv",
+        "input_csv": "strategy_alignment_evidence_v1_newdata.csv",
     },
 }
 
 OUTPUT_FILES = {
-    "purpose_articulation": "purpose_articulation_llm_review_v1.csv",
-    "history_consistency": "history_consistency_llm_review_v1.csv",
-    "strategy_alignment": "strategy_alignment_llm_review_v1.csv",
-    "all_reviews": "all_evidence_llm_reviews_v1.csv",
-    "human_review_queue": "human_review_queue_v1.csv",
-    "diagnostics": "evidence_llm_review_diagnostics_v1.txt",
+    "purpose_articulation": "purpose_articulation_llm_review_v1_newdata.csv",
+    "history_consistency": "history_consistency_llm_review_v1_newdata.csv",
+    "strategy_alignment": "strategy_alignment_llm_review_v1_newdata.csv",
+    "all_reviews": "all_evidence_llm_reviews_v1_newdata.csv",
+    "human_review_queue": "human_review_queue_v1_newdata.csv",
+    "diagnostics": "evidence_llm_review_diagnostics_v1_newdata.txt",
 }
 
 COMMON_LLM_REVIEW_FIELDS = [

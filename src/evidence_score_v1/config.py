@@ -19,9 +19,9 @@ COMPANY_COL = "company"
 CHUNK_ID_COL = "chunk_id"
 TEXT_COL = "text_clean"
 
-DEFAULT_INPUT_CSV = CLEAN_DIR / "unified_chunks_v3.csv"
-EVIDENCE_MATRIX_OUTPUT_PATH = PHASE2_DIR / "evidence_score_v1.csv"
-DEFAULT_DIAGNOSTICS_TXT = PHASE2_DIR / "evidence_score_v1_diagnostics.txt"
+DEFAULT_INPUT_CSV = CLEAN_DIR / "unified_chunks_v4.csv"
+EVIDENCE_MATRIX_OUTPUT_PATH = PHASE2_DIR / "evidence_score_v1_newdata.csv"
+DEFAULT_DIAGNOSTICS_TXT = PHASE2_DIR / "evidence_score_v1_diagnostics_newdata.txt"
 
 HISTORY_BONUS_PER_EXTRA_YEAR = 0.08
 HISTORY_BONUS_MAX = 0.40
