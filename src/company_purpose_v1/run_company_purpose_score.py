@@ -62,7 +62,7 @@ from company_purpose_v1.purpose_score_config import (
     DEFAULT_SOURCE_WEIGHT,
 )
 
-from company_purpose_v1.rubric_config import DIMENSION_QUERIES
+from company_purpose_v1.rubric_config import DIMENSION_QUERIES, PURPOSE_RUBRIC
 from company_purpose_v1.prompt_templates import (
     SYSTEM_PROMPT,
     build_company_purpose_prompt,
@@ -426,10 +426,32 @@ def clamp(value: Any, low: float, high: float, default: float) -> float:
     return max(low, min(high, value))
 
 
+def question_score_fields() -> list[str]:
+    fields = []
+    for rubric in PURPOSE_RUBRIC.values():
+        fields.extend(question["score_field"] for question in rubric["questions"])
+    return fields
+
+
+def dimension_question_scores(raw: dict[str, Any], dimension: str) -> tuple[dict[str, float], float]:
+    rubric = PURPOSE_RUBRIC[dimension]
+    final_field = rubric["score_field"]
+    raw_final = raw.get(final_field)
+    fallback = clamp(raw_final, 0, 5, 0) if raw_final is not None else 0
+
+    scores = {}
+    for question in rubric["questions"]:
+        field = question["score_field"]
+        scores[field] = clamp(raw.get(field), 0, 5, fallback)
+
+    final_score = sum(scores.values()) / len(scores) if scores else fallback
+    return scores, final_score
+
+
 def normalize_score_result(raw: dict[str, Any], company: str, year: int) -> dict[str, Any]:
-    pa = clamp(raw.get("pa_final_score"), 0, 5, 0)
-    hc = clamp(raw.get("hc_final_score"), 0, 5, 0)
-    sa = clamp(raw.get("sa_final_score"), 0, 5, 0)
+    pa_questions, pa = dimension_question_scores(raw, "purpose_articulation")
+    hc_questions, hc = dimension_question_scores(raw, "history_consistency")
+    sa_questions, sa = dimension_question_scores(raw, "strategy_alignment")
 
     calculated_0_100 = (
         DIMENSION_WEIGHTS["purpose_articulation"] * pa
@@ -437,23 +459,19 @@ def normalize_score_result(raw: dict[str, Any], company: str, year: int) -> dict
         + DIMENSION_WEIGHTS["strategy_alignment"] * sa
     ) / 5 * 100
 
-    model_score = clamp(
-        raw.get("company_purpose_score_0_100"),
-        0,
-        100,
-        calculated_0_100,
-    )
-
-    return {
+    result = {
         "company": company,
         "year": year,
+        **{field: round(score, 2) for field, score in pa_questions.items()},
         "pa_final_score": round(pa, 2),
+        **{field: round(score, 2) for field, score in hc_questions.items()},
         "hc_final_score": round(hc, 2),
+        **{field: round(score, 2) for field, score in sa_questions.items()},
         "sa_final_score": round(sa, 2),
-        "company_purpose_score_0_100": round(model_score, 2),
+        "company_purpose_score_0_100": round(calculated_0_100, 2),
         "calculated_purpose_score_0_100": round(calculated_0_100, 2),
         "purpose_driven_label": bool(
-            model_score >= PURPOSE_DRIVEN_THRESHOLD_0_100
+            calculated_0_100 >= PURPOSE_DRIVEN_THRESHOLD_0_100
             and min(pa, hc, sa) >= 2
         ),
         "confidence": clamp(raw.get("confidence"), 0, 1, 0),
@@ -465,6 +483,7 @@ def normalize_score_result(raw: dict[str, Any], company: str, year: int) -> dict
         "weak_or_contradictory_chunk_ids": json.dumps(raw.get("weak_or_contradictory_chunk_ids", []), ensure_ascii=False),
         "needs_human_review": bool(raw.get("needs_human_review", False)),
     }
+    return result
 
 
 def call_openai_company_score(
@@ -671,6 +690,10 @@ def process_targets(
 
 def aggregate_company_scores(company_year_df: pd.DataFrame) -> pd.DataFrame:
     rows = []
+    subscore_fields = [
+        field for field in question_score_fields()
+        if field in company_year_df.columns
+    ]
 
     for company, group in company_year_df.groupby("company"):
         row = {
@@ -686,6 +709,8 @@ def aggregate_company_scores(company_year_df: pd.DataFrame) -> pd.DataFrame:
             ),
             "needs_human_review": bool(group["needs_human_review"].any()),
         }
+        for field in subscore_fields:
+            row[field] = round(group[field].mean(), 2)
         rows.append(row)
 
     return pd.DataFrame(rows).sort_values(
@@ -711,13 +736,16 @@ def write_diagnostics(
 
     lines.append("SCORE SUMMARY")
     lines.append("=" * 80)
-    for col in [
+    score_summary_cols = [
+        *question_score_fields(),
         "pa_final_score",
         "hc_final_score",
         "sa_final_score",
         "company_purpose_score_0_100",
         "confidence",
-    ]:
+    ]
+
+    for col in score_summary_cols:
         if col in company_year_df.columns:
             s = pd.to_numeric(company_year_df[col], errors="coerce")
             lines.append(

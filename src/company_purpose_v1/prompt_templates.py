@@ -7,7 +7,7 @@ from company_purpose_v1.rubric_config import PURPOSE_RUBRIC
 
 
 SYSTEM_PROMPT = """
-You are a business analytics evaluator scoring company purpose alignment.
+You are a business analytics evaluator scoring whether a company is purpose-driven in a given year based on retrieved evidence and a detailed rubric.
 
 You must score a company-year using only the provided evidence.
 Do not use outside knowledge.
@@ -30,7 +30,10 @@ def _format_evidence_pack(evidence_pack: dict[str, list[dict[str, Any]]]) -> str
 
     for dimension, rows in evidence_pack.items():
         rubric = PURPOSE_RUBRIC[dimension]
-        sections.append(f"\n## {dimension} - {rubric['label']}")
+        question_labels = ", ".join(
+            question["score_field"] for question in rubric["questions"]
+        )
+        sections.append(f"\n## {dimension} - {rubric['label']} ({question_labels})")
 
         if not rows:
             sections.append("No retrieved evidence.")
@@ -68,9 +71,17 @@ def build_company_purpose_prompt(
     for dimension, rubric in PURPOSE_RUBRIC.items():
         rubric_text[dimension] = {
             "label": rubric["label"],
-            "question": rubric["question"],
-            "criteria": rubric["criteria"],
-            "score_guide": rubric["score_guide"],
+            "score_field": rubric["score_field"],
+            "questions": [
+                {
+                    "label": question["label"],
+                    "score_field": question["score_field"],
+                    "question": question["question"],
+                    "criteria": question.get("criteria", []),
+                    "score_guide": question["score_guide"],
+                }
+                for question in rubric["questions"]
+            ],
         }
 
     evidence_text = _format_evidence_pack(evidence_pack)
@@ -78,8 +89,14 @@ def build_company_purpose_prompt(
     expected_schema = {
         "company": "string",
         "year": "string or integer",
+        "pa_Q1": "integer 0-5",
+        "pa_Q2": "integer 0-5",
+        "pa_Q3": "integer 0-5",
         "pa_final_score": "integer 0-5",
+        "hc_Q1": "integer 0-5",
         "hc_final_score": "integer 0-5",
+        "sa_Q1": "integer 0-5",
+        "sa_Q2": "integer 0-5",
         "sa_final_score": "integer 0-5",
         "company_purpose_score_0_100": "float 0-100",
         "purpose_driven_label": "boolean",
@@ -106,15 +123,18 @@ Retrieved evidence:
 {evidence_text}
 
 Rules:
-1. Score each dimension from 0 to 5.
+1. Score each rubric question from 0 to 5.
 2. Use only retrieved evidence.
 3. Penalize vague, boilerplate, or purely promotional language.
 4. Purpose Articulation evaluates what the company says.
 5. History Consistency evaluates continuity over time.
 6. Strategy Alignment evaluates whether purpose connects to strategy, resources, KPIs, or outcomes.
 7. If one dimension has insufficient evidence, score that dimension conservatively.
-8. company_purpose_score_0_100 should be the weighted average of PA, HC, and SA scores converted to 0-100.
-9. purpose_driven_label should be true only if the overall score is strong and no major dimension is unsupported.
+8. pa_final_score should be the average of pa_Q1, pa_Q2, and pa_Q3.
+9. hc_final_score should equal hc_Q1.
+10. sa_final_score should be the average of sa_Q1 and sa_Q2.
+11. company_purpose_score_0_100 should be the weighted average of PA, HC, and SA final scores converted to 0-100.
+12. purpose_driven_label should be true only if the overall score is strong and no major dimension is unsupported.
 
 Return JSON using exactly this schema:
 {json.dumps(expected_schema, ensure_ascii=False, indent=2)}
