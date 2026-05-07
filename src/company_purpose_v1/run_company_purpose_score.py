@@ -1,3 +1,16 @@
+"""
+Phase 4: Company Purpose Scoring
+
+This module aggregates reviewed evidence per company-year and uses LLM to generate final
+purpose-driven scores. It performs RAG-style evidence retrieval, builds evidence packs,
+and prompts LLM to score companies across three dimensions using a structured rubric.
+
+Input: data/phase3/evidence_llm_review_v1/all_evidence_llm_reviews_v1_newdata.csv (from Phase 3)
+Output: data/phase4/company_purpose_score_v1/*_newdata.csv (company-year and company-level scores)
+
+The final output includes 0-100 purpose scores, dimension breakdowns, and purpose-driven labels.
+"""
+
 from __future__ import annotations
 
 import argparse

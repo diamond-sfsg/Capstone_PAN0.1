@@ -1,3 +1,14 @@
+"""
+Company Purpose Scoring Rubric Configuration
+
+This module defines the scoring rubric for company purpose evaluation across three dimensions:
+- Purpose Articulation: Clear mission beyond profit
+- History Consistency: Sustained commitment over time
+- Strategy Alignment: Purpose embedded in business strategy
+
+It includes scoring guides, criteria, and TF-IDF queries used for evidence retrieval in Phase 4.
+"""
+
 PURPOSE_RUBRIC = {
     "purpose_articulation": {
         "label": "Purpose Articulation",

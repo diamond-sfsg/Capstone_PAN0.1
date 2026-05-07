@@ -1,3 +1,16 @@
+"""
+Phase 2B: Evidence Bucket Assignment
+
+This module assigns each scored evidence chunk to the most relevant purpose dimension bucket
+based on scoring thresholds. It categorizes chunks into Purpose Articulation, History Consistency,
+or Strategy Alignment buckets, handling overlaps and edge cases with review flags.
+
+Input: data/phase2/evidence_score_v1_newdata.csv (from Phase 2A)
+Output: data/phase2/evidence_buckets_v1/*_evidence_v1_newdata.csv (per-dimension buckets)
+
+The bucketed evidence is then passed to Phase 3 for LLM quality review.
+"""
+
 from __future__ import annotations
 
 import sqlite3

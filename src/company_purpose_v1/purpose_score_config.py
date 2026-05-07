@@ -1,3 +1,11 @@
+"""
+Company Purpose Scoring Configuration
+
+This module contains configuration constants for Phase 4 company purpose scoring,
+including file paths, LLM settings, scoring parameters, dimension weights, and
+evidence selection thresholds.
+"""
+
 from pathlib import Path
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]

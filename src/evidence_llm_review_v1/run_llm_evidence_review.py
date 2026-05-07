@@ -1,3 +1,17 @@
+"""
+Phase 3: LLM Evidence Review
+
+This module uses Large Language Models (OpenAI/Anthropic) to review and score the quality
+of evidence chunks within each purpose dimension bucket. It evaluates relevance, credibility,
+specificity, and flags chunks needing human review.
+
+Input: data/phase2/evidence_buckets_v1/*_evidence_v1_newdata.csv (from Phase 2B)
+Output: data/phase3/evidence_llm_review_v1/all_evidence_llm_reviews_v1_newdata.csv
+
+The reviewed evidence with additional LLM scores (e.g., llm_credibility_score) is used in
+Phase 4 for final company purpose scoring.
+"""
+
 from __future__ import annotations
 
 import argparse

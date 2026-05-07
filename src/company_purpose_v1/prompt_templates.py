@@ -1,3 +1,12 @@
+"""
+Company Purpose Scoring Prompt Templates
+
+This module contains the LLM prompt templates and system messages used in Phase 4 for
+company purpose scoring. It builds structured prompts that include the scoring rubric,
+selected evidence chunks, and instructions for generating dimension scores and overall
+purpose assessment.
+"""
+
 from __future__ import annotations
 
 import json

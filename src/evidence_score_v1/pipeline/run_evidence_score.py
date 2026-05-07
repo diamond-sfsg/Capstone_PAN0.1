@@ -1,3 +1,19 @@
+"""
+Phase 2A: Evidence Scoring Pipeline
+
+This module implements the evidence scoring phase of the purpose-driven company scoring pipeline.
+It processes unified text chunks from company filings and computes relevance scores across three
+purpose dimensions (Purpose Articulation, History Consistency, Strategy Alignment) using multiple
+scoring methods: lexical matching, TF-IDF similarity, embedding similarity, metadata matching,
+and prompt-pattern matching.
+
+Input: data/clean_2.0/unified_chunks_v4.csv
+Output: data/phase2/evidence_score_v1_newdata.csv
+
+The output scores (e.g., pa_sum_score, hc_sum_score, sa_sum_score) are used in Phase 2B for
+bucket assignment.
+"""
+
 from __future__ import annotations
 
 import sys
