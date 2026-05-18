@@ -1,0 +1,69 @@
+EVIDENCE SCORE V1 DIAGNOSTICS
+================================================================================
+rows: 17223
+columns: 43
+
+SCORE COLUMN SUMMARY
+================================================================================
+                          count      mean       std       min       25%       50%       75%       max
+pa_lexical_score        17223.0  0.180270  0.242854 -0.603023  0.000000  0.142966  0.285931  2.689927
+pa_tfidf_score          17223.0  0.131835  0.046531  0.000000  0.097720  0.129733  0.162167  0.486500
+pa_embedding_score      17223.0  0.134717  0.022669  0.000000  0.121115  0.134974  0.148731  0.262826
+pa_metadata_score       17223.0  0.500000  0.000000  0.500000  0.500000  0.500000  0.500000  0.500000
+pa_prompt_score         17223.0  0.017259  0.148236  0.000000  0.000000  0.000000  0.000000  2.000000
+pa_sum_score            17223.0  0.964080  0.311757  0.085465  0.763453  0.892762  1.075783  4.386755
+hc_lexical_score        17223.0  0.181809  0.238097 -0.603023  0.000000  0.142966  0.285931  1.845557
+hc_tfidf_score          17223.0  0.164793  0.044231  0.000000  0.135084  0.162101  0.189117  0.475495
+hc_embedding_score      17223.0  0.179832  0.026331  0.009809  0.165177  0.180445  0.195476  0.346985
+hc_metadata_score       17223.0  0.500000  0.000000  0.500000  0.500000  0.500000  0.500000  0.500000
+hc_prompt_score         17223.0  0.257896  0.705691  0.000000  0.000000  0.000000  0.000000  6.000000
+hc_history_bonus_score  17223.0  0.003507  0.016379  0.000000  0.000000  0.000000  0.000000  0.080000
+hc_sum_score            17223.0  1.287837  0.858988  0.252422  0.840622  0.970730  1.186683  8.132543
+sa_lexical_score        17223.0  0.214446  0.338540 -0.603023  0.000000  0.000000  0.287883  3.548149
+sa_tfidf_score          17223.0  0.099628  0.043131  0.000000  0.066623  0.096906  0.127189  0.333113
+sa_embedding_score      17223.0  0.171900  0.031429  0.000000  0.151776  0.171070  0.190956  0.384862
+sa_metadata_score       17223.0  0.500000  0.000000  0.500000  0.500000  0.500000  0.500000  0.500000
+sa_prompt_score         17223.0  0.103234  0.432858  0.000000  0.000000  0.000000  0.000000  3.750000
+sa_sum_score            17223.0  1.089209  0.661444  0.128134  0.740481  0.839899  1.147381  7.314190
+
+TOP 10 BY pa_sum_score
+================================================================================
+                             chunk_id company   year source section  pa_sum_score
+    edgar|nke|2021|nke_2021_risk|0002     NKE 2021.0  edgar item 1a      4.386755
+    edgar|nke|2022|nke_2022_risk|0002     NKE 2022.0  edgar item 1a      4.315787
+    edgar|cmg|2023|cmg_2023_risk|0025     CMG 2023.0  edgar item 1a      4.257267
+edgar|tmo|2021|tmo_2021_business|0001     TMO 2021.0  edgar  item 1      3.954404
+    edgar|syk|2021|syk_2021_mdna|0006     SYK 2021.0  edgar  item 7      3.751453
+edgar|wab|2023|wab_2023_business|0016     WAB 2023.0  edgar  item 1      3.687063
+edgar|tmo|2022|tmo_2022_business|0001     TMO 2022.0  edgar  item 1      3.684709
+    edgar|syk|2022|syk_2022_mdna|0006     SYK 2022.0  edgar  item 7      3.678271
+edgar|eix|2023|eix_2023_business|0099     EIX 2023.0  edgar  item 1      3.632248
+edgar|tjx|2026|tjx_2026_business|0005     TJX 2026.0  edgar  item 1      3.628496
+
+TOP 10 BY hc_sum_score
+================================================================================
+                             chunk_id company   year source section  hc_sum_score
+    edgar|msi|2019|msi_2019_mdna|0003     MSI 2019.0  edgar  item 7      8.132543
+    edgar|cpb|2016|cpb_2016_risk|0019     CPB 2016.0  edgar item 1a      7.870703
+edgar|nke|2022|nke_2022_business|0002     NKE 2022.0  edgar  item 1      7.713458
+    edgar|fix|2019|fix_2019_risk|0043     FIX 2019.0  edgar item 1a      7.314873
+    edgar|fdx|2021|fdx_2021_risk|0008     FDX 2021.0  edgar item 1a      7.112692
+    edgar|hpq|2016|hpq_2016_mdna|0003     HPQ 2016.0  edgar  item 7      6.224643
+    edgar|msi|2020|msi_2020_mdna|0003     MSI 2020.0  edgar  item 7      6.208490
+edgar|wab|2023|wab_2023_business|0010     WAB 2023.0  edgar  item 1      6.104465
+edgar|wab|2026|wab_2026_business|0009     WAB 2026.0  edgar  item 1      6.080760
+edgar|wab|2025|wab_2025_business|0008     WAB 2025.0  edgar  item 1      6.043868
+
+TOP 10 BY sa_sum_score
+================================================================================
+                             chunk_id company   year source section  sa_sum_score
+edgar|eix|2025|eix_2025_business|0050     EIX 2025.0  edgar  item 1      7.314190
+edgar|eix|2017|eix_2017_business|0096     EIX 2017.0  edgar  item 1      7.246245
+edgar|eix|2022|eix_2022_business|0055     EIX 2022.0  edgar  item 1      6.573303
+    edgar|pwr|2020|pwr_2020_mdna|0034     PWR 2020.0  edgar  item 7      6.157992
+edgar|eix|2026|eix_2026_business|0050     EIX 2026.0  edgar  item 1      6.037682
+edgar|eix|2024|eix_2024_business|0055     EIX 2024.0  edgar  item 1      6.037641
+edgar|tsn|2020|tsn_2020_business|0007     TSN 2020.0  edgar  item 1      5.980412
+    edgar|cnc|2019|cnc_2019_risk|0002     CNC 2019.0  edgar item 1a      5.913064
+      edgar|gm|2021|gm_2021_risk|0046      GM 2021.0  edgar item 1a      5.861680
+    edgar|fdx|2022|fdx_2022_risk|0012     FDX 2022.0  edgar item 1a      5.831989

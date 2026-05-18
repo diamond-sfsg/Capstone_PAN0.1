@@ -1,0 +1,52 @@
+EVIDENCE LLM REVIEW V1 DIAGNOSTICS
+================================================================================
+provider    : openai
+run_version : evidence_llm_review_v1_50c
+rows        : 25,945
+review rows : 25,830
+review rate : 0.9956
+
+ROWS BY BUCKET
+================================================================================
+history_consistency: 9,115
+purpose_articulation: 8,416
+strategy_alignment: 8,414
+
+LLM STATUS
+================================================================================
+ok: 25,945
+
+COMMON SCORE SUMMARY
+================================================================================
+llm_bucket_relevance_score: mean=0.9051, median=1.0000, min=0.0000, max=5.0000
+llm_evidence_specificity_score: mean=1.0215, median=1.0000, min=0.0000, max=4.0000
+llm_source_context_score: mean=2.9217, median=3.0000, min=1.0000, max=5.0000
+llm_boilerplate_risk_score: mean=4.4807, median=5.0000, min=1.0000, max=5.0000
+llm_credibility_score: mean=3.0424, median=3.0000, min=0.0000, max=5.0000
+llm_confidence: mean=0.8903, median=0.9000, min=0.7000, max=1.0000
+
+PA-ONLY SCORE SUMMARY
+================================================================================
+llm_purpose_clarity_score: mean=0.1441, median=0.0000, min=0.0000, max=5.0000
+llm_beyond_profit_score: mean=0.1425, median=0.0000, min=0.0000, max=5.0000
+llm_commitment_tone_score: mean=0.2341, median=0.0000, min=0.0000, max=4.0000
+llm_authenticity_score: mean=0.2627, median=0.0000, min=0.0000, max=4.0000
+llm_pa_tone_context_score: mean=0.1763, median=0.0000, min=0.0000, max=4.0000
+
+HUMAN REVIEW REASON CODES
+================================================================================
+llm_marked_review;low_relevance;high_boilerplate: 19,782
+llm_marked_review;low_relevance;low_credibility;high_boilerplate: 3,926
+llm_marked_review: 851
+llm_marked_review;low_relevance: 519
+low_relevance;high_boilerplate: 473
+llm_marked_review;high_boilerplate: 207
+ok: 115
+low_relevance: 66
+low_relevance;low_credibility;high_boilerplate: 4
+llm_marked_review;low_credibility;high_boilerplate: 1
+high_boilerplate: 1
+
+ERROR SAMPLE
+================================================================================
+No LLM errors.

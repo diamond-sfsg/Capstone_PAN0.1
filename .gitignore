@@ -52,6 +52,7 @@ code/src/ingestion/__init__.py
 # =========================
 .ipynb_checkpoints/
 *.ipynb
+!notebooks/download_edgar_10k_colab.ipynb
 
 # 如果你想保留 notebook，但去输出：
 # 可以后面用 nbstripout

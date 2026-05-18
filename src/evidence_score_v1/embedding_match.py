@@ -53,7 +53,13 @@ def score_embedding_proxy(df: pd.DataFrame, cfg) -> pd.DataFrame:
         out["embedding_rank_within_dimension"] = out["embedding_cosine"].rank(method="first", ascending=False).astype(int)
         return out
 
-    vectorizer = TfidfVectorizer(analyzer="char_wb", ngram_range=(3, 5), min_df=1)
+    # Limit features to prevent memory issues with large datasets
+    vectorizer = TfidfVectorizer(
+        analyzer="char_wb", 
+        ngram_range=(3, 5), 
+        min_df=1,
+        max_features=30000  # Limit to prevent excessive memory usage
+    )
     X = vectorizer.fit_transform(df["text_for_match"].tolist())
     q = vectorizer.transform([cfg.query_text])
     sims = cosine_similarity(X, q).ravel()

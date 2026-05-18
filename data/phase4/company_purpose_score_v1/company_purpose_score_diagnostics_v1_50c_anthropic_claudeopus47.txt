@@ -1,0 +1,28 @@
+COMPANY PURPOSE SCORE V1 DIAGNOSTICS
+================================================================================
+run_version: v1_50c_anthropic_claudeopus47
+rows scored: 418
+evidence rows used: 8,354
+
+SCORE SUMMARY
+================================================================================
+pa_Q1: mean=0.9354, median=1.0000, min=0.0000, max=4.0000
+pa_Q2: mean=0.8301, median=1.0000, min=0.0000, max=3.0000
+pa_Q3: mean=0.9809, median=1.0000, min=0.0000, max=3.0000
+hc_Q1: mean=1.7440, median=2.0000, min=0.0000, max=4.0000
+sa_Q1: mean=1.4689, median=1.0000, min=0.0000, max=4.0000
+sa_Q2: mean=1.2129, median=1.0000, min=0.0000, max=3.0000
+pa_final_score: mean=0.9155, median=1.0000, min=0.0000, max=3.3300
+hc_final_score: mean=1.7440, median=2.0000, min=0.0000, max=4.0000
+sa_final_score: mean=1.3409, median=1.0000, min=0.0000, max=3.5000
+company_purpose_score_0_100: mean=26.6691, median=26.6700, min=0.0000, max=65.5600
+confidence: mean=0.5353, median=0.5500, min=0.2000, max=0.7000
+
+PURPOSE LABEL DISTRIBUTION
+================================================================================
+False: 418
+
+HUMAN REVIEW
+================================================================================
+needs_human_review: 380
+review_rate: 0.9091

@@ -3,6 +3,7 @@ from __future__ import annotations
 import json
 import re
 import time
+from argparse import ArgumentParser
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
@@ -15,24 +16,16 @@ from tenacity import retry, stop_after_attempt, wait_exponential
 # Basic Config
 # =========================
 
-TICKERS = [
-    "AAPL",
-    "AMZN",
-    "CSCO",
-    "CVX",
-    "JNJ",
-    "META",
-    "NFLX",
-    "NVDA",
-    "ORCL",
-    "WMT",
-]
+REPO_ROOT = Path(__file__).resolve().parents[2]
+
+# One ticker per line. Blank lines and # comments are ignored.
+TICKER_FILE = REPO_ROOT / "configs" / "company_ticker.txt"
 
 # How many most recent 10-K filings to download per company
 MAX_FILINGS_PER_TICKER = 10
 
-# Root output folder
-RAW_ROOT = Path("data/raw/edgar")
+# Root output folder. Keep this aligned with the existing raw download folder.
+RAW_ROOT = Path(r"D:\BaiduNetdiskDownload\edgar_10k_raw\edgar_10k_raw")
 
 # SEC requires a descriptive User-Agent with contact info
 USER_AGENT = "UCI MSBA RAG Project ruofay3l@uci.edu"
@@ -99,6 +92,27 @@ def write_text(path: Path, text: str) -> None:
 
 def maybe_sleep() -> None:
     time.sleep(REQUEST_SLEEP_SECONDS)
+
+
+def read_tickers(path: Path) -> list[str]:
+    tickers: list[str] = []
+    seen: set[str] = set()
+    for raw_line in path.read_text(encoding="utf-8").splitlines():
+        ticker = raw_line.strip().upper()
+        if not ticker or ticker.startswith("#"):
+            continue
+        if ticker in seen:
+            continue
+        tickers.append(ticker)
+        seen.add(ticker)
+    return tickers
+
+
+def existing_nonempty_file(path: Path | str | None) -> bool:
+    if not path:
+        return False
+    candidate = Path(path)
+    return candidate.is_file() and candidate.stat().st_size > 0
 
 
 @dataclass
@@ -237,6 +251,14 @@ def download_primary_document(filing: FilingRecord, output_dir: Path) -> dict[st
     filename_base = f"{filing.filing_year}_10K_{filing.filing_date}"
     primary_doc_path = output_dir / f"{filename_base}{ext}"
 
+    if existing_nonempty_file(primary_doc_path):
+        print(f"  [SKIP] primary document exists: {primary_doc_path.name}")
+        return {
+            "primary_doc_url": primary_doc_url,
+            "primary_doc_path": str(primary_doc_path),
+            "primary_doc_content_type": None,
+        }
+
     print(f"  Downloading primary document: {primary_doc_url}")
     resp = http_get(primary_doc_url, headers=make_headers("www.sec.gov"))
     maybe_sleep()
@@ -261,6 +283,13 @@ def try_download_full_submission_txt(filing: FilingRecord, output_dir: Path) -> 
 
     filename_base = f"{filing.filing_year}_10K_{filing.filing_date}_full_submission"
     txt_path = output_dir / f"{filename_base}.txt"
+
+    if existing_nonempty_file(txt_path):
+        print(f"  [SKIP] full submission txt exists: {txt_path.name}")
+        return {
+            "full_submission_txt_url": txt_url,
+            "full_submission_txt_path": str(txt_path),
+        }
 
     try:
         print(f"  Trying full submission txt: {txt_url}")
@@ -307,16 +336,96 @@ def save_filing_manifest(
     write_json(manifest_path, manifest)
 
 
+def metadata_path_for_filing(filing: FilingRecord, ticker_dir: Path) -> Path:
+    return ticker_dir / f"{filing.filing_year}_10K_{filing.filing_date}_metadata.json"
+
+
+def expected_primary_doc_path(filing: FilingRecord, ticker_dir: Path) -> Path:
+    ext = Path(filing.primary_document).suffix.lower() or ".html"
+    return ticker_dir / f"{filing.filing_year}_10K_{filing.filing_date}{ext}"
+
+
+def expected_full_submission_txt_path(filing: FilingRecord, ticker_dir: Path) -> Path:
+    return ticker_dir / f"{filing.filing_year}_10K_{filing.filing_date}_full_submission.txt"
+
+
+def filing_is_complete(filing: FilingRecord, ticker_dir: Path) -> bool:
+    manifest_path = metadata_path_for_filing(filing, ticker_dir)
+    primary_path = expected_primary_doc_path(filing, ticker_dir)
+    txt_path = expected_full_submission_txt_path(filing, ticker_dir)
+
+    if not (
+        existing_nonempty_file(manifest_path)
+        and existing_nonempty_file(primary_path)
+        and existing_nonempty_file(txt_path)
+    ):
+        return False
+
+    try:
+        manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError:
+        return False
+
+    return (
+        manifest.get("accession_number") == filing.accession_number
+        and manifest.get("primary_document") == filing.primary_document
+    )
+
+
+def summarize_ticker_dir(ticker: str, output_root: Path) -> dict[str, Any]:
+    ticker_dir = output_root / ticker
+    if not ticker_dir.exists():
+        return {
+            "ticker": ticker,
+            "ticker_dir_exists": False,
+            "metadata_files": 0,
+            "primary_documents": 0,
+            "full_submission_txt": 0,
+        }
+
+    return {
+        "ticker": ticker,
+        "ticker_dir_exists": True,
+        "metadata_files": len(list(ticker_dir.glob("*_metadata.json"))),
+        "primary_documents": len(
+            [
+                path
+                for path in ticker_dir.iterdir()
+                if path.is_file()
+                and path.suffix.lower() in {".htm", ".html", ".txt"}
+                and not path.name.endswith("_full_submission.txt")
+            ]
+        ),
+        "full_submission_txt": len(list(ticker_dir.glob("*_full_submission.txt"))),
+    }
+
+
 # =========================
 # Main per ticker
 # =========================
 
-def process_ticker(ticker: str, mapping: dict[str, dict[str, str]]) -> None:
+def process_ticker(
+    ticker: str,
+    mapping: dict[str, dict[str, str]],
+    output_root: Path,
+    check_only: bool = False,
+) -> dict[str, Any]:
     ticker = ticker.upper()
+
+    status: dict[str, Any] = {
+        **summarize_ticker_dir(ticker, output_root),
+        "status": "unknown",
+        "filings_found": 0,
+        "filings_complete": 0,
+        "filings_downloaded_or_repaired": 0,
+        "filing_errors": 0,
+        "error": None,
+    }
 
     if ticker not in mapping:
         print(f"[ERROR] {ticker}: not found in SEC ticker mapping")
-        return
+        status["status"] = "not_found_in_sec_mapping"
+        return status
 
     cik = mapping[ticker]["cik_str"]
     company_name = mapping[ticker]["title"]
@@ -324,7 +433,7 @@ def process_ticker(ticker: str, mapping: dict[str, dict[str, str]]) -> None:
     print(f"\n=== Processing {ticker} ===")
     print(f"CIK: {cik} | Company: {company_name}")
 
-    ticker_dir = RAW_ROOT / ticker
+    ticker_dir = output_root / ticker
     ensure_dir(ticker_dir)
 
     submissions = load_company_submissions(cik)
@@ -343,27 +452,90 @@ def process_ticker(ticker: str, mapping: dict[str, dict[str, str]]) -> None:
 
     if not filings:
         print(f"[WARN] {ticker}: no 10-K filings found in recent submissions")
-        return
+        status["status"] = "no_10k_found"
+        return status
 
     print(f"Found {len(filings)} recent 10-K filings for {ticker}")
+    status["filings_found"] = len(filings)
 
     for filing in filings:
+        if filing_is_complete(filing, ticker_dir):
+            status["filings_complete"] += 1
+            print(f"  [OK] complete: {filing.filing_date} | {filing.accession_number}")
+            continue
+
+        if check_only:
+            print(f"  [MISSING] incomplete: {filing.filing_date} | {filing.accession_number}")
+            continue
+
         try:
-            print(f"\n- {filing.filing_date} | {filing.accession_number}")
+            print(f"\n- repair/download {filing.filing_date} | {filing.accession_number}")
             download_info = download_primary_document(filing, ticker_dir)
             txt_info = try_download_full_submission_txt(filing, ticker_dir)
             save_filing_manifest(filing, ticker_dir, download_info, txt_info)
+            status["filings_downloaded_or_repaired"] += 1
             print("  [OK] saved")
         except Exception as e:
+            status["filing_errors"] += 1
             print(f"  [ERROR] failed filing {filing.accession_number}: {e}")
+
+    if check_only:
+        incomplete = status["filings_found"] - status["filings_complete"]
+        status["status"] = "complete" if incomplete == 0 else "incomplete"
+    else:
+        status["status"] = "ok" if status["filing_errors"] == 0 else "partial_error"
+    return status
+
+
+def write_progress(output_root: Path, results: list[dict[str, Any]]) -> None:
+    write_json(output_root / "_download_progress.json", results)
+
+
+def write_summary_csv(output_root: Path, results: list[dict[str, Any]]) -> None:
+    if not results:
+        return
+
+    columns = list(dict.fromkeys(key for row in results for key in row))
+    lines = [",".join(columns)]
+    for row in results:
+        values = []
+        for column in columns:
+            value = "" if row.get(column) is None else str(row.get(column))
+            values.append('"' + value.replace('"', '""') + '"')
+        lines.append(",".join(values))
+
+    write_text(output_root / "_download_summary.csv", "\n".join(lines) + "\n")
 
 
 # =========================
 # Main
 # =========================
 
+def parse_args() -> Any:
+    parser = ArgumentParser(
+        description="Check and repair EDGAR 10-K downloads for tickers in configs/company_ticker.txt."
+    )
+    parser.add_argument("--ticker-file", type=Path, default=TICKER_FILE)
+    parser.add_argument("--output-root", type=Path, default=RAW_ROOT)
+    parser.add_argument("--max-filings", type=int, default=MAX_FILINGS_PER_TICKER)
+    parser.add_argument(
+        "--start-index",
+        type=int,
+        default=1,
+        help="1-based ticker position to start from in the ticker file.",
+    )
+    parser.add_argument(
+        "--check-only",
+        action="store_true",
+        help="Only report missing/incomplete filings; do not download files.",
+    )
+    return parser.parse_args()
+
+
 def main() -> None:
-    ensure_dir(RAW_ROOT)
+    args = parse_args()
+    output_root = args.output_root
+    ensure_dir(output_root)
 
     try:
         mapping = load_ticker_cik_mapping()
@@ -371,11 +543,38 @@ def main() -> None:
         print(f"[FATAL] failed to load ticker mapping: {e}")
         return
 
-    for ticker in TICKERS:
+    tickers = read_tickers(args.ticker_file)
+    print(f"Loaded {len(tickers)} tickers from {args.ticker_file}")
+    print(f"Output root: {output_root}")
+
+    global MAX_FILINGS_PER_TICKER
+    MAX_FILINGS_PER_TICKER = args.max_filings
+
+    start_index = max(args.start_index, 1)
+    selected_tickers = tickers[start_index - 1 :]
+
+    results: list[dict[str, Any]] = []
+    for index, ticker in enumerate(selected_tickers, start=start_index):
+        print(f"\n##### {index}/{len(tickers)} #####")
         try:
-            process_ticker(ticker, mapping)
+            result = process_ticker(
+                ticker=ticker,
+                mapping=mapping,
+                output_root=output_root,
+                check_only=args.check_only,
+            )
         except Exception as e:
             print(f"[ERROR] {ticker}: {e}")
+            result = {
+                "ticker": ticker,
+                "status": "error",
+                "error": str(e),
+            }
+        results.append(result)
+        write_progress(output_root, results)
+
+    write_summary_csv(output_root, results)
+    print(f"\nDone. Summary saved to: {output_root / '_download_summary.csv'}")
 
 
 if __name__ == "__main__":
