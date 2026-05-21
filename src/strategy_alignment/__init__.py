@@ -1,0 +1,2 @@
+"""Strategy Alignment scoring pipeline."""
+

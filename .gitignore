@@ -24,6 +24,7 @@ env/
 # 3. Raw Data & API KEY（重点！！！）
 # =========================
 data/raw/
+data/test/
 configs/config.py
 
 # 但保留结构（可选）
@@ -71,6 +72,9 @@ Thumbs.db
 *.feather
 *.csv
 *.jsonl
+*.txt
+*.db
+outputs/
 
 # ⚠️ 注意：
 # 如果你有“最终clean数据要交付”，
