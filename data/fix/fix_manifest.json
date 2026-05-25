@@ -1,0 +1,11 @@
+{
+  "dataset_name": "fix",
+  "source_csv": "E:\\OneDrive - UC Irvine\\spring\\PAN_purpose0.1\\data\\clean_2.0\\unified_chunks_final_v4.csv",
+  "company_list": "E:\\OneDrive - UC Irvine\\spring\\PAN_purpose0.1\\data\\clean_2.0\\com.txt",
+  "output_csv": "E:\\OneDrive - UC Irvine\\spring\\PAN_purpose0.1\\data\\fix\\unified_chunks_final_v4.csv",
+  "selected_companies_csv": "E:\\OneDrive - UC Irvine\\spring\\PAN_purpose0.1\\data\\fix\\selected_companies.csv",
+  "company_count_requested": 94,
+  "company_count_with_chunks": 94,
+  "total_chunks": 58786,
+  "missing_companies": []
+}

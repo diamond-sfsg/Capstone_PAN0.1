@@ -221,6 +221,58 @@ def _load_anthropic_key_from_local_config() -> str:
     return str(local_key or "").strip()
 
 
+def _load_openai_key_from_local_config() -> str:
+    try:
+        from configs.config import OPENAI_API_KEY as local_key
+    except Exception:
+        return ""
+
+    return str(local_key or "").strip()
+
+
+def call_openai(
+    prompt: str,
+    model_name: str = "gpt-4o-mini",
+    temperature: float = LLM_TEMPERATURE,
+    max_tokens: int = 1000,
+) -> str:
+    """
+    Call OpenAI Chat Completions API and request a JSON object response.
+    """
+    api_key = (
+        os.getenv("OPENAI_API_KEY", "").strip()
+        or _load_openai_key_from_local_config()
+    )
+
+    if not api_key:
+        raise EnvironmentError("Missing API key environment variable: OPENAI_API_KEY")
+
+    try:
+        from openai import OpenAI
+    except ImportError as exc:
+        raise ImportError("openai is not installed. Install with: pip install openai") from exc
+
+    client = OpenAI(api_key=api_key)
+    response = client.chat.completions.create(
+        model=model_name,
+        messages=[
+            {
+                "role": "system",
+                "content": (
+                    "You are a careful corporate history consistency scoring analyst. "
+                    "Return valid JSON only."
+                ),
+            },
+            {"role": "user", "content": prompt},
+        ],
+        temperature=temperature,
+        max_tokens=max_tokens,
+        response_format={"type": "json_object"},
+    )
+
+    return response.choices[0].message.content or ""
+
+
 def call_claude(
     prompt: str,
     model_name: str = "claude-opus-4-1-20250805",
@@ -288,6 +340,7 @@ def run_hc_llm_for_company(
     Run company-level HC LLM scoring.
 
     Provider currently supported:
+    - openai
     - gemini
     - claude
 
@@ -319,7 +372,12 @@ def run_hc_llm_for_company(
         raw_response = ""
 
         try:
-            if provider == "gemini":
+            if provider == "openai":
+                raw_response = call_openai(
+                    prompt=prompt,
+                    model_name=model_name,
+                )
+            elif provider == "gemini":
                 raw_response = call_gemini(
                     prompt=prompt,
                     model_name=model_name,

@@ -19,6 +19,7 @@ DEFAULT_OUTPUT_DIR = Path("outout/aggregate/test")
 DEFAULT_TEST_INPUT = Path("data/test/test1_rand/unified_chunks_final_v4.csv")
 DEFAULT_PHASE_OUTPUT_ROOT = Path("outputs/aggregate_test1_rand_claude")
 DEFAULT_CLAUDE_MODEL = "claude-opus-4-1-20250805"
+DEFAULT_OPENAI_MODEL = "gpt-4o-mini"
 
 PA_FILES = [
     "pa_company_score_v1.csv",
@@ -209,7 +210,10 @@ def run_scoring_phases(args: argparse.Namespace) -> tuple[Path, Path, Path]:
 
     env = os.environ.copy()
     env["PA_LLM_FALLBACK_TO_MOCK"] = "false"
-    env["CLAUDE_MODEL"] = args.llm_model
+    if args.provider == "openai":
+        env["OPENAI_MODEL"] = args.llm_model
+    elif args.provider == "claude":
+        env["CLAUDE_MODEL"] = args.llm_model
 
     company_root = phase_root / "company_runs"
 
@@ -768,12 +772,12 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--provider",
         default="claude",
-        choices=["claude"],
+        choices=["openai", "claude"],
         help="LLM provider used when --run-phases is set.",
     )
     parser.add_argument(
         "--llm-model",
-        default=os.getenv("CLAUDE_MODEL", DEFAULT_CLAUDE_MODEL),
+        default=None,
         help="LLM model used when --run-phases is set.",
     )
     parser.add_argument(
@@ -800,6 +804,12 @@ def parse_args() -> argparse.Namespace:
 
 def main() -> None:
     args = parse_args()
+    if args.llm_model is None:
+        if args.provider == "openai":
+            args.llm_model = os.getenv("OPENAI_MODEL", DEFAULT_OPENAI_MODEL)
+        elif args.provider == "claude":
+            args.llm_model = os.getenv("CLAUDE_MODEL", DEFAULT_CLAUDE_MODEL)
+
     progress_path = None
     if args.run_phases:
         progress_path = Path(args.progress_path or Path(args.phase_output_root) / "progress_company_phase.json")

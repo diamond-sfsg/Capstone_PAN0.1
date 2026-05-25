@@ -331,6 +331,57 @@ def _load_anthropic_key_from_local_config() -> str:
     return str(local_key or "").strip()
 
 
+def _load_openai_key_from_local_config() -> str:
+    try:
+        from configs.config import OPENAI_API_KEY as local_key
+    except Exception:
+        return ""
+
+    return str(local_key or "").strip()
+
+
+def build_openai_llm_client(
+    model: str = "gpt-4o-mini",
+    max_tokens: int = 1000,
+    temperature: float = 0.0,
+) -> LLMClient:
+    api_key = (
+        os.getenv("OPENAI_API_KEY", "").strip()
+        or _load_openai_key_from_local_config()
+    )
+
+    if not api_key:
+        raise RuntimeError("OPENAI_API_KEY is missing.")
+
+    try:
+        from openai import OpenAI
+    except ImportError as exc:
+        raise ImportError("openai is not installed. Install it with: pip install openai") from exc
+
+    openai_client = OpenAI(api_key=api_key)
+
+    def client(prompt: str) -> str:
+        response = openai_client.chat.completions.create(
+            model=model,
+            messages=[
+                {
+                    "role": "system",
+                    "content": (
+                        "You are a careful corporate strategy alignment scoring analyst. "
+                        "Return valid JSON only."
+                    ),
+                },
+                {"role": "user", "content": prompt},
+            ],
+            temperature=temperature,
+            max_tokens=max_tokens,
+            response_format={"type": "json_object"},
+        )
+        return response.choices[0].message.content or ""
+
+    return client
+
+
 def build_claude_llm_client(
     model: str = "claude-opus-4-1-20250805",
     max_tokens: int = 1000,
@@ -403,14 +454,14 @@ def parse_args() -> argparse.Namespace:
         "--provider",
         type=str,
         default="mock",
-        choices=["mock", "claude"],
+        choices=["mock", "openai", "claude"],
         help="LLM provider for CLI runs.",
     )
 
     parser.add_argument(
         "--llm-model",
         type=str,
-        default=os.getenv("CLAUDE_MODEL", "claude-opus-4-1-20250805"),
+        default=None,
         help="LLM model name for real provider runs.",
     )
 
@@ -466,9 +517,16 @@ def parse_args() -> argparse.Namespace:
 
 def main() -> None:
     args = parse_args()
+    if args.llm_model is None:
+        if args.provider == "openai":
+            args.llm_model = os.getenv("OPENAI_MODEL", "gpt-4o-mini")
+        elif args.provider == "claude":
+            args.llm_model = os.getenv("CLAUDE_MODEL", "claude-opus-4-1-20250805")
 
     if args.mock_llm or args.provider == "mock":
         client = mock_llm_client
+    elif args.provider == "openai":
+        client = build_openai_llm_client(model=args.llm_model)
     elif args.provider == "claude":
         client = build_claude_llm_client(model=args.llm_model)
     else:

@@ -408,14 +408,14 @@ def parse_args() -> argparse.Namespace:
         "--llm-provider",
         type=str,
         default="claude",
-        choices=["gemini", "claude"],
+        choices=["openai", "gemini", "claude"],
         help="LLM provider.",
     )
 
     parser.add_argument(
         "--llm-model",
         type=str,
-        default="claude-opus-4-1-20250805",
+        default=None,
         help="LLM model name.",
     )
 
@@ -447,6 +447,13 @@ def main() -> None:
     CLI entry point.
     """
     args = parse_args()
+    if args.llm_model is None:
+        if args.llm_provider == "openai":
+            args.llm_model = "gpt-4o-mini"
+        elif args.llm_provider == "gemini":
+            args.llm_model = "gemini-2.5-flash"
+        elif args.llm_provider == "claude":
+            args.llm_model = "claude-opus-4-1-20250805"
 
     run_hc_pipeline(
         input_path=args.input,
